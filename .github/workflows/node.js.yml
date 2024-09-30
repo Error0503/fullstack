@@ -26,5 +26,6 @@ jobs:
         path: ./backend/coverage
     - uses: ArtiomTr/jest-coverage-report-action@v2
       with:
+        coverage-file: coverage-final.json
         test-script: npm run test:cov
         skip-step: all
