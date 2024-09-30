@@ -1,0 +1,26 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ./backend/
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm run test:cov
+    - uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: ./backend/coverage
