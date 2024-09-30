@@ -17,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: ls
     - run: npm ci
     - run: npm run build --if-present
+    - run: npm test:cov
+    - uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: output/coverage
