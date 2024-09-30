@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: echo pwd
+    - run: pwd
     - run: cd ./backend
-    - run: echo pwd
+    - run: pwd
     - run: npm ci
     - run: npm run build --if-present
