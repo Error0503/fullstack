@@ -26,5 +26,5 @@ jobs:
         path: ./backend/coverage
     - uses: ArtiomTr/jest-coverage-report-action@v2
       with:
-        coverage-file: coverage/coverage-final.json
+        coverage-file: ./backend/coverage/coverage-final.json
         skip-step: all
