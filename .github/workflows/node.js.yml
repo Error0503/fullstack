@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v4
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test:cov
+    - run: npm run test:cov
     - uses: actions/upload-artifact@v4
       with:
         name: code-coverage-report
