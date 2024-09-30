@@ -18,7 +18,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: pwd
-    - run: cd ./backend
-    - run: pwd
     - run: npm ci
     - run: npm run build --if-present
