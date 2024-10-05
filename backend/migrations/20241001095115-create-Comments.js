@@ -1,31 +1,47 @@
-const DataTypes = require('sequelize').DataTypes;
-
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface) => {
+  async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Comments', {
       id: {
-        type: DataTypes.INTEGER,
-        field: 'id',
-        primaryKey: true,
-        autoIncrement: true,
         allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
       },
       content: {
-        type: DataTypes.STRING,
-        field: 'content',
         allowNull: false,
+        type: Sequelize.STRING,
+      },
+      UserId: {
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+        onDelete: 'cascade',
+        type: Sequelize.INTEGER,
+      },
+      PostId: {
+        allowNull: false,
+        references: {
+          model: 'Posts',
+          key: 'id',
+        },
+        onDelete: 'cascade',
+        type: Sequelize.INTEGER,
       },
       createdAt: {
-        type: DataTypes.DATE,
-        field: 'createdAt',
+        allowNull: false,
+        type: Sequelize.DATE,
       },
       updatedAt: {
-        type: DataTypes.DATE,
-        field: 'updatedAt',
+        allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },
-  down: async (queryInterface) => {
+  async down(queryInterface) {
     await queryInterface.dropTable('Comments');
   },
 };
