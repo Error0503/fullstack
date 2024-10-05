@@ -1,0 +1,139 @@
+import { genSaltSync, hashSync } from 'bcrypt-ts';
+import {
+  Association,
+  CreationOptional,
+  DataTypes,
+  HasManyGetAssociationsMixin,
+  HasManySetAssociationsMixin,
+  HasManyAddAssociationMixin,
+  HasManyAddAssociationsMixin,
+  HasManyCreateAssociationMixin,
+  HasManyRemoveAssociationMixin,
+  HasManyRemoveAssociationsMixin,
+  HasManyHasAssociationMixin,
+  HasManyHasAssociationsMixin,
+  HasManyCountAssociationsMixin,
+  InferCreationAttributes,
+  InferAttributes,
+  Model,
+  NonAttribute,
+  Sequelize,
+} from 'sequelize';
+import type { Comment } from './Comment';
+import type { Post } from './Post';
+import type { Report } from './Report';
+
+type UserAssociations = 'posts' | 'comments' | 'reports';
+
+export class User extends Model<
+  InferAttributes<User, { omit: UserAssociations }>,
+  InferCreationAttributes<User, { omit: UserAssociations }>
+> {
+  declare id: CreationOptional<number>;
+  declare username: string;
+  declare password: string;
+  declare role: 'user' | 'moderator' | 'admin';
+  declare createdAt: CreationOptional<Date>;
+  declare updatedAt: CreationOptional<Date>;
+
+  // User hasMany Post
+  declare posts?: NonAttribute<Post[]>;
+  declare getPosts: HasManyGetAssociationsMixin<Post>;
+  declare setPosts: HasManySetAssociationsMixin<Post, number>;
+  declare addPost: HasManyAddAssociationMixin<Post, number>;
+  declare addPosts: HasManyAddAssociationsMixin<Post, number>;
+  declare createPost: HasManyCreateAssociationMixin<Post, 'id'>;
+  declare removePost: HasManyRemoveAssociationMixin<Post, number>;
+  declare removePosts: HasManyRemoveAssociationsMixin<Post, number>;
+  declare hasPost: HasManyHasAssociationMixin<Post, number>;
+  declare hasPosts: HasManyHasAssociationsMixin<Post, number>;
+  declare countPosts: HasManyCountAssociationsMixin;
+
+  // User hasMany Comment
+  declare comments?: NonAttribute<Comment[]>;
+  declare getComments: HasManyGetAssociationsMixin<Comment>;
+  declare setComments: HasManySetAssociationsMixin<Comment, number>;
+  declare addComment: HasManyAddAssociationMixin<Comment, number>;
+  declare addComments: HasManyAddAssociationsMixin<Comment, number>;
+  declare createComment: HasManyCreateAssociationMixin<Comment, 'id'>;
+  declare removeComment: HasManyRemoveAssociationMixin<Comment, number>;
+  declare removeComments: HasManyRemoveAssociationsMixin<Comment, number>;
+  declare hasComment: HasManyHasAssociationMixin<Comment, number>;
+  declare hasComments: HasManyHasAssociationsMixin<Comment, number>;
+  declare countComments: HasManyCountAssociationsMixin;
+
+  // User hasMany Report
+  declare reports?: NonAttribute<Report[]>;
+  declare getReports: HasManyGetAssociationsMixin<Report>;
+  declare setReports: HasManySetAssociationsMixin<Report, number>;
+  declare addReport: HasManyAddAssociationMixin<Report, number>;
+  declare addReports: HasManyAddAssociationsMixin<Report, number>;
+  declare createReport: HasManyCreateAssociationMixin<Report, 'id'>;
+  declare removeReport: HasManyRemoveAssociationMixin<Report, number>;
+  declare removeReports: HasManyRemoveAssociationsMixin<Report, number>;
+  declare hasReport: HasManyHasAssociationMixin<Report, number>;
+  declare hasReports: HasManyHasAssociationsMixin<Report, number>;
+  declare countReports: HasManyCountAssociationsMixin;
+
+  declare static associations: {
+    posts: Association<User, Post>;
+    comments: Association<User, Comment>;
+    reports: Association<User, Report>;
+  };
+
+  static initModel(sequelize: Sequelize): typeof User {
+    User.init(
+      {
+        id: {
+          type: DataTypes.INTEGER.UNSIGNED,
+          primaryKey: true,
+          autoIncrement: true,
+          allowNull: false,
+        },
+        username: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true,
+        },
+        password: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        role: {
+          type: DataTypes.ENUM('user', 'moderator', 'admin'),
+          allowNull: false,
+          defaultValue: 'user',
+        },
+        createdAt: {
+          type: DataTypes.DATE,
+        },
+        updatedAt: {
+          type: DataTypes.DATE,
+        },
+      },
+      {
+        sequelize,
+        modelName: 'User',
+        hooks: {
+          beforeCreate: (instance, options) => {
+            console.log(instance);
+            console.log(options);
+            instance.password = hashSync(instance.password, genSaltSync(12));
+          },
+          beforeBulkCreate: (instances, options) => {
+            instances.forEach((instance) => {
+              console.log(instance);
+              console.log(options);
+              instance.password = hashSync(instance.password, genSaltSync(12));
+            });
+          },
+          beforeQuery: () => {
+            console.log('AAAAAAAAAAA');
+          },
+        },
+      },
+    );
+
+    return User;
+  }
+}
