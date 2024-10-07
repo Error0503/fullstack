@@ -12,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { User } from './user.model';
 import { UserService } from './user.service';
+import { Response } from 'express';
 
 @Controller('user')
 export class UserController {
@@ -23,37 +24,60 @@ export class UserController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
-  findAll(): Promise<User[]> {
-    return this.userService.findAll();
+  async findAll(): Promise<User[]> {
+    return await this.userService.findAll();
   }
 
   @Get(':id')
-  @HttpCode(HttpStatus.OK)
-  findOne(@Param('id') id: string): Promise<User> {
-    return this.userService.findOne(id);
+  async findOne(@Param('id') id: string, @Res() res: Response): Promise<User> {
+    const result = await this.userService.findOne(id);
+    if (result === null) {
+      res.status(HttpStatus.NOT_FOUND).send({ message: 'User not found' });
+      return null;
+    }
+    res.status(HttpStatus.OK).send(result);
+    return result;
   }
 
   @Post()
-  @HttpCode(HttpStatus.CREATED)
-  create(
+  async create(
     @Res() res: Response,
     @Body() { username, password }: { username: string; password: string },
   ): Promise<User> {
-    return this.userService.create(username, password);
+    const result = await this.userService.create(username, password);
+
+    if (result === null) {
+      res
+        .status(HttpStatus.CONFLICT)
+        .send({ message: 'Username already exists' });
+      return null;
+    }
+    res.status(HttpStatus.CREATED).send(result);
+    return result;
   }
 
   @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
-  delete(@Param('id') id: string): Promise<void> {
-    return this.userService.delete(id);
+  async delete(@Param('id') id: string, @Res() res: Response): Promise<void> {
+    const result = await this.userService.delete(id);
+    if (result === null) {
+      res.status(HttpStatus.NOT_FOUND).send({ message: 'User not found' });
+      return null;
+    }
+    res.status(HttpStatus.NO_CONTENT).send();
   }
 
   @Put(':id')
-  @HttpCode(HttpStatus.OK)
-  update(
+  async update(
     @Param('id') id: string,
     @Body() { username, password }: { username: string; password: string },
+    @Res() res: Response,
   ) {
-    return this.userService.update(id, username, password);
+    const result = await this.userService.update(id, username, password);
+    if (result === null) {
+      res.status(HttpStatus.NOT_FOUND).send({ message: 'User not found' });
+      return null;
+    }
+    res.status(HttpStatus.OK).send(result);
+    return result;
   }
 }

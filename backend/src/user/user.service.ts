@@ -35,16 +35,18 @@ export class UserService {
         return await user.save({ transaction: t });
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      return null;
     }
   }
 
   async delete(id: string): Promise<void> {
     try {
       const user = await this.findOne(id);
-      await user.destroy();
+      return await user.destroy();
     } catch (error) {
       console.error(error);
+      return null;
     }
   }
 
@@ -59,6 +61,7 @@ export class UserService {
       });
     } catch (error) {
       console.error(error);
+      return null;
     }
   }
 }
