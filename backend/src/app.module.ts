@@ -9,6 +9,7 @@ import { Post } from './post/post.model';
 import { Report } from './report/report.model';
 import { CommentModule } from './comment/comment.module';
 import { Comment } from './comment/comment.model';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { Comment } from './comment/comment.model';
     PostModule,
     ReportModule,
     CommentModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
