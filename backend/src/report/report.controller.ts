@@ -44,12 +44,18 @@ export class ReportController {
     @Res() res: Response,
     @Body()
     {
+      body,
+      reason,
       userId,
       postId,
-      reason,
-    }: { userId: number; postId: number; reason: string },
+    }: { body: string; reason: Reasons; userId: number; postId: number },
   ) {
-    const result = await this.reportService.create(userId, postId, reason);
+    const result = await this.reportService.create(
+      body,
+      reason,
+      userId,
+      postId,
+    );
 
     if (result === null) {
       res

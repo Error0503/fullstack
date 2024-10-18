@@ -30,9 +30,10 @@ export class ReportService {
   }
 
   async create(
+    body: string,
+    reason: Reasons,
     userId: number,
     postId: number,
-    reason: string,
   ): Promise<Report> {
     try {
       const user = await User.findOne({
@@ -53,9 +54,10 @@ export class ReportService {
 
       return await this.sequelize.transaction(async (t) => {
         const report = new Report();
+        report.body = body;
+        report.reason = reason;
         report.userId = userId;
         report.postId = postId;
-        report.reason = reason;
         return await report.save({ transaction: t });
       });
     } catch (error) {
