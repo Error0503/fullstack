@@ -8,6 +8,7 @@ import {
   Delete,
   Res,
   HttpStatus,
+  Query,
   HttpCode,
 } from '@nestjs/common';
 import { User } from './user.model';
@@ -24,15 +25,23 @@ export class UserController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
-  async findAll(): Promise<User[]> {
-    return await this.userService.findAll();
-  }
+  async find(
+    @Query('id') id: string,
+    @Query('username') username: string,
+    @Res() res: Response,
+  ): Promise<User | User[]> {
+    let result: User | User[];
 
-  @Get(':id')
-  async findOne(@Param('id') id: string, @Res() res: Response): Promise<User> {
-    const result = await this.userService.findOne(id);
-    if (result === null) {
-      res.status(HttpStatus.NOT_FOUND).send({ message: 'User not found' });
+    if (id) {
+      result = await this.userService.findOneById(id);
+    } else if (username) {
+      result = await this.userService.findOneByUsername(username);
+    } else {
+      result = await this.userService.findAll();
+    }
+
+    if (!result) {
+      res.status(HttpStatus.NOT_FOUND).send({ message: 'Data not found' });
       return null;
     }
     res.status(HttpStatus.OK).send(result);
