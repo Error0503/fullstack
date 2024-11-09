@@ -10,6 +10,7 @@ import { Report } from './report/report.model';
 import { CommentModule } from './comment/comment.module';
 import { Comment } from './comment/comment.model';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { UserModule } from './user/user.module';
     ReportModule,
     CommentModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
