@@ -1,0 +1,34 @@
+<div class="navbar pb-0">
+  <div class="flex-1 gap-2">
+    <div
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#dc9b32] bg-[#ccbea7] hover:bg-[#dc9b32] transition-colors"
+    >
+      Heroes
+    </div>
+    <div
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#7bbb1c] bg-[#ccbea7] hover:bg-[#7bbb1c] transition-colors"
+    >
+      Items
+    </div>
+    <div
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#cd91fe] bg-[#ccbea7] hover:bg-[#cd91fe] transition-colors"
+    >
+      Builds
+    </div>
+  </div>
+  <div class="flex-none gap-2">
+    <div
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+    >
+      @if (this.userService.isLoggedIn ) { <a href="/profile">Profile</a> }
+      @else { <a href="/login">Login</a> }
+    </div>
+    @if (this.userService.isLoggedIn ) {
+    <div
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-red-400 bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+    >
+      <button class="btn-ghost" (click)="logout()">Logout</button>
+    </div>
+    }
+  </div>
+</div>
