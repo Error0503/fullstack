@@ -1,8 +1,8 @@
 <div class="w-full">
   <form
     class="w-1/5 mx-auto"
-    [formGroup]="loginForm"
-    (ngSubmit)="submitForm($event)"
+    [formGroup]="registerForm"
+    (submit)="submitForm()"
   >
     <label class="input input-bordered flex items-center gap-2">
       <svg
@@ -42,6 +42,8 @@
         placeholder="Password"
       />
     </label>
-    <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+    <button class="btn btn-primary" [disabled]="!registerForm.valid">
+      Login
+    </button>
   </form>
 </div>

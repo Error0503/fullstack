@@ -25,4 +25,21 @@ export class ClientService {
         })
       );
   }
+
+  register(userInfo: {
+    username: string;
+    password: string;
+  }): Observable<{ access_token: string }> {
+    return this.http
+      .post<{ access_token: string }>(
+        'http://localhost:3000/auth/register',
+        userInfo
+      )
+      .pipe(
+        map((response) => {
+          this.userService.saveToken(response.access_token);
+          return response;
+        })
+      );
+  }
 }

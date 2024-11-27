@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClientService } from '../../services/ClientService/client-service.service';
+import { ClientService } from '../../../services/ClientService/client-service.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.less',
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -17,8 +17,7 @@ export class LoginComponent {
     });
   }
 
-  submitForm(event: Event) {
-    console.log(this.loginForm.value);
+  submitForm() {
     this.clientService.login(this.loginForm.value).subscribe((response) => {
       console.log('here');
     });
