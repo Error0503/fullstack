@@ -9,20 +9,25 @@ interface Item {
   // activeEffects: [{ property: 'test'; value: 0 }];
   // conditionalEfffects: [{ condition: 'test'; property: 'test'; value: 0 }];
   description: string | null;
-  // compnents: ;
-  // compnentOf: null;
+  // components: ;
+  // componentOf: ;
+  // isActive: boolean;
 }
 
 @Component({
   selector: 'app-items',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './item.component.html',
-  styleUrl: './item.component.css',
+  templateUrl: './items.component.html',
+  styleUrl: './items.component.css',
 })
-export class ItemComponent {
-  @Input() category: 'weapon' | 'vitality' | 'spirit' = 'weapon';
-  items: Item[] = itemsData.weapon;
+export class ItemsComponent {
+  @Input() categories: string[] = Object.keys(itemsData);
+  items = Object.values(itemsData);
 
-
+  onSelect(item: Item) {
+    console.log(item);
+    //   item.isActive = !item.isActive;
+    // TODO: Add item to build
+  }
 }

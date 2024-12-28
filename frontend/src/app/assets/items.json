@@ -10,8 +10,8 @@
       "activeEffects": [],
       "conditionalEfffects": [],
       "description": null,
-      "compnents": null,
-      "compnentOf": "Titanic Magazine"
+      "components": null,
+      "componentOf": "Titanic Magazine"
     },
     {
       "name": "Close Quarters",
@@ -26,8 +26,8 @@
         }
       ],
       "description": "Deal additional <b>Weapon Damage</b> when in <b>close range</b> to your target.",
-      "compnents": null,
-      "compnentOf": "Point Blank"
+      "components": null,
+      "componentOf": "Point Blank"
     },
     {
       "name": "Headshot Booster",
@@ -41,8 +41,8 @@
         { "property": "Head Shot Bonus Damage", "value": 40 }
       ],
       "description": "Deal additional <b>Weapon Damage</b> with <b>headshots</b>.",
-      "compnents": null,
-      "compnentOf": "Headhunter"
+      "components": null,
+      "componentOf": "Headhunter"
     },
     {
       "name": "High-Velocity Mag",
@@ -55,8 +55,8 @@
       "activeEffects": [],
       "conditionalEfffects": [],
       "description": null,
-      "compnents": null,
-      "compnentOf": "Pristine Emblem"
+      "components": null,
+      "componentOf": "Pristine Emblem"
     },
     {
       "name": "Hollow Point Ward",
@@ -74,8 +74,8 @@
         }
       ],
       "description": "When you are <b>above 60% health</b>, deal additional <b>Weapon Damage</b>.",
-      "compnents": null,
-      "compnentOf": null
+      "components": null,
+      "componentOf": null
     },
     {
       "name": "Monster Rounds",
@@ -89,8 +89,8 @@
       "activeEffects": [{ "property": "", "value": 0 }],
       "conditionalEfffects": [{ "condition": "", "property": "", "value": 0 }],
       "description": null,
-      "compnents": null,
-      "compnentOf": null
+      "components": null,
+      "componentOf": null
     },
     {
       "name": "Rapid Rounds",
@@ -102,8 +102,8 @@
       "activeEffects": [{ "property": "", "value": 0 }],
       "conditionalEfffects": [{ "condition": "", "property": "", "value": 0 }],
       "description": null,
-      "compnents": null,
-      "compnentOf": null
+      "components": null,
+      "componentOf": null
     },
     {
       "name": "Active Reload",
@@ -129,8 +129,8 @@
         }
       ],
       "description": "While reloading, pressing reload during the highlited portion will <b>instantly finish your reload</b> and grant you <b>Fire Rate</b> and <b>Bullet Lifesteal</b>.",
-      "compnents": null,
-      "compnentOf": null
+      "components": null,
+      "componentOf": null
     },
     {
       "name": "test",
@@ -139,8 +139,8 @@
       "activeEffects": [{ "property": "test", "value": 0 }],
       "conditionalEfffects": [{ "condition": "test", "property": "test", "value": 0 }],
       "description": "test",
-      "compnents": null,
-      "compnentOf": null
+      "components": null,
+      "componentOf": null
     }
   ],
   "vitality": [],
