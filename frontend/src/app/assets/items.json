@@ -1615,10 +1615,15 @@
         "category": "spirit",
         "name": "Cold Front",
         "cost": 1250,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [{ "property": "Spirit Resist", "value": "10%" }],
+        "activeEffects": [
+          { "property": "Damage", "value": "75" },
+          { "property": "Movement Slow", "value": "40%" },
+          { "property": "End Radius", "value": "14m" },
+          { "property": "Duration", "value": "3s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Release an expanding ice blast that deals Spirit Damage and Slow targets it hits. Deals 2x Damage to non-Heroes.",
         "components": null,
         "componentOf": null
       },
@@ -1626,10 +1631,19 @@
         "category": "spirit",
         "name": "Decay",
         "cost": 1250,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Health Regen", "value": "1.5" },
+          { "property": "Spirit Power", "value": "7" },
+          { "property": "Ability Duration", "value": "8%" }
+        ],
+        "activeEffects": [
+          { "property": "Healing Reduction", "value": "-55%" },
+          { "property": "Bleed Damage", "value": "1.5%/sec" },
+          { "property": "Cast Range", "value": "17.4" },
+          { "property": "Duration", "value": "10.8" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Reduces healing received of targeted enemy and inflicts damage over time of their current health. Decay's damage is non-lethal.",
         "components": null,
         "componentOf": null
       },
@@ -1637,10 +1651,20 @@
         "category": "spirit",
         "name": "Slowing Hex",
         "cost": 1250,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Spirit Lifesteal", "value": "10%" },
+          { "property": "Spirit Power", "value": "5" },
+          { "property": "Bonus Health", "value": "75" }
+        ],
+        "activeEffects": [
+          { "property": "Damage", "value": "40" },
+          { "property": "Movement Slow", "value": "20%" },
+          { "property": "Dash Distance", "value": "-30%" },
+          { "property": "Cast Range", "value": "25m" },
+          { "property": "Duration", "value": "3s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Deals Spirit Damage, Slows target movement and dashes. Also Silences their movement-based items and abilities.",
         "components": "Enduring Spirit",
         "componentOf": null
       },
@@ -1648,10 +1672,20 @@
         "category": "spirit",
         "name": "Withering Whip",
         "cost": 1250,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Bullet Shield Health", "value": "100" },
+          { "property": "Spirit Power", "value": "6" },
+          { "property": "Sprint Speed", "value": "1 m/s" }
+        ],
+        "activeEffects": [
+          { "property": "Damage", "value": "50" },
+          { "property": "Fire Rate Slow", "value": "45%" },
+          { "property": "Bullet Resist", "value": "-12%" },
+          { "property": "Cast Range", "value": "30m" },
+          { "property": "Duration", "value": "5s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Target an enemy to apply Fire Rate Slow and reduce their Bullet Resist.",
         "components": null,
         "componentOf": null
       }
@@ -1661,10 +1695,21 @@
         "category": "spirit",
         "name": "Arcane Surge",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Stamina", "value": "1" },
+          { "property": "Bonus Health", "value": "100" },
+          { "property": "Movement Slow Resist", "value": "15%" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Ability Range", "value": "18%" },
+          { "property": "Ability Duration", "value": "18%" },
+          { "property": "Spirit Power", "value": "18" },
+          { "property": "Fire Rate", "value": "20%" },
+          { "property": "Temporary Ammo", "value": "5" },
+          { "property": "Duration", "value": "7s" }
+        ],
+        "description": "Your next Dash-Jump does not cost and extra stamina and the next ability you use will have bonus Range, Duration, and Spirit Power. Additionally you gain Fire Rate and bonus Ammo until your next reload. Lasts up to 7s.",
         "components": "Kinetic Dash",
         "componentOf": null
       },
@@ -1672,10 +1717,15 @@
         "category": "spirit",
         "name": "Improved Burst",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Spirit Shield Health", "value": "100" },
+          { "property": "Weapon Damage", "value": "8%" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Max Health Bonus Damage", "value": "8%" }
+        ],
+        "description": "Abilities deal bonus Spirit Damage if they deal 175 damage or more in a single hit. Targets are immune to the effects of Improved Burst for 5s after taking damage from it.",
         "components": "Mystic Burst",
         "componentOf": null
       },
@@ -1683,10 +1733,15 @@
         "category": "spirit",
         "name": "Improved Reach",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Imbued Ability Range", "value": "35%" },
+          { "property": "Non-Imbued Ability Range", "value": "26%" },
+          { "property": "Bullet Resist", "value": "13%" },
+          { "property": "Spirit Power", "value": "8" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Increases the range and effect radius of your abilities and items.",
         "components": "Mystic Reach",
         "componentOf": null
       },
@@ -1694,7 +1749,12 @@
         "category": "spirit",
         "name": "Improved Spirit",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Spirit Power", "value": "30" },
+          { "property": "Health Regen", "value": "3" },
+          { "property": "Sprint Speed", "value": "1 m/s" },
+          { "property": "Bonus Health", "value": "125" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
         "description": "",
@@ -1705,10 +1765,19 @@
         "category": "spirit",
         "name": "Mystic Slow",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Bonus Health", "value": "160" },
+          { "property": "Health Regen", "value": "3" },
+          { "property": "Spirit Power", "value": "6" },
+          { "property": "Sprint Speed", "value": "1 m/s" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Movement Slow", "value": "25%" },
+          { "property": "Fire Rate Slow", "value": "40%" },
+          { "property": "Duration", "value": "2.5s" }
+        ],
+        "description": "When target takes Spirit Damage, they have their Move Speed and Fire Rate reduced.",
         "components": "Suppressor",
         "componentOf": null
       },
@@ -1716,7 +1785,15 @@
         "category": "spirit",
         "name": "Rapid Recharge",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Bonus Ability Charges", "value": "2" },
+          { "property": "Faster Time Between Charges", "value": "60%" },
+          {
+            "property": "Cooldown Reduction For Charged Abilities",
+            "value": "25%"
+          },
+          { "property": "Weapon Damage", "value": "12%" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
         "description": "",
@@ -1727,10 +1804,20 @@
         "category": "spirit",
         "name": "Spirit Snatch",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Melee Damage", "value": "15%" },
+          { "property": "Bonus Health", "value": "125" },
+          { "property": "Spirit Resist", "value": "8%" },
+          { "property": "Sprint Speed", "value": "1 m/s" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Spirit Damage", "value": "50" },
+          { "property": "Spirit Resist Steal", "value": "12" },
+          { "property": "Spirit Power Steal", "value": "26" },
+          { "property": "Duration", "value": "16s" }
+        ],
+        "description": "When you perform a Light or Heavy Melee attack against a hero, the attack deals extra Spirit Damage and steals Spirit Resist and Spirit Power.",
         "components": "Spirit Strike",
         "componentOf": null
       },
@@ -1738,10 +1825,19 @@
         "category": "spirit",
         "name": "Superior Cooldown",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Imbued Ability Cooldown Reduction", "value": "32%" },
+          {
+            "property": "Non-Imbued Ability Cooldown Reduction",
+            "value": "24%"
+          },
+          { "property": "Spirit Shield Health", "value": "150" },
+          { "property": "Health Regen", "value": "4" },
+          { "property": "Ammo", "value": "15%" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Reduces the Cooldown of your abilities and items.",
         "components": "Improved Cooldown",
         "componentOf": null
       },
@@ -1749,10 +1845,16 @@
         "category": "spirit",
         "name": "Superior Duration",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Imbued Abitlity Duration", "value": "33%" },
+          { "property": "Non-Imbued Abitlity Duration", "value": "27%" },
+          { "property": "Bonus Health", "value": "175" },
+          { "property": "Weapon Damage", "value": "15%" },
+          { "property": "Health Regen", "value": "4" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Increses the Duration of your abilities and items.",
         "components": "Duration Extender",
         "componentOf": null
       },
@@ -1760,10 +1862,15 @@
         "category": "spirit",
         "name": "Surge of Power",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [{ "property": "Bonus Health", "value": "75" }],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Imbued Ability Spirit Power", "value": "34" },
+          { "property": "Fire Rate Bonus", "value": "15" },
+          { "property": "Move Speed", "value": "2 m/s" },
+          { "property": "Move Speed Duration", "value": "6s" }
+        ],
+        "description": "Imbue an ability with permanent Spirit Power. When that ability is used, gain bonus Move Speed and maintain full speed while attacking.",
         "components": null,
         "componentOf": null
       },
@@ -1771,10 +1878,17 @@
         "category": "spirit",
         "name": "Torment Pulse",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Bonus Health", "value": "160" },
+          { "property": "Melee Resist", "value": "15%" },
+          { "property": "Spirit Power", "value": "6" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Pulse Damage", "value": "40" },
+          { "property": "Pulse Radius", "value": "9m" }
+        ],
+        "description": "Periodically deal Spirit Damage to the closest two enemies nearby.",
         "components": null,
         "componentOf": null
       },
@@ -1782,32 +1896,54 @@
         "category": "spirit",
         "name": "Ethereal Shift",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [{ "property": "Spirit Power", "value": "6" }],
+        "activeEffects": [
+          { "property": "Spirit Power", "value": "20" },
+          { "property": "Spirit Resist", "value": "40%" },
+          { "property": "Movement Speed", "value": "3 m/s" },
+          { "property": "Buff Duration", "value": "5s" },
+          { "property": "Duration", "value": "3.5s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "You enter a void state and become Untangible and Invincible for a short duration, during which you float slowly and cannot perform any actions. Afterwards you gain move speed, spirit, and spirit resist. Cancels any active ability.",
         "components": null,
         "componentOf": null
       },
-        {
-          "category": "spirit",
-          "name": "Knockdown",
-          "cost": 3000,
-          "effects": [{ "property": "", "value": "" }],
-          "activeEffects": [],
-          "conditionalEffects": [],
-          "description": "",
-          "components": null,
-          "componentOf": null
-        },
+      {
+        "category": "spirit",
+        "name": "Knockdown",
+        "cost": 3000,
+        "effects": [
+          { "property": "Stamina", "value": "1" },
+          { "property": "Spirit Shield Health", "value": "300" },
+          { "property": "Spirit Power", "value": "6" }
+        ],
+        "activeEffects": [
+          { "property": "Status Effect", "value": "Stun" },
+          { "property": "Stun Duration", "value": "0.5s" },
+          { "property": "Cast Range", "value": "45m" }
+        ],
+        "conditionalEffects": [],
+        "description": "Target is knocked down and Stunned after a 2s delay, interrupting and temporarily preventing them from taking any action. Stun lasts up to 2x longer against airborne targets based on how high off the ground they are (up to 30m).",
+        "components": null,
+        "componentOf": null
+      },
       {
         "category": "spirit",
         "name": "Silence Glyph",
         "cost": 3000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Spirit Shield Health", "value": "150" },
+          { "property": "Sprint Speed", "value": "1 m/s" }
+        ],
+        "activeEffects": [
+          { "property": "Status Effect", "value": "Silenced" },
+          { "property": "Damage", "value": "100" },
+          { "property": "Cast Range", "value": "25m" },
+          { "property": "Duration", "value": "3s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Fire a projectile that silences and damages the first enemy hero it hits. Silence does not interrupt chanelling abilities.",
         "components": null,
         "componentOf": null
       }
@@ -1817,7 +1953,13 @@
         "category": "spirit",
         "name": "Boundless Spirit",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Spirit Power", "value": "65" },
+          { "property": "Bonus Health", "value": "300" },
+          { "property": "Health Regen", "value": "15" },
+          { "property": "Weapon Damage", "value": "30%" },
+          { "property": "Sprint Speed", "value": "2 m/s" }
+        ],
         "activeEffects": [],
         "conditionalEffects": [],
         "description": "",
@@ -1828,10 +1970,18 @@
         "category": "spirit",
         "name": "Diviner's Kevlar",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Cooldown Reduction", "value": "10%" },
+          { "property": "Ability Duration", "value": "10%" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Bullet Shield", "value": "700" },
+          { "property": "Spirit Shield", "value": "700" },
+          { "property": "Spirit Power", "value": "40" },
+          { "property": "Buff Duration", "value": "16.5s" }
+        ],
+        "description": "Upon casting an ultimate ability gain temporary Bullet Shield, Spirit Shield, and Spirit Power.",
         "components": null,
         "componentOf": null
       },
@@ -1839,10 +1989,19 @@
         "category": "spirit",
         "name": "Escalating Exposure",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Spirit Resist", "value": "15%" },
+          { "property": "Bonus Health", "value": "125" },
+          { "property": "Spirit Resist on Spirit Damage", "value": "-12%" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Spirit Amp per Stack", "value": "4%" },
+          { "property": "Max Stacks", "value": "20" },
+          { "property": "Duration", "value": "12s" },
+          { "property": "Max Frequency per Target", "value": "0.7s" }
+        ],
+        "description": "Dealing Spirit Damage applies a stacking Spirit Amp that increases your Spirit Damage to the target.",
         "components": "Mystic Vulnerability",
         "componentOf": null
       },
@@ -1850,10 +2009,19 @@
         "category": "spirit",
         "name": "Mystic Reverb",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
+        "effects": [
+          { "property": "Spirit Lifesteal", "value": "14%" },
+          { "property": "Spirit Resist", "value": "14%" },
+          { "property": "Ability Range", "value": "14%" }
+        ],
         "activeEffects": [],
-        "conditionalEffects": [],
-        "description": "",
+        "conditionalEffects": [
+          { "property": "Damage", "value": "50%" },
+          { "property": "Movement Slow", "value": "40%" },
+          { "property": "Radius", "value": "18.2m" },
+          { "property": "Delay Duration", "value": "3s" }
+        ],
+        "description": "Imbue an ability to apply slow on a hit target and deal an additional percentage of the damage dealt to enemies around the target after a short delay.",
         "components": null,
         "componentOf": null
       },
@@ -1861,10 +2029,17 @@
         "category": "spirit",
         "name": "Curse",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Weapon Damage", "value": "20%" },
+          { "property": "Spirit Power", "value": "8" }
+        ],
+        "activeEffects": [
+          { "property": "Status Effect", "value": "Silenced" },
+          { "property": "Duration", "value": "3.25s" },
+          { "property": "Cast Range", "value": "20m" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Curse an enemy - Interrupting, Silencing, Disarming, and preventing item usage.",
         "components": null,
         "componentOf": null
       },
@@ -1872,10 +2047,14 @@
         "category": "spirit",
         "name": "Echo Shard",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Move Speed", "value": "1 m/s" },
+          { "property": "Bullet Resist", "value": "16%" },
+          { "property": "Spirit Power", "value": "12" }
+        ],
+        "activeEffects": [{ "property": "", "value": "" }],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Reset the cooldown of your most recently used non-ulitmate ability.",
         "components": null,
         "componentOf": null
       },
@@ -1883,10 +2062,22 @@
         "category": "spirit",
         "name": "Magic Carpet",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Ability Duration", "value": "15%" },
+          { "property": "Spirit Power", "value": "15" },
+          { "property": "Bonus Health", "value": "150" },
+          { "property": "Ability Range", "value": "10%" }
+        ],
+        "activeEffects": [
+          { "property": "Bullet Shield Health", "value": "400" },
+          { "property": "Spirit Shield Health", "value": "400" },
+          { "property": "Duration", "value": "8.8s" },
+          { "property": "Summon Duration", "value": "1.3s" },
+          { "property": "Bonus Fly Speed", "value": "6 m/s" },
+          { "property": "Shield Duration", "value": "17.6s" }
+        ],
         "conditionalEffects": [],
-        "description": "",
+        "description": "Summon a Magic Carpet that will fly you away and gain Bullet and Spirit Shields. Cannot use abilities while the carpet is being summoned. While flying you are immune to slows and doing any action will dismiss the carpet.",
         "components": null,
         "componentOf": null
       },
@@ -1894,10 +2085,13 @@
         "category": "spirit",
         "name": "Refresher",
         "cost": 6000,
-        "effects": [{ "property": "", "value": "" }],
-        "activeEffects": [],
+        "effects": [
+          { "property": "Spirit Resist", "value": "8%" },
+          { "property": "Bullet Resist", "value": "16%" }
+        ],
+        "activeEffects": [{ "property": "", "value": "" }],
         "conditionalEffects": [],
-        "description": "",
+        "description": "reset the cooldown of all your abilities and restore all your charges.",
         "components": null,
         "componentOf": null
       }
