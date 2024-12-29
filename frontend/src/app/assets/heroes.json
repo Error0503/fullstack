@@ -1,0 +1,1086 @@
+[
+  {
+    "name": "Abrams",
+    "shortDescription": "Charges into close combat",
+    "description": "Abrams has the bulk and sustain to lead from the front, often running into the middle of his foes and wathcing them scatter. If his enemies waste their fire on him, his backline teammates can lay out damage with impunity.",
+    "abilities": [
+      {
+        "name": "Siphon Life",
+        "description": "Drain health from enemies in front of you while they are in the radius.",
+        "stats": [
+          { "property": "Damage Per Second", "value": "35", "scales": true },
+          { "property": "Heal vs Heroes", "value": "75%", "scales": false },
+          { "property": "Heal vs Non-Heroes", "value": "40%", "scales": false }
+        ],
+        "upgrades": ["-19s cooldown", "+2s duration", "+40 Damage Per Second"]
+      },
+      {
+        "name": "Shoulder Charge",
+        "description": "Charge forward, colliding with enemies and draggind them along. Hitting a wall will Stun enemies caught by Abrams. Speed increased after colliding with enemy Heroes.",
+        "stats": [
+          { "property": "Damage", "value": "40", "scales": true },
+          { "property": "Stun Duration", "value": "0.85s", "scales": false }
+        ],
+        "upgrades": [
+          "-19s cooldown",
+          "+0.5 duration",
+          "+5.5 Weapon Damage for 8s after colliding with an enemy"
+        ]
+      },
+      {
+        "name": "Infernal Resillience",
+        "description": "Regenerate a portion of Incoming damage over time.",
+        "stats": [
+          { "property": "Damage regenerated", "value": "11%", "scales": false },
+          { "property": "Regeneration Time", "value": "20s", "scales": false },
+          { "property": "Health Regen", "value": "1", "scales": false }
+        ],
+        "upgrades": [
+          "+1.5 Health Regen",
+          "+150 Health",
+          "+6% Damage Regenerated"
+        ]
+      },
+      {
+        "name": "Seismic Impact",
+        "description": "Leap high into the air and choose a ground location to crash down into. When you hit the ground all enemies in the radius are damaged and stunned. Press Attack to crash down early.",
+        "stats": [
+          { "property": "Damage", "value": "150", "scales": true },
+          { "property": "Stun Duration", "value": "1s", "scales": false },
+          { "property": "Impact Radius", "value": "9m", "scales": false }
+        ],
+        "upgrades": [
+          "-38s",
+          "Gain 100 Max HP and 15% Fire Rate per hero hit. Lasts 25.",
+          "On cast, become Immune to Stun, Silence, Sleep, Root, and Disarm. Expires 3s after landing."
+        ]
+      }
+    ],
+    "weaponStats": {
+      "dps": 63,
+      "bulletDamage": 4.5,
+      "ammo": 9,
+      "bulletsPerSec": 1.67,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 570,
+      "healthRegen": 1.5,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Bebop",
+    "shortDescription": "Hooks an enemy for a knockout combo",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 66,
+      "bulletDamage": 5.3,
+      "ammo": 66,
+      "bulletsPerSec": 12.5,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 650,
+      "healthRegen": 3,
+      "bulletResist": 10,
+      "spiritResist": 0,
+      "moveSpeed": 6.6,
+      "sprintSpeed": 3.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Dynamo",
+
+    "shortDescription": "Locks down the enemy team",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 52,
+      "bulletDamage": 13,
+      "ammo": 18,
+      "bulletsPerSec": 4,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 650,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Grey Talon",
+    "shortDescription": "Delivers long range skill-shots",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 45,
+      "bulletDamage": 25,
+      "ammo": 17,
+      "bulletsPerSec": 1.82,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2.5,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.3,
+      "sprintSpeed": 0.5,
+      "stamina": 4
+    }
+  },
+  {
+    "name": "Haze",
+    "shortDescription": "Sneaks and sprays bullets",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 56,
+      "bulletDamage": 5.6,
+      "ammo": 25,
+      "bulletsPerSec": 10,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 500,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 8.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Infernus",
+    "shortDescription": "Lights up enemies and watches them burn",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 66,
+      "bulletDamage": 6.6,
+      "ammo": 27,
+      "bulletsPerSec": 10,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 600,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Ivy",
+    "shortDescription": "Sets up a power duo with a lucky ally",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 74,
+      "bulletDamage": 5.2,
+      "ammo": 33,
+      "bulletsPerSec": 14.3,
+      "lightMelee": 54,
+      "heavyMelee": 99
+    },
+    "vitalityStats": {
+      "maxHealth": 525,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 0.5,
+      "stamina": 4
+    }
+  },
+  {
+    "name": "Kelvin",
+    "shortDescription": "Freezes enemies in their tracks",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 84,
+      "bulletDamage": 21,
+      "ammo": 15,
+      "bulletsPerSec": 4,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 600,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 10,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Lady Geist",
+    "shortDescription": "Sacrifices health then drains it back",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 55,
+      "bulletDamage": 25,
+      "ammo": 13,
+      "bulletsPerSec": 2.22,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 650,
+      "healthRegen": 1,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.3,
+      "sprintSpeed": 2.0,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Lash",
+    "shortDescription": "Dives down to stomp his foes",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 55,
+      "bulletDamage": 9,
+      "ammo": 29,
+      "bulletsPerSec": 6.12,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 15,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 1.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "McGinnis",
+    "shortDescription": "Controls the battle with combat turrets",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 89,
+      "bulletDamage": 7.15,
+      "ammo": 66,
+      "bulletsPerSec": 12.5,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 15,
+      "spiritResist": 0,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 2
+    }
+  },
+  {
+    "name": "Mirage",
+    "shortDescription": "Times his shots and catches fleeing targets",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 51,
+      "bulletDamage": 18,
+      "ammo": 16,
+      "bulletsPerSec": 2.86,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Mo & Krill",
+    "shortDescription": "Borrows underneath his enemies",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 76,
+      "bulletDamage": 3.6,
+      "ammo": 20,
+      "bulletsPerSec": 5.56,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 700,
+      "healthRegen": 3,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 8.1,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Paradox",
+    "shortDescription": "Manipulates Space and Time",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 57,
+      "bulletDamage": 7.2,
+      "ammo": 40,
+      "bulletsPerSec": 7.94,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.8,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Pocket",
+    "shortDescription": "Infiltrates and disrupts the backline",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 70,
+      "bulletDamage": 5,
+      "ammo": 11,
+      "bulletsPerSec": 2,
+      "lightMelee": 75,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": -15,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Seven",
+    "shortDescription": "Electrocutes crowds of enemies",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 70,
+      "bulletDamage": 11.5,
+      "ammo": 29,
+      "bulletsPerSec": 6.12,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 3,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.1,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Shiv",
+    "shortDescription": "Bleeds out foes, then goes in for a kill",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 60,
+      "bulletDamage": 5.7,
+      "ammo": 10,
+      "bulletsPerSec": 1.9,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 600,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.0,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Vindicta",
+    "shortDescription": "Snipes the unsuspecting",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 59,
+      "bulletDamage": 13,
+      "ammo": 22,
+      "bulletsPerSec": 4.55,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 525,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 9.0,
+      "sprintSpeed": 0.5,
+      "stamina": 2
+    }
+  },
+  {
+    "name": "Viscous",
+    "shortDescription": "Rolls around deflecting bullets",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 55,
+      "bulletDamage": 11,
+      "ammo": 20,
+      "bulletsPerSec": 5,
+      "lightMelee": 63,
+      "heavyMelee":116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Warden",
+    "shortDescription": "Weakens his enemies and chases them down",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 79,
+      "bulletDamage": 19.8,
+      "ammo": 17,
+      "bulletsPerSec": 4,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 6.3,
+      "sprintSpeed": 1.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Wraith",
+    "shortDescription": "Melts isolated targets",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 61,
+      "bulletDamage": 5.5,
+      "ammo": 52,
+      "bulletsPerSec": 11.1,
+      "lightMelee": 63,
+      "heavyMelee": 116
+    },
+    "vitalityStats": {
+      "maxHealth": 550,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 7.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  },
+  {
+    "name": "Yamato",
+    "shortDescription": "Delivers charged attacks with finesse",
+    "description": "",
+    "abilities": [
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      },
+      {
+        "name": "",
+        "description": "",
+        "stats": [{ "property": "", "value": "", "scales": false }],
+        "upgrades": ["", "", ""]
+      }
+    ],
+    "weaponStats": {
+      "dps": 70,
+      "bulletDamage": 5.65,
+      "ammo": 12,
+      "bulletsPerSec": 2.5,
+      "lightMelee": 69,
+      "heavyMelee": 128
+    },
+    "vitalityStats": {
+      "maxHealth": 500,
+      "healthRegen": 2,
+      "bulletResist": 0,
+      "spiritResist": 0,
+      "moveSpeed": 8.3,
+      "sprintSpeed": 0.5,
+      "stamina": 3
+    }
+  }
+]
