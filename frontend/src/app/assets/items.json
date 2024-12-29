@@ -6,8 +6,8 @@
         "name": "Basic Magazine",
         "cost": 500,
         "effects": [
-          { "property": "Ammo", "value": "26%" },
-          { "property": "Weapon Damage", "value": "15%" }
+          { "property": "Ammo", "value": "+26%" },
+          { "property": "Weapon Damage", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -19,13 +19,13 @@
         "category": "weapon",
         "name": "Close Quarters",
         "cost": 500,
-        "effects": [{ "property": "Bullet Resist", "value": "4%" }],
+        "effects": [{ "property": "Bullet Resist", "value": "+4%" }],
         "activeEffects": [],
         "conditionalEffects": [
           {
             "condition": "15.0m close range",
             "property": "Weapon Damage",
-            "value": "22%"
+            "value": "+22%"
           }
         ],
         "description": "Deal additional Weapon Damage when in close range to your target.",
@@ -37,12 +37,12 @@
         "name": "Headshot Booster",
         "cost": 500,
         "effects": [
-          { "property": "Fire Rate", "value": "4%" },
-          { "property": "Bullet Shield Health", "value": "40" }
+          { "property": "Fire Rate", "value": "+4%" },
+          { "property": "Bullet Shield Health", "value": "+40" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Head Shot Bonus Damage", "value": "40" }
+          { "property": "Head Shot Bonus Damage", "value": "+40" }
         ],
         "description": "Deal additional Weapon Damage with headshots.",
         "components": null,
@@ -53,9 +53,9 @@
         "name": "High-Velocity Mag",
         "cost": 500,
         "effects": [
-          { "property": "Bullet Velocity", "value": "20%" },
-          { "property": "Weapon Damage", "value": "11%" },
-          { "property": "Bullet Shield Health", "value": "65" }
+          { "property": "Bullet Velocity", "value": "+20%" },
+          { "property": "Weapon Damage", "value": "+11%" },
+          { "property": "Bullet Shield Health", "value": "+65" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -68,15 +68,15 @@
         "name": "Hollow Point Ward",
         "cost": 500,
         "effects": [
-          { "property": "Spirit Shield Health", "value": "95" },
-          { "property": "Spirit Power", "value": "4" }
+          { "property": "Spirit Shield Health", "value": "+95" },
+          { "property": "Spirit Power", "value": "+4" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
           {
             "condition": "Health above 60%",
             "property": "Weapon Damage",
-            "value": "20%"
+            "value": "+20%"
           }
         ],
         "description": "When you are above 60% health, deal additional Weapon Damage.",
@@ -88,10 +88,10 @@
         "name": "Monster Rounds",
         "cost": 500,
         "effects": [
-          { "property": "Weapon Damage vs. NPCs", "value": "26%" },
-          { "property": "Bullet Resist vs. NPCs", "value": "25%" },
-          { "property": "Bonus Health", "value": "30" },
-          { "property": "Health Regen", "value": "1" }
+          { "property": "Weapon Damage vs. NPCs", "value": "+26%" },
+          { "property": "Bullet Resist vs. NPCs", "value": "+25%" },
+          { "property": "Bonus Health", "value": "+30" },
+          { "property": "Health Regen", "value": "+1" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -104,8 +104,8 @@
         "name": "Rapid Rounds",
         "cost": 500,
         "effects": [
-          { "property": "Fire Rate", "value": "10" },
-          { "property": "Sprint Speed", "value": "1" }
+          { "property": "Fire Rate", "value": "+10" },
+          { "property": "Sprint Speed", "value": "+1" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -117,11 +117,11 @@
         "category": "weapon",
         "name": "Restorative Shot",
         "cost": 500,
-        "effects": [{ "property": "Bullet Shield Health", "value": "100" }],
-        "activeEffects": [{ "property": "Weapon Damage", "value": "3%" }],
+        "effects": [{ "property": "Bullet Shield Health", "value": "+100" }],
+        "activeEffects": [{ "property": "Weapon Damage", "value": "+3%" }],
         "conditionalEffects": [
-          { "property": "Healing from Heroes", "value": "40" },
-          { "property": "Healing from NPCs / Orbs", "value": "15" }
+          { "property": "Healing from Heroes", "value": "+40" },
+          { "property": "Healing from NPCs / Orbs", "value": "+15" }
         ],
         "description": "",
         "components": null,
@@ -134,22 +134,22 @@
         "name": "Active Reload",
         "cost": 1250,
         "effects": [
-          { "property": "Weapon Damage", "value": "10%" },
-          { "property": "Ammo", "value": "24%" },
-          { "property": "Bonus Health", "value": "50" }
+          { "property": "Weapon Damage", "value": "+10%" },
+          { "property": "Ammo", "value": "+24%" },
+          { "property": "Bonus Health", "value": "+50" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
           {
             "condition": "Active Reload",
             "property": "Fire Rate",
-            "value": "20%",
+            "value": "+20%",
             "duration": 7
           },
           {
             "condition": "Active Reload",
             "property": "Bullet Lifesteal",
-            "value": "18%",
+            "value": "+18%",
             "duration": 7
           }
         ],
@@ -162,14 +162,14 @@
         "name": "Berserker",
         "cost": 1250,
         "effects": [
-          { "property": "Ammo", "value": "4" },
-          { "property": "Bullet Resist", "value": "9%" }
+          { "property": "Ammo", "value": "+4" },
+          { "property": "Bullet Resist", "value": "+9%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Weapon Damage per Stack", "value": "6%" },
-          { "property": "Damage taken on Stack", "value": "100" },
-          { "property": "Max Stacks", "value": "10" }
+          { "property": "Weapon Damage per Stack", "value": "+6%" },
+          { "property": "Damage taken on Stack", "value": "+100" },
+          { "property": "Max Stacks", "value": "+10" }
         ],
         "description": "Your Weapon Damage increases as you take sustained damage.",
         "components": null,
@@ -180,13 +180,13 @@
         "name": "Kinetic Dash",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "100" },
-          { "property": "Health Regen", "value": "1.5" }
+          { "property": "Bonus Health", "value": "+100" },
+          { "property": "Health Regen", "value": "+1.5" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Fire Rate", "value": "20%" },
-          { "property": "Temporary Ammo", "value": "5" }
+          { "property": "Fire Rate", "value": "+20%" },
+          { "property": "Temporary Ammo", "value": "+5" }
         ],
         "description": "Your next Dash-Jump does not cost an extra stamina and you gain Fire Rate and bonus Ammo until your next reload. Lasts up to 7s.",
         "components": null,
@@ -198,11 +198,11 @@
         "cost": 1250,
         "effects": [
           { "property": "Reload Time", "value": "-20%" },
-          { "property": "Bullet Shield Health", "value": "140" },
-          { "property": "Weapon Damage", "value": "10%" }
+          { "property": "Bullet Shield Health", "value": "+140" },
+          { "property": "Weapon Damage", "value": "+10%" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "Weapon Damage", "value": "30%" }],
+        "conditionalEffects": [{ "property": "Weapon Damage", "value": "+30%" }],
         "description": "Deal additional Weapon Damage when beyond a minimum distance from your target.",
         "components": null,
         "componentOf": "Sharpshooter"
@@ -212,13 +212,13 @@
         "name": "Melee Damage",
         "cost": 1250,
         "effects": [
-          { "property": "Weapon Damage", "value": "20%" },
-          { "property": "Bonus Health", "value": "65" },
-          { "property": "Heavy Melee Distance", "value": "40%" }
+          { "property": "Weapon Damage", "value": "+20%" },
+          { "property": "Bonus Health", "value": "+65" },
+          { "property": "Heavy Melee Distance", "value": "+40%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bonus Heavy Damage", "value": "20%" }
+          { "property": "Bonus Heavy Damage", "value": "+20%" }
         ],
         "description": "Your next Heavy Melee attack against an enemy deals increased damage and either reload your weapon instantly or give you up to +100% bonus ammo. Only activates when Bonus Ammo is not full.",
         "components": null,
@@ -229,8 +229,8 @@
         "name": "Mystic Shot",
         "cost": 1250,
         "effects": [
-          { "property": "Weapon Damage", "value": "12%" },
-          { "property": "Spirit Power", "value": "4" }
+          { "property": "Weapon Damage", "value": "+12%" },
+          { "property": "Spirit Power", "value": "+4" }
         ],
         "activeEffects": [],
         "conditionalEffects": [{ "property": "Spirit Damage", "value": 65 }],
@@ -243,11 +243,11 @@
         "name": "Slowing Bullets",
         "cost": 1250,
         "effects": [
-          { "property": "Weapon Damage", "value": "16%" },
-          { "property": "Spirit Power", "value": "6" }
+          { "property": "Weapon Damage", "value": "+16%" },
+          { "property": "Spirit Power", "value": "+6" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "Movement Slow", "value": "25%" }],
+        "conditionalEffects": [{ "property": "Movement Slow", "value": "+25%" }],
         "description": "Your bullets apply Movement Slow.",
         "components": null,
         "componentOf": "Glass Cannon"
@@ -256,11 +256,11 @@
         "category": "weapon",
         "name": "Soul Shredder Bullets",
         "cost": 1250,
-        "effects": [{ "property": "Weapon Damage", "value": "7%" }],
+        "effects": [{ "property": "Weapon Damage", "value": "+7%" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Amp", "value": "8%" },
-          { "property": "Spirit Lifesteal", "value": "18%" }
+          { "property": "Spirit Amp", "value": "+8%" },
+          { "property": "Spirit Lifesteal", "value": "+18%" }
         ],
         "description": "Your bullets apply a debuff that amplifies your Spirit Damage against the target and grants you Spirit Lifesteal against them.",
         "components": null,
@@ -271,8 +271,8 @@
         "name": "Swift Striker",
         "cost": 1250,
         "effects": [
-          { "property": "Fire Rate", "value": "22%" },
-          { "property": "Ammo", "value": "10%" },
+          { "property": "Fire Rate", "value": "+22%" },
+          { "property": "Ammo", "value": "+10%" },
           { "property": "Bullet Resist", "value": "-5%" }
         ],
         "activeEffects": [],
@@ -286,12 +286,12 @@
         "name": "Fleetfoot",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "90" },
-          { "property": "Slide Distance", "value": "25%" }
+          { "property": "Bonus Health", "value": "+90" },
+          { "property": "Slide Distance", "value": "+25%" }
         ],
         "activeEffects": [
-          { "property": "Move Speed", "value": "3" },
-          { "property": "Temporary Ammo", "value": "30%" }
+          { "property": "Move Speed", "value": "+3" },
+          { "property": "Temporary Ammo", "value": "+30%" }
         ],
         "conditionalEffects": [],
         "description": "",
@@ -305,15 +305,15 @@
         "name": "Burst Fire",
         "cost": 3000,
         "effects": [
-          { "property": "Fire Rate", "value": "12%" },
-          { "property": "Slide Distance", "value": "50%" },
-          { "property": "Movement Slow Resist", "value": "20%" },
-          { "property": "Bonus Health", "value": "70" }
+          { "property": "Fire Rate", "value": "+12%" },
+          { "property": "Slide Distance", "value": "+50%" },
+          { "property": "Movement Slow Resist", "value": "+20%" },
+          { "property": "Bonus Health", "value": "+70" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Fire Rate", "value": "30" },
-          { "property": "Move Speed", "value": "2" }
+          { "property": "Fire Rate", "value": "+30" },
+          { "property": "Move Speed", "value": "+2" }
         ],
         "description": "Briefly gain Fire Rate and Move Speed when one of your bullets hit an enemy hero.",
         "components": null,
@@ -324,13 +324,13 @@
         "name": "Escalating Resilience",
         "cost": 3000,
         "effects": [
-          { "property": "Fire Rate", "value": "12%" },
-          { "property": "Weapon Damage", "value": "14%" }
+          { "property": "Fire Rate", "value": "+12%" },
+          { "property": "Weapon Damage", "value": "+14%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Max Bullet Resist", "value": "40%" },
-          { "property": "Bullet Resist per Stack", "value": "2%" }
+          { "property": "Max Bullet Resist", "value": "+40%" },
+          { "property": "Bullet Resist per Stack", "value": "+2%" }
         ],
         "description": "Grants Bullet Resist when your bullets hit an enemy hero. Each shot can only gain one stack.",
         "components": null,
@@ -341,17 +341,17 @@
         "name": "Headhunter",
         "cost": 3000,
         "effects": [
-          { "property": "Weapon Damage", "value": "15%" },
-          { "property": "Bullet Shield Health", "value": "150" },
-          { "property": "Fire Rate", "value": "5%" }
+          { "property": "Weapon Damage", "value": "+15%" },
+          { "property": "Bullet Shield Health", "value": "+150" },
+          { "property": "Fire Rate", "value": "+5%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Head Shot Bonus Damage", "value": "130" },
-          { "property": "Heal per Headshot", "value": "7%" },
-          { "property": "Move Speed", "value": "2" }
+          { "property": "Head Shot Bonus Damage", "value": "+130" },
+          { "property": "Heal per Headshot", "value": "+7%" },
+          { "property": "Move Speed", "value": "+2" }
         ],
-        "description": "",
+        "description": "Landing a headshot deals bonus damage, heals you for a portion of your Max HP, and briefly grants you bonus movement speed.",
         "components": "Headshot Booster",
         "componentOf": null
       },
@@ -359,11 +359,11 @@
         "category": "weapon",
         "name": "Hunter's Aura",
         "cost": 3000,
-        "effects": [{ "property": "Bonus Health", "value": "150" }],
+        "effects": [{ "property": "Bonus Health", "value": "+150" }],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Bullet Resist", "value": "-9%" },
-          { "property": "Fire Rate Slow", "value": "9%" }
+          { "property": "Fire Rate Slow", "value": "+9%" }
         ],
         "description": "Reduces nearby enemies' Bullet Resist and Fire Rate. If there is only one enemy hero nearby, this effect is tripled.",
         "components": null,
@@ -374,12 +374,12 @@
         "name": "Intensifying Magazine",
         "cost": 3000,
         "effects": [
-          { "property": "Ammo", "value": "25%" },
-          { "property": "Weapon Damage", "value": "20%" }
+          { "property": "Ammo", "value": "+25%" },
+          { "property": "Weapon Damage", "value": "+20%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Max Weapon Damage", "value": "60%" }
+          { "property": "Max Weapon Damage", "value": "+60%" }
         ],
         "description": "Increases Weapon Damage as you continuously fire your weapon.",
         "components": null,
@@ -390,14 +390,14 @@
         "name": "Point Blank",
         "cost": 3000,
         "effects": [
-          { "property": "Bullet Resist", "value": "15%" },
-          { "property": "Melee Resist", "value": "20%" },
-          { "property": "Stamina", "value": "1" }
+          { "property": "Bullet Resist", "value": "+15%" },
+          { "property": "Melee Resist", "value": "+20%" },
+          { "property": "Stamina", "value": "+1" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Weapon Damage", "value": "45%" },
-          { "property": "Movement Slow", "value": "25%" }
+          { "property": "Weapon Damage", "value": "+45%" },
+          { "property": "Movement Slow", "value": "+25%" }
         ],
         "description": "When in close range to your target, gain Weapon Damage and your bullets apply a Movement Slow.",
         "components": "Close Quarters",
@@ -408,13 +408,13 @@
         "name": "Pristine Emblem",
         "cost": 3000,
         "effects": [
-          { "property": "Bullet Velocity", "value": "35%" },
-          { "property": "Weapon Damage", "value": "25%" },
-          { "property": "Spirit Power", "value": "12" },
-          { "property": "Spirit Resist", "value": "12%" }
+          { "property": "Bullet Velocity", "value": "+35%" },
+          { "property": "Weapon Damage", "value": "+25%" },
+          { "property": "Spirit Power", "value": "+12" },
+          { "property": "Spirit Resist", "value": "+12%" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "Weapon Damage", "value": "25%" }],
+        "conditionalEffects": [{ "property": "Weapon Damage", "value": "+25%" }],
         "description": "Your attacks have additional Weapon Damage against enemies above 50% health.",
         "components": "High-Velocity Mag",
         "componentOf": null
@@ -425,11 +425,11 @@
         "cost": 3000,
         "effects": [
           { "property": "Reload Time", "value": "-20%" },
-          { "property": "Weapon Fall-off Range", "value": "15%" },
-          { "property": "Weapon Zoom", "value": "35%" },
-          { "property": "Bullet Shield Health", "value": "200" },
-          { "property": "Weapon Damage", "value": "30%" },
-          { "property": "Fire Rate Slow", "value": "10%" },
+          { "property": "Weapon Fall-off Range", "value": "+15%" },
+          { "property": "Weapon Zoom", "value": "+35%" },
+          { "property": "Bullet Shield Health", "value": "+200" },
+          { "property": "Weapon Damage", "value": "+30%" },
+          { "property": "Fire Rate Slow", "value": "+10%" },
           { "property": "Move Speed", "value": "-0.5" }
         ],
         "activeEffects": [],
@@ -437,7 +437,7 @@
           {
             "condition": "15.0m min distance",
             "property": "Weapon Damage",
-            "value": "70%"
+            "value": "+70%"
           }
         ],
         "description": "Deal additional Weapon Damage when beyond a minimum distance from your target.",
@@ -449,14 +449,14 @@
         "name": "Spellslinger Headshots",
         "cost": 3000,
         "effects": [
-          { "property": "Weapon Damage", "value": "12%" },
-          { "property": "Bonus Health", "value": "150" }
+          { "property": "Weapon Damage", "value": "+12%" },
+          { "property": "Bonus Health", "value": "+150" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Amp", "value": "8%" },
-          { "property": "Spirit Lifesteal Proc", "value": "18%" },
-          { "property": "Spirit Amp per Headshot", "value": "4%" }
+          { "property": "Spirit Amp", "value": "+8%" },
+          { "property": "Spirit Lifesteal Proc", "value": "+18%" },
+          { "property": "Spirit Amp per Headshot", "value": "+4%" }
         ],
         "description": "Your bullets apply a debuff that amplifies your Spirit Damage against the target and grants you Spirit Lifesteal against them. Landing a headshot increases your total Spirit Amp against them.",
         "components": "Soul Shredder Bullets",
@@ -466,13 +466,13 @@
         "category": "weapon",
         "name": "Tesla Bullets",
         "cost": 3000,
-        "effects": [{ "property": "Fire Rate", "value": "14%" }],
+        "effects": [{ "property": "Fire Rate", "value": "+14%" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Damage on Jump", "value": "60" },
-          { "property": "Proc Chance", "value": "25%" },
-          { "property": "Jump Radius", "value": "8" },
-          { "property": "Max Jumps", "value": "2" }
+          { "property": "Damage on Jump", "value": "+60" },
+          { "property": "Proc Chance", "value": "+25%" },
+          { "property": "Jump Radius", "value": "+8" },
+          { "property": "Max Jumps", "value": "+2" }
         ],
         "description": "Your bullets have a chance to shock your target. The shock will jump to a nearby enemy.",
         "components": null,
@@ -483,10 +483,10 @@
         "name": "Titanic Magazine",
         "cost": 3000,
         "effects": [
-          { "property": "Ammo", "value": "120%" },
-          { "property": "Weapon Damage", "value": "18%" },
-          { "property": "Melee Resist", "value": "30%" },
-          { "property": "Spirit Resist", "value": "12%" }
+          { "property": "Ammo", "value": "+120%" },
+          { "property": "Weapon Damage", "value": "+18%" },
+          { "property": "Melee Resist", "value": "+30%" },
+          { "property": "Spirit Resist", "value": "+12%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -498,10 +498,10 @@
         "category": "weapon",
         "name": "Toxic Bullets",
         "cost": 3000,
-        "effects": [{ "property": "Bonus Health", "value": "100" }],
+        "effects": [{ "property": "Bonus Health", "value": "+100" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bleed Damage", "value": "2.8%/sec" },
+          { "property": "Bleed Damage", "value": "+2.8%/sec" },
           { "property": "Healing Reduction", "value": "-50%" }
         ],
         "description": "Your bullets build up a Bleed on enemies, causing them to lose a percentage of their Max Health over time. Also applies Healing Reduction on the bleeding target.",
@@ -513,14 +513,14 @@
         "name": "Alchemical Fire",
         "cost": 3000,
         "effects": [
-          { "property": "Sprint Speed", "value": "1" },
-          { "property": "Bullet Shield Health", "value": "225" },
-          { "property": "Weapon Damage", "value": "14%" },
-          { "property": "Spirit Power", "value": "7" }
+          { "property": "Sprint Speed", "value": "+1" },
+          { "property": "Bullet Shield Health", "value": "+225" },
+          { "property": "Weapon Damage", "value": "+14%" },
+          { "property": "Spirit Power", "value": "+7" }
         ],
         "activeEffects": [
-          { "property": "DPS", "value": "50" },
-          { "property": "Weapon Damage", "value": "50%" }
+          { "property": "DPS", "value": "+50" },
+          { "property": "Weapon Damage", "value": "+50%" }
         ],
         "conditionalEffects": [],
         "description": "Throw a flash that explodes on contact, creating an area that does increasing Spirit Damage per second and causes enemies to receive additional Weapon Damage from your team. Deals 40% less DPS vs non-heroes.",
@@ -532,16 +532,16 @@
         "name": "Heroic Aura",
         "cost": 3000,
         "effects": [
-          { "property": "Bullet Lifesteal", "value": "18%" },
-          { "property": "Bonus Health", "value": "150" },
-          { "property": "Move Speed", "value": "1" }
+          { "property": "Bullet Lifesteal", "value": "+18%" },
+          { "property": "Bonus Health", "value": "+150" },
+          { "property": "Move Speed", "value": "+1" }
         ],
         "activeEffects": [
-          { "property": "Move Speed", "value": "2" },
-          { "property": "Fire Rate", "value": "25%" }
+          { "property": "Move Speed", "value": "+2" },
+          { "property": "Fire Rate", "value": "+25%" }
         ],
         "conditionalEffects": [
-          { "property": "Minions Fire Rate", "value": "40%" }
+          { "property": "Minions Fire Rate", "value": "+40%" }
         ],
         "description": "Provides Fire Rate to nearby player minions. Provides bonus Move Speed and Fire Rate to you and nearby allies.",
         "components": null,
@@ -552,12 +552,12 @@
         "name": "Warp Stone",
         "cost": 3000,
         "effects": [
-          { "property": "Weapon Damage", "value": "20%" },
-          { "property": "Spirit Power", "value": "8" }
+          { "property": "Weapon Damage", "value": "+20%" },
+          { "property": "Spirit Power", "value": "+8" }
         ],
         "activeEffects": [
-          { "property": "Teleport Range", "value": "11" },
-          { "property": "Bullet Resist", "value": "30%" }
+          { "property": "Teleport Range", "value": "+11" },
+          { "property": "Bullet Resist", "value": "+30%" }
         ],
         "conditionalEffects": [],
         "description": "Teleport straight ahead, gaining Bullet Resist.",
@@ -571,14 +571,14 @@
         "name": "Crippling Headshot",
         "cost": 6000,
         "effects": [
-          { "property": "Weapon Damage", "value": "20%" },
-          { "property": "Bullet Lifesteal", "value": "10%" },
-          { "property": "Spirit Lifesteal", "value": "10%" }
+          { "property": "Weapon Damage", "value": "+20%" },
+          { "property": "Bullet Lifesteal", "value": "+10%" },
+          { "property": "Spirit Lifesteal", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bullet Resist Reduction", "value": "24%" },
-          { "property": "Spirit Resist Reduction", "value": "24%" }
+          { "property": "Bullet Resist Reduction", "value": "+24%" },
+          { "property": "Spirit Resist Reduction", "value": "+24%" }
         ],
         "description": "Headshots reduce target's Bullet and Spirit Resist.",
         "components": null,
@@ -589,19 +589,19 @@
         "name": "Frenzy",
         "cost": 6000,
         "effects": [
-          { "property": "Ammo", "value": "12" },
-          { "property": "Bonus Health", "value": "150" },
-          { "property": "Bullet Resist", "value": "10%" }
+          { "property": "Ammo", "value": "+12" },
+          { "property": "Bonus Health", "value": "+150" },
+          { "property": "Bullet Resist", "value": "+10%" }
         ],
         "activeEffects": [
-          { "property": "Move Speed", "value": "4" },
-          { "property": "Fire Rate", "value": "40%" },
-          { "property": "Bullet Resist", "value": "55%" }
+          { "property": "Move Speed", "value": "+4" },
+          { "property": "Fire Rate", "value": "+40%" },
+          { "property": "Bullet Resist", "value": "+55%" }
         ],
         "conditionalEffects": [
-          { "property": "Weapon Damage per Stack", "value": "8%" },
-          { "property": "Damage taken on Stack", "value": "100" },
-          { "property": "Max Stacks", "value": "10" }
+          { "property": "Weapon Damage per Stack", "value": "+8%" },
+          { "property": "Damage taken on Stack", "value": "+100" },
+          { "property": "Max Stacks", "value": "+10" }
         ],
         "description": "While you are below 50% health, you gain stat bonuses. Your Weapon Damage increases as you take sustained damage.",
         "components": null,
@@ -612,15 +612,15 @@
         "name": "",
         "cost": 6000,
         "effects": [
-          { "property": "Bullet Slow Proc", "value": "25%" },
-          { "property": "Weapon Damage", "value": "70%" },
-          { "property": "Fire Rate", "value": "10%" },
-          { "property": "Move Speed", "value": "1" },
+          { "property": "Bullet Slow Proc", "value": "+25%" },
+          { "property": "Weapon Damage", "value": "+70%" },
+          { "property": "Fire Rate", "value": "+10%" },
+          { "property": "Move Speed", "value": "+1" },
           { "property": "Max Health", "value": "-12%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Weapon Damage per Kill", "value": "10%" }
+          { "property": "Weapon Damage per Kill", "value": "+10%" }
         ],
         "description": "Each hero kill grants permanent Weapon Damage (up to a max of 7 times). Death results in the loss of 1 stack.",
         "components": null,
@@ -631,13 +631,13 @@
         "name": "Lucky Shot",
         "cost": 6000,
         "effects": [
-          { "property": "Bullet Shield Health", "value": "150" },
-          { "property": "Ammo", "value": "30%" }
+          { "property": "Bullet Shield Health", "value": "+150" },
+          { "property": "Ammo", "value": "+30%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bonus Weapon Damage", "value": "110%" },
-          { "property": "Movement Slow", "value": "30%" }
+          { "property": "Bonus Weapon Damage", "value": "+110%" },
+          { "property": "Movement Slow", "value": "+30%" }
         ],
         "description": "Your bullets have a chance to be empowered, causing them to deal Bonus Weapon Damage and Slow on hit.",
         "components": null,
@@ -648,15 +648,15 @@
         "name": "Ricochet",
         "cost": 6000,
         "effects": [
-          { "property": "Ammo", "value": "35%" },
-          { "property": "Fire Rate", "value": "10%" },
-          { "property": "Bonus Health", "value": "150" }
+          { "property": "Ammo", "value": "+35%" },
+          { "property": "Fire Rate", "value": "+10%" },
+          { "property": "Bonus Health", "value": "+150" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Ricochet Damage", "value": "60%" },
-          { "property": "Ricochet Targets", "value": "2" },
-          { "property": "Ricochet Range", "value": "11m" }
+          { "property": "Ricochet Damage", "value": "+60%" },
+          { "property": "Ricochet Targets", "value": "+2" },
+          { "property": "Ricochet Range", "value": "+11m" }
         ],
         "description": "Your bullets will ricochet to enemies near your target, applying any bullet procs and dealing a percentage of the original damage.",
         "components": null,
@@ -667,17 +667,17 @@
         "name": "Silencer",
         "cost": 6000,
         "effects": [
-          { "property": "Weapon Damage", "value": "20%" },
-          { "property": "Debuff Resist", "value": "20%" },
-          { "property": "Spirit Resist", "value": "15%" }
+          { "property": "Weapon Damage", "value": "+20%" },
+          { "property": "Debuff Resist", "value": "+20%" },
+          { "property": "Spirit Resist", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Status Effect", "value": "Silences" },
-          { "property": "Silence Durations", "value": "2s" },
-          { "property": "Debuff Duration", "value": "6s" },
+          { "property": "Status Effect", "value": "+Silences" },
+          { "property": "Silence Durations", "value": "+2s" },
+          { "property": "Debuff Duration", "value": "+6s" },
           { "property": "Spirit Damage Reduction", "value": "-40%" },
-          { "property": "Buildup per Shot", "value": "7%" }
+          { "property": "Buildup per Shot", "value": "+7%" }
         ],
         "description": "Your bullets build up a Debuff that briefly Silences and reduces their Spirit Damage. Victims are immune to the build up for 12s after debuff expires.",
         "components": null,
@@ -688,15 +688,15 @@
         "name": "Spiritual Overflow",
         "cost": 6000,
         "effects": [
-          { "property": "Cooldown Reduction", "value": "12%" },
-          { "property": "Spirit Lifesteal", "value": "10%" },
-          { "property": "Bullet Shield Health", "value": "225" }
+          { "property": "Cooldown Reduction", "value": "+12%" },
+          { "property": "Spirit Lifesteal", "value": "+10%" },
+          { "property": "Bullet Shield Health", "value": "+225" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Fire Rate", "value": "35%" },
-          { "property": "Spirit Power", "value": "50" },
-          { "property": "Buildup per Shot", "value": "12.1%" }
+          { "property": "Fire Rate", "value": "+35%" },
+          { "property": "Spirit Power", "value": "+50" },
+          { "property": "Buildup per Shot", "value": "+12.1%" }
         ],
         "description": "Gain bonus Fire Rate and Spirit Power by charging up when shooting enemy heroes.",
         "components": null,
@@ -707,17 +707,17 @@
         "name": "Shadow Weave",
         "cost": 6000,
         "effects": [
-          { "property": "Health Regen", "value": "15" },
-          { "property": "Spirit Shield Health", "value": "300" },
-          { "property": "Ammo", "value": "30%" }
+          { "property": "Health Regen", "value": "+15" },
+          { "property": "Spirit Shield Health", "value": "+300" },
+          { "property": "Ammo", "value": "+30%" }
         ],
         "activeEffects": [
-          { "property": "Status Effect", "value": "Stealth" },
-          { "property": "Stealth Duration", "value": "25s" },
-          { "property": "Spot Radius", "value": "26m" },
-          { "property": "Ambush Fire Rate", "value": "30%" },
-          { "property": "Ambush Spirit Power", "value": "55" },
-          { "property": "Ambush Duration", "value": "8s" }
+          { "property": "Status Effect", "value": "+Stealth" },
+          { "property": "Stealth Duration", "value": "+25s" },
+          { "property": "Spot Radius", "value": "+26m" },
+          { "property": "Ambush Fire Rate", "value": "+30%" },
+          { "property": "Ambush Spirit Power", "value": "+55" },
+          { "property": "Ambush Duration", "value": "+8s" }
         ],
         "conditionalEffects": [],
         "description": "Become Stealthed. Whenever you take damage while Stealthed you get briefly revealed. Attacking or using an ability will end your stealth and start an Ambush, temporarily granting you Bonus Fire Rate and Spirit Power.",
@@ -729,15 +729,15 @@
         "name": "Vampiric Burst",
         "cost": 6000,
         "effects": [
-          { "property": "Move Speed", "value": "2 m/s" },
-          { "property": "Weapon Damage", "value": "25%" },
-          { "property": "Bonus Health", "value": "175" }
+          { "property": "Move Speed", "value": "+2 m/s" },
+          { "property": "Weapon Damage", "value": "+25%" },
+          { "property": "Bonus Health", "value": "+175" }
         ],
         "activeEffects": [
-          { "property": "Bullet Lifesteal", "value": "80%" },
-          { "property": "Fire Rate", "value": "40%" },
-          { "property": "Ammo", "value": "75%" },
-          { "property": "Duration", "value": "4.5s" }
+          { "property": "Bullet Lifesteal", "value": "+80%" },
+          { "property": "Fire Rate", "value": "+40%" },
+          { "property": "Ammo", "value": "+75%" },
+          { "property": "Duration", "value": "+4.5s" }
         ],
         "conditionalEffects": [],
         "description": "Grants Lifesteal, Fire Rate, and Ammo. This added Ammo is not limited by your max magazine size.",
@@ -753,9 +753,9 @@
         "name": "Enduring Spirit",
         "cost": 500,
         "effects": [
-          { "property": "Spirit Lifesteal", "value": "10%" },
-          { "property": "Bonus Health", "value": "75" },
-          { "property": "Spirit Power", "value": "4" }
+          { "property": "Spirit Lifesteal", "value": "+10%" },
+          { "property": "Bonus Health", "value": "+75" },
+          { "property": "Spirit Power", "value": "+4" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -768,8 +768,8 @@
         "name": "Extra Health",
         "cost": 500,
         "effects": [
-          { "property": "Bonus Health", "value": "160" },
-          { "property": "Weapon Damage", "value": "7%" }
+          { "property": "Bonus Health", "value": "+160" },
+          { "property": "Weapon Damage", "value": "+7%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -782,8 +782,8 @@
         "name": "Extra Regen",
         "cost": 500,
         "effects": [
-          { "property": "Health Regen", "value": "3" },
-          { "property": "Ammo", "value": "10%" }
+          { "property": "Health Regen", "value": "+3" },
+          { "property": "Ammo", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -796,10 +796,10 @@
         "name": "Extra Stamina",
         "cost": 500,
         "effects": [
-          { "property": "Stamina", "value": "1" },
-          { "property": "Stamina Recovery", "value": "16%" },
-          { "property": "Fire Rate", "value": "5%" },
-          { "property": "Bonus Health", "value": "35" }
+          { "property": "Stamina", "value": "+1" },
+          { "property": "Stamina Recovery", "value": "+16%" },
+          { "property": "Fire Rate", "value": "+5%" },
+          { "property": "Bonus Health", "value": "+35" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -812,14 +812,14 @@
         "name": "Melee Lifesteal",
         "cost": 500,
         "effects": [
-          { "property": "Melee Damage", "value": "12%" },
-          { "property": "Bonus Health", "value": "75" },
-          { "property": "Bullet Resist", "value": "3%" }
+          { "property": "Melee Damage", "value": "+12%" },
+          { "property": "Bonus Health", "value": "+75" },
+          { "property": "Bullet Resist", "value": "+3%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Melee Lifesteal", "value": "18% of damage + 90" },
-          { "property": "Effectiveness against non-heroes", "value": "30%" }
+          { "property": "Melee Lifesteal", "value": "+18% of damage + 90" },
+          { "property": "Effectiveness against non-heroes", "value": "+30%" }
         ],
         "description": "Your melee attacks heal you for 18% of the Melee Damage dealt plus 90. This heal is 30% effective vs non-heroes.",
         "components": null,
@@ -830,9 +830,9 @@
         "name": "Sprint Boots",
         "cost": 500,
         "effects": [
-          { "property": "Sprint Speed", "value": "1.5 m/s" },
-          { "property": "Health Regen", "value": "1" },
-          { "property": "Weapon Damage", "value": "4%" }
+          { "property": "Sprint Speed", "value": "+1.5 m/s" },
+          { "property": "Health Regen", "value": "+1" },
+          { "property": "Weapon Damage", "value": "+4%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -845,14 +845,14 @@
         "name": "Healing Rite",
         "cost": 500,
         "effects": [
-          { "property": "Bonus Health", "value": "30" },
-          { "property": "Spirit Power", "value": "3" }
+          { "property": "Bonus Health", "value": "+30" },
+          { "property": "Spirit Power", "value": "+3" }
         ],
         "activeEffects": [
-          { "property": "Total HP Regen", "value": "370" },
-          { "property": "Sprint Speed", "value": "2 m/s" },
-          { "property": "Regen Duration", "value": "20s" },
-          { "property": "Cast Range", "value": "30m" }
+          { "property": "Total HP Regen", "value": "+370" },
+          { "property": "Sprint Speed", "value": "+2 m/s" },
+          { "property": "Regen Duration", "value": "+20s" },
+          { "property": "Cast Range", "value": "+30m" }
         ],
         "conditionalEffects": [],
         "description": "Grant Regen and Sprint Speed to the target. Gets dispelled if you take damage from enemy players or objectives. Can be self-cast.",
@@ -866,8 +866,8 @@
         "name": "Bullet Armor",
         "cost": 1250,
         "effects": [
-          { "property": "Bullet Resist", "value": "26%" },
-          { "property": "Weapon Damage", "value": "6%" }
+          { "property": "Bullet Resist", "value": "+26%" },
+          { "property": "Weapon Damage", "value": "+6%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -880,8 +880,8 @@
         "name": "Bullet Lifesteal",
         "cost": 1250,
         "effects": [
-          { "property": "Bullet Lifesteal", "value": "26%" },
-          { "property": "Bonus Health", "value": "75" }
+          { "property": "Bullet Lifesteal", "value": "+26%" },
+          { "property": "Bonus Health", "value": "+75" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -893,11 +893,11 @@
         "category": "vitality",
         "name": "Combat Barrier",
         "cost": 1250,
-        "effects": [{ "property": "Bullet Shield Health", "value": "325" }],
+        "effects": [{ "property": "Bullet Shield Health", "value": "+325" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Weapon Damage While Shielded", "value": "22%" },
-          { "property": "Fire Rate While Shielded", "value": "7%" }
+          { "property": "Weapon Damage While Shielded", "value": "+22%" },
+          { "property": "Fire Rate While Shielded", "value": "+7%" }
         ],
         "description": "While you have a Bullet Shield, gain Weapon Damage and Fire Rate.",
         "components": null,
@@ -908,11 +908,11 @@
         "name": "Debuff Reducer",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Weapon Damage", "value": "8%" }
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Weapon Damage", "value": "+8%" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "Debuff Resist", "value": "28%" }],
+        "conditionalEffects": [{ "property": "Debuff Resist", "value": "+28%" }],
         "description": "Reduces the duration of all negative effects applied to you.",
         "components": null,
         "componentOf": "Debuff Remover"
@@ -921,11 +921,11 @@
         "category": "vitality",
         "name": "Enchantress's Barrier",
         "cost": 1250,
-        "effects": [{ "property": "Spirit Shield Health", "value": "300" }],
+        "effects": [{ "property": "Spirit Shield Health", "value": "+300" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Power While Shielded", "value": "20" },
-          { "property": "Cooldown Reduction While Shielded", "value": "6%" }
+          { "property": "Spirit Power While Shielded", "value": "+20" },
+          { "property": "Cooldown Reduction While Shielded", "value": "+6%" }
         ],
         "description": "While you have a Spirit Shield, gain Spirit Power and Cooldown Reduction.",
         "components": null,
@@ -936,14 +936,14 @@
         "name": "Enduring Speed",
         "cost": 1250,
         "effects": [
-          { "property": "Move Speed", "value": "1.1 m/s" },
-          { "property": "Sprint Speed", "value": "1.5 m/s" },
-          { "property": "Bonus Health", "value": "75" },
-          { "property": "Health Regen", "value": "1.5" }
+          { "property": "Move Speed", "value": "+1.1 m/s" },
+          { "property": "Sprint Speed", "value": "+1.5 m/s" },
+          { "property": "Bonus Health", "value": "+75" },
+          { "property": "Health Regen", "value": "+1.5" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Movement Slow Resist", "value": "30%" }
+          { "property": "Movement Slow Resist", "value": "+30%" }
         ],
         "description": "Reduces the effect of enemy Movement Slow.",
         "components": "Sprint Boots",
@@ -953,12 +953,12 @@
         "category": "vitality",
         "name": "Healbane",
         "cost": 1250,
-        "effects": [{ "property": "Bonus Health", "value": "75" }],
+        "effects": [{ "property": "Bonus Health", "value": "+75" }],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Healing Reduction", "value": "-40%" },
-          { "property": "Heal on Hero Kill", "value": "350" },
-          { "property": "Duration", "value": "7s" }
+          { "property": "Heal on Hero Kill", "value": "+350" },
+          { "property": "Duration", "value": "+7s" }
         ],
         "description": "Your Spirit Damage applies Healing Reduction. If an enemy hero dies under this effect, you receive a large heal.",
         "components": null,
@@ -969,11 +969,11 @@
         "name": "Healing Booster",
         "cost": 1250,
         "effects": [
-          { "property": "Spirit Resist", "value": "6%" },
-          { "property": "Health Regen", "value": "2" }
+          { "property": "Spirit Resist", "value": "+6%" },
+          { "property": "Health Regen", "value": "+2" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "", "value": "" }],
+        "conditionalEffects": [],
         "description": "Increases the effectiveness of your healing by 25% and increases your resistance to healing reduction by 15%.",
         "components": null,
         "componentOf": null
@@ -983,15 +983,15 @@
         "name": "Reactive Barrier",
         "cost": 1250,
         "effects": [
-          { "property": "Ammo", "value": "20%" },
-          { "property": "Bonus Health", "value": "75" },
-          { "property": "Health Regen", "value": "2" }
+          { "property": "Ammo", "value": "+20%" },
+          { "property": "Bonus Health", "value": "+75" },
+          { "property": "Health Regen", "value": "+2" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bullet Shield Health", "value": "350" },
-          { "property": "Spirit Shield Health", "value": "200" },
-          { "property": "Duration", "value": "9s" }
+          { "property": "Bullet Shield Health", "value": "+350" },
+          { "property": "Spirit Shield Health", "value": "+200" },
+          { "property": "Duration", "value": "+9s" }
         ],
         "description": "Automatically restore one stamina and deploy temporary Bullet and Spirit Shields when you are movement locked, Stunned, Chained, Immobilized, or Slept.",
         "components": null,
@@ -1002,8 +1002,8 @@
         "name": "Spirit Armor",
         "cost": 1250,
         "effects": [
-          { "property": "Spirit Resist", "value": "22%" },
-          { "property": "Spirit Power", "value": "5" }
+          { "property": "Spirit Resist", "value": "+22%" },
+          { "property": "Spirit Power", "value": "+5" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1016,8 +1016,8 @@
         "name": "Spirit Lifesteal",
         "cost": 1250,
         "effects": [
-          { "property": "Spirit Lifesteal", "value": "22%" },
-          { "property": "Bonus Health", "value": "75" }
+          { "property": "Spirit Lifesteal", "value": "+22%" },
+          { "property": "Bonus Health", "value": "+75" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1030,15 +1030,15 @@
         "name": "Divine Barrier",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "50" },
-          { "property": "Ability Range", "value": "8%" }
+          { "property": "Bonus Health", "value": "+50" },
+          { "property": "Ability Range", "value": "+8%" }
         ],
         "activeEffects": [
-          { "property": "Bullet Shield", "value": "260" },
-          { "property": "Spirit Shield", "value": "260" },
-          { "property": "Move Speed", "value": "2 m/s" },
-          { "property": "Buff Duration", "value": "5s" },
-          { "property": "Cast Range", "value": "38m" }
+          { "property": "Bullet Shield", "value": "+260" },
+          { "property": "Spirit Shield", "value": "+260" },
+          { "property": "Move Speed", "value": "+2 m/s" },
+          { "property": "Buff Duration", "value": "+5s" },
+          { "property": "Cast Range", "value": "+38m" }
         ],
         "conditionalEffects": [],
         "description": "Provide the target with Bullet Shield, Spirit Shield, and Move Speed. Can be self-cast.",
@@ -1050,14 +1050,14 @@
         "name": "Healing Nova",
         "cost": 1250,
         "effects": [
-          { "property": "Weapon Damage", "value": "12%" },
-          { "property": "Bonus Health", "value": "100" },
-          { "property": "Spirit Power", "value": "6" }
+          { "property": "Weapon Damage", "value": "+12%" },
+          { "property": "Bonus Health", "value": "+100" },
+          { "property": "Spirit Power", "value": "+6" }
         ],
         "activeEffects": [
-          { "property": "Total HP Regen", "value": "260" },
-          { "property": "Regen Duration", "value": "2.8s" },
-          { "property": "Radius", "value": "15m" }
+          { "property": "Total HP Regen", "value": "+260" },
+          { "property": "Regen Duration", "value": "+2.8s" },
+          { "property": "Radius", "value": "+15m" }
         ],
         "conditionalEffects": [],
         "description": "Heal yourself and nearby allies. Heals an additional 20% per ally.",
@@ -1069,15 +1069,15 @@
         "name": "Restorative Locket",
         "cost": 1250,
         "effects": [
-          { "property": "Spirit Resist", "value": "10%" },
-          { "property": "Melee Resist", "value": "25%" },
-          { "property": "Sprint Speed", "value": "1 m/s" }
+          { "property": "Spirit Resist", "value": "+10%" },
+          { "property": "Melee Resist", "value": "+25%" },
+          { "property": "Sprint Speed", "value": "+1 m/s" }
         ],
         "activeEffects": [
-          { "property": "Heal per Stack", "value": "32" },
-          { "property": "Max Stacks", "value": "15" }
+          { "property": "Heal per Stack", "value": "+32" },
+          { "property": "Max Stacks", "value": "+15" }
         ],
-        "conditionalEffects": [{ "property": "", "value": "" }],
+        "conditionalEffects": [],
         "description": "When an enemy uses an ability within 50m range from you, store on Restoration Stack. Consume all stacks to heal a target ally and replenish a stamina point. Can be self-cast.",
         "components": null,
         "componentOf": null
@@ -1087,16 +1087,16 @@
         "name": "Return Fire",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Health Regen", "value": "3" },
-          { "property": "Ammo", "value": "10%" }
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Health Regen", "value": "+3" },
+          { "property": "Ammo", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bullet Damage Returned", "value": "60%" },
-          { "property": "Spirit Damage Returned", "value": "30%" },
-          { "property": "Bullet Resist", "value": "20%" },
-          { "property": "Duration", "value": "6s" }
+          { "property": "Bullet Damage Returned", "value": "+60%" },
+          { "property": "Spirit Damage Returned", "value": "+30%" },
+          { "property": "Bullet Resist", "value": "+20%" },
+          { "property": "Duration", "value": "+6s" }
         ],
         "description": "Automatically fire a bullet towards any attacker who damages you with their abilities or weapon.",
         "components": "Extra Regen",
@@ -1108,12 +1108,11 @@
         "category": "vitality",
         "name": "Fortitude",
         "cost": 3000,
-        "effects": [{ "property": "Bonus Health", "value": "400" }],
+        "effects": [{ "property": "Bonus Health", "value": "+400" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "", "value": "" },
-          { "property": "Weapon Damage", "value": "27%" },
-          { "property": "Move Speed", "value": "2 m/s" }
+          { "property": "Weapon Damage", "value": "+27%" },
+          { "property": "Move Speed", "value": "+2 m/s" }
         ],
         "description": "After not taking damage for 10s, gain 4% Max Health Regen. When you are above 75%, you have bonus Weapon Damage and Move Speed.",
         "components": "Extra Health",
@@ -1124,8 +1123,8 @@
         "name": "Improved Bullet Armor",
         "cost": 3000,
         "effects": [
-          { "property": "Bullet Resist", "value": "50%" },
-          { "property": "Weapon Damage", "value": "10%" }
+          { "property": "Bullet Resist", "value": "+50%" },
+          { "property": "Weapon Damage", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1138,8 +1137,8 @@
         "name": "Improved Spirit Armor",
         "cost": 3000,
         "effects": [
-          { "property": "Spirit Resist", "value": "45%" },
-          { "property": "Spirit Power", "value": "8" }
+          { "property": "Spirit Resist", "value": "+45%" },
+          { "property": "Spirit Power", "value": "+8" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1152,14 +1151,14 @@
         "name": "Lifestrike",
         "cost": 3000,
         "effects": [
-          { "property": "Melee Damage", "value": "35%" },
-          { "property": "Bullet Resist", "value": "10%" },
-          { "property": "Bonus Health", "value": "125" }
+          { "property": "Melee Damage", "value": "+35%" },
+          { "property": "Bullet Resist", "value": "+10%" },
+          { "property": "Bonus Health", "value": "+125" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Movement Slow", "value": "60%" },
-          { "property": "Slow Duration", "value": "2.5s" }
+          { "property": "Movement Slow", "value": "+60%" },
+          { "property": "Slow Duration", "value": "+2.5s" }
         ],
         "description": "Your Melee Attack applies Movement Slow and heals you for 55% of the Melee Damage dealt plus 110. This heal is 40% effective vs non-heroes.",
         "components": "Melee Lifesteal",
@@ -1170,15 +1169,15 @@
         "name": "Superior Stamina",
         "cost": 3000,
         "effects": [
-          { "property": "Stamina", "value": "3" },
-          { "property": "Stamina Recovery", "value": "25%" },
-          { "property": "Air Jump/Dash Distance", "value": "30%" },
-          { "property": "Bonus Health", "value": "75" },
-          { "property": "Fire Rate", "value": "7%" },
-          { "property": "Spirit Power", "value": "12" }
+          { "property": "Stamina", "value": "+3" },
+          { "property": "Stamina Recovery", "value": "+25%" },
+          { "property": "Air Jump/Dash Distance", "value": "+30%" },
+          { "property": "Bonus Health", "value": "+75" },
+          { "property": "Fire Rate", "value": "+7%" },
+          { "property": "Spirit Power", "value": "+12" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "", "value": "" }],
+        "conditionalEffects": [],
         "description": "Increases the number of Air Jump, Air Dashes and Wall Jumps that can be performed before landing from 1 to 2.",
         "components": "Extra Stamina",
         "componentOf": null
@@ -1188,16 +1187,16 @@
         "name": "Debuff Remover",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Weapon Damage", "value": "20%" }
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Weapon Damage", "value": "+20%" }
         ],
         "activeEffects": [
-          { "property": "HP Healed on Activate", "value": "300" },
-          { "property": "Move Speed", "value": "3 m/s" },
-          { "property": "Buff Duration", "value": "5s" }
+          { "property": "HP Healed on Activate", "value": "+300" },
+          { "property": "Move Speed", "value": "+3 m/s" },
+          { "property": "Buff Duration", "value": "+5s" }
         ],
         "conditionalEffects": [
-          { "property": "Debuff Duration", "value": "40%" }
+          { "property": "Debuff Duration", "value": "+40%" }
         ],
         "description": "",
         "components": "Debuff Reducer",
@@ -1208,11 +1207,11 @@
         "name": "Majestic Leap",
         "cost": 3000,
         "effects": [
-          { "property": "Spirit Power", "value": "10" },
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Spirit Power", "value": "6%" }
+          { "property": "Spirit Power", "value": "+10" },
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Spirit Power", "value": "+6%" }
         ],
-        "activeEffects": [{ "property": "", "value": "" }],
+        "activeEffects": [],
         "conditionalEffects": [],
         "description": "Launch yourself high into the air. While in the air, you can use the active again to drop down faster. Cannot be used for 5s if attacked by enemy hero.",
         "components": null,
@@ -1223,15 +1222,15 @@
         "name": "Metal Skin",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Spirit Power", "value": "8" },
-          { "property": "Fire Rate", "value": "8%" }
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Spirit Power", "value": "+8" },
+          { "property": "Fire Rate", "value": "+8%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Active Move Speed Penalty", "value": "-1.5 m/s" },
           { "property": "Dash Distance", "value": "-25%" },
-          { "property": "Duration", "value": "4s" }
+          { "property": "Duration", "value": "+4s" }
         ],
         "description": "Become Immune to bullets.",
         "components": null,
@@ -1242,15 +1241,15 @@
         "name": "Rescue Beam",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Sprint Speed", "value": "1 m/s" },
-          { "property": "Spirit Power", "value": "9" },
-          { "property": "Ability Range", "value": "6%" }
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Sprint Speed", "value": "+1 m/s" },
+          { "property": "Spirit Power", "value": "+9" },
+          { "property": "Ability Range", "value": "+6%" }
         ],
         "activeEffects": [
-          { "property": "Heal Amount", "value": "26%" },
-          { "property": "Channel Duration", "value": "2.5s" },
-          { "property": "Cast Range", "value": "30m" }
+          { "property": "Heal Amount", "value": "+26%" },
+          { "property": "Channel Duration", "value": "+2.5s" },
+          { "property": "Cast Range", "value": "+30m" }
         ],
         "conditionalEffects": [],
         "description": "",
@@ -1264,14 +1263,14 @@
         "name": "Inhibitor",
         "cost": 6000,
         "effects": [
-          { "property": "Weapon Damage", "value": "25%" },
-          { "property": "Bonus Health", "value": "175" }
+          { "property": "Weapon Damage", "value": "+25%" },
+          { "property": "Bonus Health", "value": "+175" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Movement Slow", "value": "20%" },
+          { "property": "Movement Slow", "value": "+20%" },
           { "property": "Damage Penalty", "value": "-35%" },
-          { "property": "Debuff Duration", "value": "2.5s" }
+          { "property": "Debuff Duration", "value": "+2.5s" }
         ],
         "description": "Your bullets apply Movement Slow and reduce the target's outgoing damage on hit.",
         "components": null,
@@ -1282,16 +1281,16 @@
         "name": "Leech",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Lifesteal", "value": "32%" },
-          { "property": "Bullet Lifesteal", "value": "32%" },
-          { "property": "Bonus Health", "value": "175" },
-          { "property": "Weapon Damage", "value": "20%" }
+          { "property": "Spirit Lifesteal", "value": "+32%" },
+          { "property": "Bullet Lifesteal", "value": "+32%" },
+          { "property": "Bonus Health", "value": "+175" },
+          { "property": "Weapon Damage", "value": "+20%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Healing Reduction", "value": "-60%" },
-          { "property": "Heal on Hero Kill", "value": "350" },
-          { "property": "Duration", "value": "8s" }
+          { "property": "Heal on Hero Kill", "value": "+350" },
+          { "property": "Duration", "value": "+8s" }
         ],
         "description": "Your Spirit Damage applies Healing Reduction. If an enemy hero dies under this effect, you receive a large heal.",
         "components": "Healbane",
@@ -1302,14 +1301,14 @@
         "name": "Siphon Bullets",
         "cost": 6000,
         "effects": [
-          { "property": "Weapon Damage", "value": "15%" },
-          { "property": "Bullet Resist", "value": "18%" }
+          { "property": "Weapon Damage", "value": "+15%" },
+          { "property": "Bullet Resist", "value": "+18%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Max HP Steal per Bullet", "value": "55" },
-          { "property": "Steal Duration", "value": "20s" },
-          { "property": "Max Frequency", "value": "0.8s" }
+          { "property": "Max HP Steal per Bullet", "value": "+55" },
+          { "property": "Steal Duration", "value": "+20s" },
+          { "property": "Max Frequency", "value": "+0.8s" }
         ],
         "description": "Your bullets temporarily steal Max HP from enemies. Enemies regain their stolen health when the debuff expires. Permanently steal 1 stacks of health if a siphoned target dies and lose 2 stacks if you die.",
         "components": null,
@@ -1320,16 +1319,16 @@
         "name": "Veil Walker",
         "cost": 6000,
         "effects": [
-          { "property": "Bullet Shield Health", "value": "300" },
-          { "property": "Spirit Shield Health", "value": "300" },
-          { "property": "Ammo", "value": "15%" },
-          { "property": "Weapon Damage", "value": "15%" }
+          { "property": "Bullet Shield Health", "value": "+300" },
+          { "property": "Spirit Shield Health", "value": "+300" },
+          { "property": "Ammo", "value": "+15%" },
+          { "property": "Weapon Damage", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Status Effect", "value": "Invisible" },
-          { "property": "Invis Move Speed", "value": "4 m/s" },
-          { "property": "Invisibility Duration", "value": "7s" }
+          { "property": "Status Effect", "value": "+Invisible" },
+          { "property": "Invis Move Speed", "value": "+4 m/s" },
+          { "property": "Invisibility Duration", "value": "+7s" }
         ],
         "description": "Walking through a cosmic veil grants you Stealth, increased Move Speed, and restores all Bullet and Spirit Shields.",
         "components": null,
@@ -1340,16 +1339,16 @@
         "name": "Colossus",
         "cost": 6000,
         "effects": [
-          { "property": "Bonus Health", "value": "600" },
-          { "property": "Melee Damage", "value": "20%" },
-          { "property": "Weapon Damage", "value": "20%" }
+          { "property": "Bonus Health", "value": "+600" },
+          { "property": "Melee Damage", "value": "+20%" },
+          { "property": "Weapon Damage", "value": "+20%" }
         ],
         "activeEffects": [
-          { "property": "Bullet Resist", "value": "40%" },
-          { "property": "Spirit Resist", "value": "40%" },
-          { "property": "Movement Slow", "value": "30%" },
-          { "property": "Radius", "value": "12m" },
-          { "property": "Duration", "value": "7s" }
+          { "property": "Bullet Resist", "value": "+40%" },
+          { "property": "Spirit Resist", "value": "+40%" },
+          { "property": "Movement Slow", "value": "+30%" },
+          { "property": "Radius", "value": "+12m" },
+          { "property": "Duration", "value": "+7s" }
         ],
         "conditionalEffects": [],
         "description": "Gain Bullet and Spirit Resist, and slow the move and dash speed of enemies nearby. Your model size grows by 20%.",
@@ -1361,14 +1360,14 @@
         "name": "Phantom Strike",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Resist", "value": "15%" },
-          { "property": "Weapon Damage", "value": "30%" }
+          { "property": "Spirit Resist", "value": "+15%" },
+          { "property": "Weapon Damage", "value": "+30%" }
         ],
         "activeEffects": [
-          { "property": "Disarm & Slow", "value": "3s" },
-          { "property": "Movement Slow", "value": "50%" },
-          { "property": "Damage", "value": "75" },
-          { "property": "Cast Range", "value": "25m" }
+          { "property": "Disarm & Slow", "value": "+3s" },
+          { "property": "Movement Slow", "value": "+50%" },
+          { "property": "Damage", "value": "+75" },
+          { "property": "Cast Range", "value": "+25m" }
         ],
         "conditionalEffects": [],
         "description": "Teleport to a nearby target, dealing damage and applying Disarm, Slow, and pulls them to the ground.",
@@ -1380,12 +1379,12 @@
         "name": "Unstoppable",
         "cost": 6000,
         "effects": [
-          { "property": "Bonus Health", "value": "150" },
-          { "property": "Bullet Resist", "value": "15%" },
-          { "property": "Spirit Power", "value": "12" },
-          { "property": "Movement Slow", "value": "20%" }
+          { "property": "Bonus Health", "value": "+150" },
+          { "property": "Bullet Resist", "value": "+15%" },
+          { "property": "Spirit Power", "value": "+12" },
+          { "property": "Movement Slow", "value": "+20%" }
         ],
-        "activeEffects": [{ "property": "Duration", "value": "6s" }],
+        "activeEffects": [{ "property": "Duration", "value": "+6s" }],
         "conditionalEffects": [],
         "description": "",
         "components": null,
@@ -1400,16 +1399,16 @@
         "name": "Ammo Scavenger",
         "cost": 500,
         "effects": [
-          { "property": "Ammo", "value": "15%" },
-          { "property": "Bonus Health", "value": "40" }
+          { "property": "Ammo", "value": "+15%" },
+          { "property": "Bonus Health", "value": "+40" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Ammo per Soul", "value": "2" },
-          { "property": "Spirit Power per Soul", "value": "1" },
-          { "property": "Sprint Speed", "value": "2 m/s" },
-          { "property": "Duration", "value": "45s" },
-          { "property": "Max Stacks", "value": "20" }
+          { "property": "Ammo per Soul", "value": "+2" },
+          { "property": "Spirit Power per Soul", "value": "+1" },
+          { "property": "Sprint Speed", "value": "+2 m/s" },
+          { "property": "Duration", "value": "+45s" },
+          { "property": "Max Stacks", "value": "+20" }
         ],
         "description": "Any time you secure or deny a Soul from an entity you get ammo back and gain stacking Spirit Power. At Max Stacks, gain bonus Sprint Speed.",
         "components": null,
@@ -1420,12 +1419,12 @@
         "name": "Extra Charge",
         "cost": 500,
         "effects": [
-          { "property": "Bonus Ability Charges", "value": "1" },
+          { "property": "Bonus Ability Charges", "value": "+1" },
           {
             "property": "Cooldown Reduction For Charged Abilities",
-            "value": "10%"
+            "value": "+10%"
           },
-          { "property": "Weapon Damage", "value": "6%" }
+          { "property": "Weapon Damage", "value": "+6%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1438,9 +1437,9 @@
         "name": "Extra Spirit",
         "cost": 500,
         "effects": [
-          { "property": "Spirit Power", "value": "10" },
-          { "property": "Health Regen", "value": "1" },
-          { "property": "Bonus Health", "value": "35" }
+          { "property": "Spirit Power", "value": "+10" },
+          { "property": "Health Regen", "value": "+1" },
+          { "property": "Bonus Health", "value": "+35" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1453,11 +1452,11 @@
         "name": "Mystic Burst",
         "cost": 500,
         "effects": [
-          { "property": "Spirit Shield Health", "value": "40" },
-          { "property": "Weapon Damage", "value": "6%" }
+          { "property": "Spirit Shield Health", "value": "+40" },
+          { "property": "Weapon Damage", "value": "+6%" }
         ],
         "activeEffects": [],
-        "conditionalEffects": [{ "property": "Bonus Damage", "value": "35" }],
+        "conditionalEffects": [{ "property": "Bonus Damage", "value": "+35" }],
         "description": "Abilities deal bonus Spirit Damage if they deal 80 damage or more in a single hit.",
         "components": null,
         "componentOf": "Improved Burst"
@@ -1467,8 +1466,8 @@
         "name": "Mystic Reach",
         "cost": 500,
         "effects": [
-          { "property": "Ability Range", "value": "15%" },
-          { "property": "Bullet Resist", "value": "7%" }
+          { "property": "Ability Range", "value": "+15%" },
+          { "property": "Bullet Resist", "value": "+7%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1481,14 +1480,14 @@
         "name": "Spirit Strike",
         "cost": 500,
         "effects": [
-          { "property": "Melee Damage", "value": "12%" },
-          { "property": "Spirit Shield Health", "value": "80" }
+          { "property": "Melee Damage", "value": "+12%" },
+          { "property": "Spirit Shield Health", "value": "+80" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Damage", "value": "50" },
+          { "property": "Spirit Damage", "value": "+50" },
           { "property": "Spirit Resist", "value": "-12%" },
-          { "property": "Duration", "value": "12s" }
+          { "property": "Duration", "value": "+12s" }
         ],
         "description": "When you perform a Light or Heavy Melee attack against a hero, deal extra Spirit Damage with the attack and reduce the target's Spirit Resist.",
         "components": null,
@@ -1499,14 +1498,14 @@
         "name": "Infuser",
         "cost": 500,
         "effects": [
-          { "property": "Spirit Shield Health", "value": "70" },
-          { "property": "Ammo", "value": "10%" }
+          { "property": "Spirit Shield Health", "value": "+70" },
+          { "property": "Ammo", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Power", "value": "16" },
-          { "property": "Spirit Lifesteal", "value": "20%" },
-          { "property": "Duration", "value": "8s" }
+          { "property": "Spirit Power", "value": "+16" },
+          { "property": "Spirit Lifesteal", "value": "+20%" },
+          { "property": "Duration", "value": "+8s" }
         ],
         "description": "",
         "components": null,
@@ -1519,13 +1518,13 @@
         "name": "Bullet Resist Shredder",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "100" },
-          { "property": "Melee Resist", "value": "15%" }
+          { "property": "Bonus Health", "value": "+100" },
+          { "property": "Melee Resist", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Bullet Resist", "value": "-12%" },
-          { "property": "Duration", "value": "8s" }
+          { "property": "Duration", "value": "+8s" }
         ],
         "description": "Reduce Bullet Resist on enemies when you deal Spirit Damage.",
         "components": null,
@@ -1536,10 +1535,10 @@
         "name": "Duration Extender",
         "cost": 1250,
         "effects": [
-          { "property": "Ability Duration", "value": "14%" },
-          { "property": "Weapon Damage", "value": "8%" },
-          { "property": "Bonus Health", "value": "100" },
-          { "property": "Health Regen", "value": "1.75" }
+          { "property": "Ability Duration", "value": "+14%" },
+          { "property": "Weapon Damage", "value": "+8%" },
+          { "property": "Bonus Health", "value": "+100" },
+          { "property": "Health Regen", "value": "+1.75" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1552,10 +1551,10 @@
         "name": "Improved Cooldown",
         "cost": 1250,
         "effects": [
-          { "property": "Cooldown Reduction", "value": "14%" },
-          { "property": "Spirit Shield Health", "value": "100" },
-          { "property": "Health Regen", "value": "1.5" },
-          { "property": "Ammo", "value": "10%" }
+          { "property": "Cooldown Reduction", "value": "+14%" },
+          { "property": "Spirit Shield Health", "value": "+100" },
+          { "property": "Health Regen", "value": "+1.5" },
+          { "property": "Ammo", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1567,11 +1566,11 @@
         "category": "spirit",
         "name": "Mystic Vulnerability",
         "cost": 1250,
-        "effects": [{ "property": "Spirit Resist", "value": "6%" }],
+        "effects": [{ "property": "Spirit Resist", "value": "+6%" }],
         "activeEffects": [],
         "conditionalEffects": [
           { "property": "Spirit Resist", "value": "-12%" },
-          { "property": "Duration", "value": "6s" }
+          { "property": "Duration", "value": "+6s" }
         ],
         "description": "",
         "components": null,
@@ -1584,9 +1583,9 @@
         "effects": [],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Damage", "value": "65" },
-          { "property": "Fire Rate Bonus", "value": "15%" },
-          { "property": "Max Frequency", "value": "12s" }
+          { "property": "Damage", "value": "+65" },
+          { "property": "Fire Rate Bonus", "value": "+15%" },
+          { "property": "Max Frequency", "value": "+12s" }
         ],
         "description": "Imbue an ability with bonus Spirit Damage on the first hit. When the ability is used, your weapon is reloaded and has a Fire Rate bonus for thatt clip. Only activates if Ammo is not full.",
         "components": null,
@@ -1597,14 +1596,14 @@
         "name": "Suppressor",
         "cost": 1250,
         "effects": [
-          { "property": "Bonus Health", "value": "50" },
-          { "property": "Health Regen", "value": "2.5" },
-          { "property": "Spirit Power", "value": "4" }
+          { "property": "Bonus Health", "value": "+50" },
+          { "property": "Health Regen", "value": "+2.5" },
+          { "property": "Spirit Power", "value": "+4" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Fire Rate Slow", "value": "25%" },
-          { "property": "Duration", "value": "2.5s" }
+          { "property": "Fire Rate Slow", "value": "+25%" },
+          { "property": "Duration", "value": "+2.5s" }
         ],
         "description": "When you deal Spirit Damage to enemies, you also apply Fire Rate Slow.",
         "components": null,
@@ -1614,12 +1613,12 @@
         "category": "spirit",
         "name": "Cold Front",
         "cost": 1250,
-        "effects": [{ "property": "Spirit Resist", "value": "10%" }],
+        "effects": [{ "property": "Spirit Resist", "value": "+10%" }],
         "activeEffects": [
-          { "property": "Damage", "value": "75" },
-          { "property": "Movement Slow", "value": "40%" },
-          { "property": "End Radius", "value": "14m" },
-          { "property": "Duration", "value": "3s" }
+          { "property": "Damage", "value": "+75" },
+          { "property": "Movement Slow", "value": "+40%" },
+          { "property": "End Radius", "value": "+14m" },
+          { "property": "Duration", "value": "+3s" }
         ],
         "conditionalEffects": [],
         "description": "Release an expanding ice blast that deals Spirit Damage and Slow targets it hits. Deals 2x Damage to non-Heroes.",
@@ -1631,15 +1630,15 @@
         "name": "Decay",
         "cost": 1250,
         "effects": [
-          { "property": "Health Regen", "value": "1.5" },
-          { "property": "Spirit Power", "value": "7" },
-          { "property": "Ability Duration", "value": "8%" }
+          { "property": "Health Regen", "value": "+1.5" },
+          { "property": "Spirit Power", "value": "+7" },
+          { "property": "Ability Duration", "value": "+8%" }
         ],
         "activeEffects": [
           { "property": "Healing Reduction", "value": "-55%" },
-          { "property": "Bleed Damage", "value": "1.5%/sec" },
-          { "property": "Cast Range", "value": "17.4" },
-          { "property": "Duration", "value": "10.8" }
+          { "property": "Bleed Damage", "value": "+1.5%/sec" },
+          { "property": "Cast Range", "value": "+17.4" },
+          { "property": "Duration", "value": "+10.8" }
         ],
         "conditionalEffects": [],
         "description": "Reduces healing received of targeted enemy and inflicts damage over time of their current health. Decay's damage is non-lethal.",
@@ -1651,16 +1650,16 @@
         "name": "Slowing Hex",
         "cost": 1250,
         "effects": [
-          { "property": "Spirit Lifesteal", "value": "10%" },
-          { "property": "Spirit Power", "value": "5" },
-          { "property": "Bonus Health", "value": "75" }
+          { "property": "Spirit Lifesteal", "value": "+10%" },
+          { "property": "Spirit Power", "value": "+5" },
+          { "property": "Bonus Health", "value": "+75" }
         ],
         "activeEffects": [
-          { "property": "Damage", "value": "40" },
-          { "property": "Movement Slow", "value": "20%" },
+          { "property": "Damage", "value": "+40" },
+          { "property": "Movement Slow", "value": "+20%" },
           { "property": "Dash Distance", "value": "-30%" },
-          { "property": "Cast Range", "value": "25m" },
-          { "property": "Duration", "value": "3s" }
+          { "property": "Cast Range", "value": "+25m" },
+          { "property": "Duration", "value": "+3s" }
         ],
         "conditionalEffects": [],
         "description": "Deals Spirit Damage, Slows target movement and dashes. Also Silences their movement-based items and abilities.",
@@ -1672,16 +1671,16 @@
         "name": "Withering Whip",
         "cost": 1250,
         "effects": [
-          { "property": "Bullet Shield Health", "value": "100" },
-          { "property": "Spirit Power", "value": "6" },
-          { "property": "Sprint Speed", "value": "1 m/s" }
+          { "property": "Bullet Shield Health", "value": "+100" },
+          { "property": "Spirit Power", "value": "+6" },
+          { "property": "Sprint Speed", "value": "+1 m/s" }
         ],
         "activeEffects": [
-          { "property": "Damage", "value": "50" },
-          { "property": "Fire Rate Slow", "value": "45%" },
+          { "property": "Damage", "value": "+50" },
+          { "property": "Fire Rate Slow", "value": "+45%" },
           { "property": "Bullet Resist", "value": "-12%" },
-          { "property": "Cast Range", "value": "30m" },
-          { "property": "Duration", "value": "5s" }
+          { "property": "Cast Range", "value": "+30m" },
+          { "property": "Duration", "value": "+5s" }
         ],
         "conditionalEffects": [],
         "description": "Target an enemy to apply Fire Rate Slow and reduce their Bullet Resist.",
@@ -1695,18 +1694,18 @@
         "name": "Arcane Surge",
         "cost": 3000,
         "effects": [
-          { "property": "Stamina", "value": "1" },
-          { "property": "Bonus Health", "value": "100" },
-          { "property": "Movement Slow Resist", "value": "15%" }
+          { "property": "Stamina", "value": "+1" },
+          { "property": "Bonus Health", "value": "+100" },
+          { "property": "Movement Slow Resist", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Ability Range", "value": "18%" },
-          { "property": "Ability Duration", "value": "18%" },
-          { "property": "Spirit Power", "value": "18" },
-          { "property": "Fire Rate", "value": "20%" },
-          { "property": "Temporary Ammo", "value": "5" },
-          { "property": "Duration", "value": "7s" }
+          { "property": "Ability Range", "value": "+18%" },
+          { "property": "Ability Duration", "value": "+18%" },
+          { "property": "Spirit Power", "value": "+18" },
+          { "property": "Fire Rate", "value": "+20%" },
+          { "property": "Temporary Ammo", "value": "+5" },
+          { "property": "Duration", "value": "+7s" }
         ],
         "description": "Your next Dash-Jump does not cost and extra stamina and the next ability you use will have bonus Range, Duration, and Spirit Power. Additionally you gain Fire Rate and bonus Ammo until your next reload. Lasts up to 7s.",
         "components": "Kinetic Dash",
@@ -1717,12 +1716,12 @@
         "name": "Improved Burst",
         "cost": 3000,
         "effects": [
-          { "property": "Spirit Shield Health", "value": "100" },
-          { "property": "Weapon Damage", "value": "8%" }
+          { "property": "Spirit Shield Health", "value": "+100" },
+          { "property": "Weapon Damage", "value": "+8%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Max Health Bonus Damage", "value": "8%" }
+          { "property": "Max Health Bonus Damage", "value": "+8%" }
         ],
         "description": "Abilities deal bonus Spirit Damage if they deal 175 damage or more in a single hit. Targets are immune to the effects of Improved Burst for 5s after taking damage from it.",
         "components": "Mystic Burst",
@@ -1733,10 +1732,10 @@
         "name": "Improved Reach",
         "cost": 3000,
         "effects": [
-          { "property": "Imbued Ability Range", "value": "35%" },
-          { "property": "Non-Imbued Ability Range", "value": "26%" },
-          { "property": "Bullet Resist", "value": "13%" },
-          { "property": "Spirit Power", "value": "8" }
+          { "property": "Imbued Ability Range", "value": "+35%" },
+          { "property": "Non-Imbued Ability Range", "value": "+26%" },
+          { "property": "Bullet Resist", "value": "+13%" },
+          { "property": "Spirit Power", "value": "+8" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1749,10 +1748,10 @@
         "name": "Improved Spirit",
         "cost": 3000,
         "effects": [
-          { "property": "Spirit Power", "value": "30" },
-          { "property": "Health Regen", "value": "3" },
-          { "property": "Sprint Speed", "value": "1 m/s" },
-          { "property": "Bonus Health", "value": "125" }
+          { "property": "Spirit Power", "value": "+30" },
+          { "property": "Health Regen", "value": "+3" },
+          { "property": "Sprint Speed", "value": "+1 m/s" },
+          { "property": "Bonus Health", "value": "+125" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1765,16 +1764,16 @@
         "name": "Mystic Slow",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Health", "value": "160" },
-          { "property": "Health Regen", "value": "3" },
-          { "property": "Spirit Power", "value": "6" },
-          { "property": "Sprint Speed", "value": "1 m/s" }
+          { "property": "Bonus Health", "value": "+160" },
+          { "property": "Health Regen", "value": "+3" },
+          { "property": "Spirit Power", "value": "+6" },
+          { "property": "Sprint Speed", "value": "+1 m/s" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Movement Slow", "value": "25%" },
-          { "property": "Fire Rate Slow", "value": "40%" },
-          { "property": "Duration", "value": "2.5s" }
+          { "property": "Movement Slow", "value": "+25%" },
+          { "property": "Fire Rate Slow", "value": "+40%" },
+          { "property": "Duration", "value": "+2.5s" }
         ],
         "description": "When target takes Spirit Damage, they have their Move Speed and Fire Rate reduced.",
         "components": "Suppressor",
@@ -1785,13 +1784,13 @@
         "name": "Rapid Recharge",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Ability Charges", "value": "2" },
-          { "property": "Faster Time Between Charges", "value": "60%" },
+          { "property": "Bonus Ability Charges", "value": "+2" },
+          { "property": "Faster Time Between Charges", "value": "+60%" },
           {
             "property": "Cooldown Reduction For Charged Abilities",
-            "value": "25%"
+            "value": "+25%"
           },
-          { "property": "Weapon Damage", "value": "12%" }
+          { "property": "Weapon Damage", "value": "+12%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1804,17 +1803,17 @@
         "name": "Spirit Snatch",
         "cost": 3000,
         "effects": [
-          { "property": "Melee Damage", "value": "15%" },
-          { "property": "Bonus Health", "value": "125" },
-          { "property": "Spirit Resist", "value": "8%" },
-          { "property": "Sprint Speed", "value": "1 m/s" }
+          { "property": "Melee Damage", "value": "+15%" },
+          { "property": "Bonus Health", "value": "+125" },
+          { "property": "Spirit Resist", "value": "+8%" },
+          { "property": "Sprint Speed", "value": "+1 m/s" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Damage", "value": "50" },
-          { "property": "Spirit Resist Steal", "value": "12" },
-          { "property": "Spirit Power Steal", "value": "26" },
-          { "property": "Duration", "value": "16s" }
+          { "property": "Spirit Damage", "value": "+50" },
+          { "property": "Spirit Resist Steal", "value": "+12" },
+          { "property": "Spirit Power Steal", "value": "+26" },
+          { "property": "Duration", "value": "+16s" }
         ],
         "description": "When you perform a Light or Heavy Melee attack against a hero, the attack deals extra Spirit Damage and steals Spirit Resist and Spirit Power.",
         "components": "Spirit Strike",
@@ -1825,14 +1824,14 @@
         "name": "Superior Cooldown",
         "cost": 3000,
         "effects": [
-          { "property": "Imbued Ability Cooldown Reduction", "value": "32%" },
+          { "property": "Imbued Ability Cooldown Reduction", "value": "+32%" },
           {
             "property": "Non-Imbued Ability Cooldown Reduction",
-            "value": "24%"
+            "value": "+24%"
           },
-          { "property": "Spirit Shield Health", "value": "150" },
-          { "property": "Health Regen", "value": "4" },
-          { "property": "Ammo", "value": "15%" }
+          { "property": "Spirit Shield Health", "value": "+150" },
+          { "property": "Health Regen", "value": "+4" },
+          { "property": "Ammo", "value": "+15%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1845,11 +1844,11 @@
         "name": "Superior Duration",
         "cost": 3000,
         "effects": [
-          { "property": "Imbued Abitlity Duration", "value": "33%" },
-          { "property": "Non-Imbued Abitlity Duration", "value": "27%" },
-          { "property": "Bonus Health", "value": "175" },
-          { "property": "Weapon Damage", "value": "15%" },
-          { "property": "Health Regen", "value": "4" }
+          { "property": "Imbued Abitlity Duration", "value": "+33%" },
+          { "property": "Non-Imbued Abitlity Duration", "value": "+27%" },
+          { "property": "Bonus Health", "value": "+175" },
+          { "property": "Weapon Damage", "value": "+15%" },
+          { "property": "Health Regen", "value": "+4" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1861,13 +1860,13 @@
         "category": "spirit",
         "name": "Surge of Power",
         "cost": 3000,
-        "effects": [{ "property": "Bonus Health", "value": "75" }],
+        "effects": [{ "property": "Bonus Health", "value": "+75" }],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Imbued Ability Spirit Power", "value": "34" },
-          { "property": "Fire Rate Bonus", "value": "15" },
-          { "property": "Move Speed", "value": "2 m/s" },
-          { "property": "Move Speed Duration", "value": "6s" }
+          { "property": "Imbued Ability Spirit Power", "value": "+34" },
+          { "property": "Fire Rate Bonus", "value": "+15" },
+          { "property": "Move Speed", "value": "+2 m/s" },
+          { "property": "Move Speed Duration", "value": "+6s" }
         ],
         "description": "Imbue an ability with permanent Spirit Power. When that ability is used, gain bonus Move Speed and maintain full speed while attacking.",
         "components": null,
@@ -1878,14 +1877,14 @@
         "name": "Torment Pulse",
         "cost": 3000,
         "effects": [
-          { "property": "Bonus Health", "value": "160" },
-          { "property": "Melee Resist", "value": "15%" },
-          { "property": "Spirit Power", "value": "6" }
+          { "property": "Bonus Health", "value": "+160" },
+          { "property": "Melee Resist", "value": "+15%" },
+          { "property": "Spirit Power", "value": "+6" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Pulse Damage", "value": "40" },
-          { "property": "Pulse Radius", "value": "9m" }
+          { "property": "Pulse Damage", "value": "+40" },
+          { "property": "Pulse Radius", "value": "+9m" }
         ],
         "description": "Periodically deal Spirit Damage to the closest two enemies nearby.",
         "components": null,
@@ -1895,13 +1894,13 @@
         "category": "spirit",
         "name": "Ethereal Shift",
         "cost": 3000,
-        "effects": [{ "property": "Spirit Power", "value": "6" }],
+        "effects": [{ "property": "Spirit Power", "value": "+6" }],
         "activeEffects": [
-          { "property": "Spirit Power", "value": "20" },
-          { "property": "Spirit Resist", "value": "40%" },
-          { "property": "Movement Speed", "value": "3 m/s" },
-          { "property": "Buff Duration", "value": "5s" },
-          { "property": "Duration", "value": "3.5s" }
+          { "property": "Spirit Power", "value": "+20" },
+          { "property": "Spirit Resist", "value": "+40%" },
+          { "property": "Movement Speed", "value": "+3 m/s" },
+          { "property": "Buff Duration", "value": "+5s" },
+          { "property": "Duration", "value": "+3.5s" }
         ],
         "conditionalEffects": [],
         "description": "You enter a void state and become Untangible and Invincible for a short duration, during which you float slowly and cannot perform any actions. Afterwards you gain move speed, spirit, and spirit resist. Cancels any active ability.",
@@ -1913,14 +1912,14 @@
         "name": "Knockdown",
         "cost": 3000,
         "effects": [
-          { "property": "Stamina", "value": "1" },
-          { "property": "Spirit Shield Health", "value": "300" },
-          { "property": "Spirit Power", "value": "6" }
+          { "property": "Stamina", "value": "+1" },
+          { "property": "Spirit Shield Health", "value": "+300" },
+          { "property": "Spirit Power", "value": "+6" }
         ],
         "activeEffects": [
-          { "property": "Status Effect", "value": "Stun" },
-          { "property": "Stun Duration", "value": "0.5s" },
-          { "property": "Cast Range", "value": "45m" }
+          { "property": "Status Effect", "value": "+Stun" },
+          { "property": "Stun Duration", "value": "+0.5s" },
+          { "property": "Cast Range", "value": "+45m" }
         ],
         "conditionalEffects": [],
         "description": "Target is knocked down and Stunned after a 2s delay, interrupting and temporarily preventing them from taking any action. Stun lasts up to 2x longer against airborne targets based on how high off the ground they are (up to 30m).",
@@ -1932,14 +1931,14 @@
         "name": "Silence Glyph",
         "cost": 3000,
         "effects": [
-          { "property": "Spirit Shield Health", "value": "150" },
-          { "property": "Sprint Speed", "value": "1 m/s" }
+          { "property": "Spirit Shield Health", "value": "+150" },
+          { "property": "Sprint Speed", "value": "+1 m/s" }
         ],
         "activeEffects": [
-          { "property": "Status Effect", "value": "Silenced" },
-          { "property": "Damage", "value": "100" },
-          { "property": "Cast Range", "value": "25m" },
-          { "property": "Duration", "value": "3s" }
+          { "property": "Status Effect", "value": "+Silenced" },
+          { "property": "Damage", "value": "+100" },
+          { "property": "Cast Range", "value": "+25m" },
+          { "property": "Duration", "value": "+3s" }
         ],
         "conditionalEffects": [],
         "description": "Fire a projectile that silences and damages the first enemy hero it hits. Silence does not interrupt chanelling abilities.",
@@ -1953,11 +1952,11 @@
         "name": "Boundless Spirit",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Power", "value": "65" },
-          { "property": "Bonus Health", "value": "300" },
-          { "property": "Health Regen", "value": "15" },
-          { "property": "Weapon Damage", "value": "30%" },
-          { "property": "Sprint Speed", "value": "2 m/s" }
+          { "property": "Spirit Power", "value": "+65" },
+          { "property": "Bonus Health", "value": "+300" },
+          { "property": "Health Regen", "value": "+15" },
+          { "property": "Weapon Damage", "value": "+30%" },
+          { "property": "Sprint Speed", "value": "+2 m/s" }
         ],
         "activeEffects": [],
         "conditionalEffects": [],
@@ -1970,15 +1969,15 @@
         "name": "Diviner's Kevlar",
         "cost": 6000,
         "effects": [
-          { "property": "Cooldown Reduction", "value": "10%" },
-          { "property": "Ability Duration", "value": "10%" }
+          { "property": "Cooldown Reduction", "value": "+10%" },
+          { "property": "Ability Duration", "value": "+10%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Bullet Shield", "value": "700" },
-          { "property": "Spirit Shield", "value": "700" },
-          { "property": "Spirit Power", "value": "40" },
-          { "property": "Buff Duration", "value": "16.5s" }
+          { "property": "Bullet Shield", "value": "+700" },
+          { "property": "Spirit Shield", "value": "+700" },
+          { "property": "Spirit Power", "value": "+40" },
+          { "property": "Buff Duration", "value": "+16.5s" }
         ],
         "description": "Upon casting an ultimate ability gain temporary Bullet Shield, Spirit Shield, and Spirit Power.",
         "components": null,
@@ -1989,16 +1988,16 @@
         "name": "Escalating Exposure",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Resist", "value": "15%" },
-          { "property": "Bonus Health", "value": "125" },
+          { "property": "Spirit Resist", "value": "+15%" },
+          { "property": "Bonus Health", "value": "+125" },
           { "property": "Spirit Resist on Spirit Damage", "value": "-12%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Spirit Amp per Stack", "value": "4%" },
-          { "property": "Max Stacks", "value": "20" },
-          { "property": "Duration", "value": "12s" },
-          { "property": "Max Frequency per Target", "value": "0.7s" }
+          { "property": "Spirit Amp per Stack", "value": "+4%" },
+          { "property": "Max Stacks", "value": "+20" },
+          { "property": "Duration", "value": "+12s" },
+          { "property": "Max Frequency per Target", "value": "+0.7s" }
         ],
         "description": "Dealing Spirit Damage applies a stacking Spirit Amp that increases your Spirit Damage to the target.",
         "components": "Mystic Vulnerability",
@@ -2009,16 +2008,16 @@
         "name": "Mystic Reverb",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Lifesteal", "value": "14%" },
-          { "property": "Spirit Resist", "value": "14%" },
-          { "property": "Ability Range", "value": "14%" }
+          { "property": "Spirit Lifesteal", "value": "+14%" },
+          { "property": "Spirit Resist", "value": "+14%" },
+          { "property": "Ability Range", "value": "+14%" }
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Damage", "value": "50%" },
-          { "property": "Movement Slow", "value": "40%" },
-          { "property": "Radius", "value": "18.2m" },
-          { "property": "Delay Duration", "value": "3s" }
+          { "property": "Damage", "value": "+50%" },
+          { "property": "Movement Slow", "value": "+40%" },
+          { "property": "Radius", "value": "+18.2m" },
+          { "property": "Delay Duration", "value": "+3s" }
         ],
         "description": "Imbue an ability to apply slow on a hit target and deal an additional percentage of the damage dealt to enemies around the target after a short delay.",
         "components": null,
@@ -2029,13 +2028,13 @@
         "name": "Curse",
         "cost": 6000,
         "effects": [
-          { "property": "Weapon Damage", "value": "20%" },
-          { "property": "Spirit Power", "value": "8" }
+          { "property": "Weapon Damage", "value": "+20%" },
+          { "property": "Spirit Power", "value": "+8" }
         ],
         "activeEffects": [
           { "property": "Status Effect", "value": "Silenced" },
-          { "property": "Duration", "value": "3.25s" },
-          { "property": "Cast Range", "value": "20m" }
+          { "property": "Duration", "value": "+3.25s" },
+          { "property": "Cast Range", "value": "+20m" }
         ],
         "conditionalEffects": [],
         "description": "Curse an enemy - Interrupting, Silencing, Disarming, and preventing item usage.",
@@ -2047,11 +2046,11 @@
         "name": "Echo Shard",
         "cost": 6000,
         "effects": [
-          { "property": "Move Speed", "value": "1 m/s" },
-          { "property": "Bullet Resist", "value": "16%" },
-          { "property": "Spirit Power", "value": "12" }
+          { "property": "Move Speed", "value": "+1 m/s" },
+          { "property": "Bullet Resist", "value": "+16%" },
+          { "property": "Spirit Power", "value": "+12" }
         ],
-        "activeEffects": [{ "property": "", "value": "" }],
+        "activeEffects": [],
         "conditionalEffects": [],
         "description": "Reset the cooldown of your most recently used non-ulitmate ability.",
         "components": null,
@@ -2062,18 +2061,18 @@
         "name": "Magic Carpet",
         "cost": 6000,
         "effects": [
-          { "property": "Ability Duration", "value": "15%" },
-          { "property": "Spirit Power", "value": "15" },
-          { "property": "Bonus Health", "value": "150" },
-          { "property": "Ability Range", "value": "10%" }
+          { "property": "Ability Duration", "value": "+15%" },
+          { "property": "Spirit Power", "value": "+15" },
+          { "property": "Bonus Health", "value": "+150" },
+          { "property": "Ability Range", "value": "+10%" }
         ],
         "activeEffects": [
-          { "property": "Bullet Shield Health", "value": "400" },
-          { "property": "Spirit Shield Health", "value": "400" },
-          { "property": "Duration", "value": "8.8s" },
-          { "property": "Summon Duration", "value": "1.3s" },
-          { "property": "Bonus Fly Speed", "value": "6 m/s" },
-          { "property": "Shield Duration", "value": "17.6s" }
+          { "property": "Bullet Shield Health", "value": "+400" },
+          { "property": "Spirit Shield Health", "value": "+400" },
+          { "property": "Duration", "value": "+8.8s" },
+          { "property": "Summon Duration", "value": "+1.3s" },
+          { "property": "Bonus Fly Speed", "value": "+6 m/s" },
+          { "property": "Shield Duration", "value": "+17.6s" }
         ],
         "conditionalEffects": [],
         "description": "Summon a Magic Carpet that will fly you away and gain Bullet and Spirit Shields. Cannot use abilities while the carpet is being summoned. While flying you are immune to slows and doing any action will dismiss the carpet.",
@@ -2085,10 +2084,10 @@
         "name": "Refresher",
         "cost": 6000,
         "effects": [
-          { "property": "Spirit Resist", "value": "8%" },
-          { "property": "Bullet Resist", "value": "16%" }
+          { "property": "Spirit Resist", "value": "+8%" },
+          { "property": "Bullet Resist", "value": "+16%" }
         ],
-        "activeEffects": [{ "property": "", "value": "" }],
+        "activeEffects": [],
         "conditionalEffects": [],
         "description": "reset the cooldown of all your abilities and restore all your charges.",
         "components": null,
