@@ -50,7 +50,7 @@
           { "property": "Impact Radius", "value": "9m", "scales": false }
         ],
         "upgrades": [
-          "-38s",
+          "-38s cooldown",
           "Gain 100 Max HP and 15% Fire Rate per hero hit. Lasts 25.",
           "On cast, become Immune to Stun, Silence, Sleep, Root, and Disarm. Expires 3s after landing."
         ]

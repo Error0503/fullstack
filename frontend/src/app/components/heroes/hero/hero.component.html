@@ -1,0 +1,123 @@
+<div class="flex w-full m-2">
+  <div class="w-3/6">
+    <p class="text-center text-4xl font-bold">{{ hero.name }}</p>
+    <p class="text-center font-semibold">{{ hero.shortDescription }}</p>
+    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+      @for (ability of hero.abilities; track $index) {
+      <div class="w-full h-full pt-6">
+        <div class="join w-fit h-1/4 mx-auto">
+          <img
+            class="w-20 h-20 mask mask-circle"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            [alt]="ability.name"
+          />
+          <p class="pl-8 my-auto font-bold">{{ ability.name }}</p>
+        </div>
+        <p class="h-1/4">{{ ability.description }}</p>
+        <table class="h-2/4 table-auto border-collapse border">
+          <tbody>
+            <tr>
+              @for (upgrade of ability.upgrades; track $index) {
+              <td class="border w-1/3 h-24">
+                <p class="">{{ upgrade }}</p>
+              </td>
+              }
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      }
+    </div>
+    <p class="pt-8">{{ hero.description }}</p>
+  </div>
+  <div class="w-2/6">
+    <img
+      class=""
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      [alt]="hero.name"
+    />
+  </div>
+  <div class="w-1/6">
+    <div>
+      <p class="text-[#dd8e18] w-fit">Weapon</p>
+      <div class="grid gird-cols-2 bg-[#2f2f2f] p-2 w-fit">
+        <div class="w-1/2">
+          <p class="text-center font-bold">{{ hero.weaponStats.dps }}</p>
+          <p class="text-center text-sm">DPS</p>
+        </div>
+        <div class="w-1/2">
+          <p class="text-center font-bold">
+            {{ hero.weaponStats.bulletDamage }}
+          </p>
+          <p class="text-center text-sm">Bullet Damage</p>
+        </div>
+        <div class="w-1/2">
+          <p class="text-center font-bold">{{ hero.weaponStats.ammo }}</p>
+          <p class="text-center text-sm">Ammo</p>
+        </div>
+        <div class="w-1/2">
+          <p class="text-center font-bold">
+            {{ hero.weaponStats.bulletsPerSec }}
+          </p>
+          <p class="text-center text-sm">Bullets per sec</p>
+        </div>
+        <div class="w-1/2">
+          <p class="text-center font-bold">{{ hero.weaponStats.lightMelee }}</p>
+          <p class="text-center text-sm">Light Melee</p>
+        </div>
+        <div class="w-1/2">
+          <p class="text-center font-bold">{{ hero.weaponStats.heavyMelee }}</p>
+          <p class="text-center text-sm">Heavy Melee</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="text-[#73ad1b]">Vitality</p>
+      <div class="grid gird-cols-2 bg-[#2f2f2f] p-2">
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.maxHealth }}
+          </p>
+          <p class="text-center text-sm">Max Health</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.healthRegen }}
+          </p>
+          <p class="text-center text-sm">Health Regen</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.bulletResist }}
+          </p>
+          <p class="text-center text-sm">Bullet Resist</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.spiritResist }}
+          </p>
+          <p class="text-center text-sm">Spirit Resist</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.moveSpeed }}
+          </p>
+          <p class="text-center text-sm">Move Speed</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.sprintSpeed }}
+          </p>
+          <p class="text-center text-sm">Sprint Speed</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">{{ hero.vitalityStats.stamina }}</p>
+          <p class="text-center text-sm">Stamina</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Vitality</p>
+    </div>
+  </div>
+</div>
