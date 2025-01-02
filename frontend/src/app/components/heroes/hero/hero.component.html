@@ -1,11 +1,11 @@
-<div class="flex w-full m-2">
-  <div class="w-3/6">
+<div class="grid xl:grid-cols-6 md:grid-cols-2 w-full m-2">
+  <div class="xl:col-span-3 md:col-span-2">
     <p class="text-center text-4xl font-bold">{{ hero.name }}</p>
     <p class="text-center font-semibold">{{ hero.shortDescription }}</p>
-    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+    <div class="grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-4 mb-4">
       @for (ability of hero.abilities; track $index) {
       <div class="w-full h-full pt-6">
-        <div class="join w-fit h-1/4 mx-auto">
+        <div class="join w-fit h-1/5 mx-auto">
           <img
             class="w-20 h-20 mask mask-circle"
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -13,14 +13,12 @@
           />
           <p class="pl-8 my-auto font-bold">{{ ability.name }}</p>
         </div>
-        <p class="h-1/4">{{ ability.description }}</p>
-        <table class="h-2/4 table-auto border-collapse border">
+        <p class="h-2/5">{{ ability.description }}</p>
+        <table class="h-2/5 table-auto border-collapse border">
           <tbody>
             <tr>
               @for (upgrade of ability.upgrades; track $index) {
-              <td class="border w-1/3 h-24">
-                <p class="">{{ upgrade }}</p>
-              </td>
+              <td class="border w-1/3 h-24">{{ upgrade }}</td>
               }
             </tr>
           </tbody>
@@ -30,42 +28,42 @@
     </div>
     <p class="pt-8">{{ hero.description }}</p>
   </div>
-  <div class="w-2/6">
+  <div class="xl:col-span-2">
     <img
-      class=""
+      class="p-7 h-full"
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
       [alt]="hero.name"
     />
   </div>
-  <div class="w-1/6">
+  <div>
     <div>
-      <p class="text-[#dd8e18] w-fit">Weapon</p>
-      <div class="grid gird-cols-2 bg-[#2f2f2f] p-2 w-fit">
-        <div class="w-1/2">
+      <p class="text-[#dd8e18]">Weapon</p>
+      <div class="grid grid-cols-2 bg-[#2f2f2f]">
+        <div>
           <p class="text-center font-bold">{{ hero.weaponStats.dps }}</p>
           <p class="text-center text-sm">DPS</p>
         </div>
-        <div class="w-1/2">
+        <div>
           <p class="text-center font-bold">
             {{ hero.weaponStats.bulletDamage }}
           </p>
           <p class="text-center text-sm">Bullet Damage</p>
         </div>
-        <div class="w-1/2">
+        <div>
           <p class="text-center font-bold">{{ hero.weaponStats.ammo }}</p>
           <p class="text-center text-sm">Ammo</p>
         </div>
-        <div class="w-1/2">
+        <div>
           <p class="text-center font-bold">
             {{ hero.weaponStats.bulletsPerSec }}
           </p>
           <p class="text-center text-sm">Bullets per sec</p>
         </div>
-        <div class="w-1/2">
+        <div>
           <p class="text-center font-bold">{{ hero.weaponStats.lightMelee }}</p>
           <p class="text-center text-sm">Light Melee</p>
         </div>
-        <div class="w-1/2">
+        <div>
           <p class="text-center font-bold">{{ hero.weaponStats.heavyMelee }}</p>
           <p class="text-center text-sm">Heavy Melee</p>
         </div>
@@ -73,7 +71,7 @@
     </div>
     <div>
       <p class="text-[#73ad1b]">Vitality</p>
-      <div class="grid gird-cols-2 bg-[#2f2f2f] p-2">
+      <div class="grid grid-cols-2 bg-[#2f2f2f] p-2">
         <div>
           <p class="text-center font-bold">
             {{ hero.vitalityStats.maxHealth }}
