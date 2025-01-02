@@ -1,0 +1,148 @@
+{
+  "weapon": [
+    {
+      "name": "Basic Magazine",
+      "cost": 500,
+      "effects": [
+        { "property": "Ammo", "value": "26%" },
+        { "property": "Weapon Damage", "value": "15%" }
+      ],
+      "activeEffects": [],
+      "conditionalEfffects": [],
+      "description": null,
+      "compnents": null,
+      "compnentOf": "Titanic Magazine"
+    },
+    {
+      "name": "Close Quarters",
+      "cost": 500,
+      "effects": [{ "property": "Bullet Resist", "value": 5 }],
+      "activeEffects": [],
+      "conditionalEfffects": [
+        {
+          "condition": "15.0m close range",
+          "property": "Weapon Damage",
+          "value": 25
+        }
+      ],
+      "description": "Deal additional <b>Weapon Damage</b> when in <b>close range</b> to your target.",
+      "compnents": null,
+      "compnentOf": "Point Blank"
+    },
+    {
+      "name": "Headshot Booster",
+      "cost": 500,
+      "effects": [
+        { "property": "Fire Rate", "value": 4 },
+        { "property": "Bullet Shield Health", "value": 40 }
+      ],
+      "activeEffects": [],
+      "conditionalEfffects": [
+        { "property": "Head Shot Bonus Damage", "value": 40 }
+      ],
+      "description": "Deal additional <b>Weapon Damage</b> with <b>headshots</b>.",
+      "compnents": null,
+      "compnentOf": "Headhunter"
+    },
+    {
+      "name": "High-Velocity Mag",
+      "cost": 500,
+      "effects": [
+        { "property": "Bullet Velocity", "value": 20 },
+        { "property": "Weapon Damage", "value": 13 },
+        { "property": "Bullet Shield Health", "value": 65 }
+      ],
+      "activeEffects": [],
+      "conditionalEfffects": [],
+      "description": null,
+      "compnents": null,
+      "compnentOf": "Pristine Emblem"
+    },
+    {
+      "name": "Hollow Point Ward",
+      "cost": 500,
+      "effects": [
+        { "property": "Spirit Shield Health", "value": 95 },
+        { "property": "Spirit Power", "value": 4 }
+      ],
+      "activeEffects": [],
+      "conditionalEfffects": [
+        {
+          "condition": "Health above 60%",
+          "property": "Weapon Damage",
+          "value": 22
+        }
+      ],
+      "description": "When you are <b>above 60% health</b>, deal additional <b>Weapon Damage</b>.",
+      "compnents": null,
+      "compnentOf": null
+    },
+    {
+      "name": "Monster Rounds",
+      "cost": 500,
+      "effects": [
+        { "property": "Weapon Damage vs. NPCs", "value": 30 },
+        { "property": "Bullet Resist vs. NPCs", "value": 25 },
+        { "property": "Bonus Health", "value": 30 },
+        { "property": "Health Regen", "value": 1 }
+      ],
+      "activeEffects": [{ "property": "", "value": 0 }],
+      "conditionalEfffects": [{ "condition": "", "property": "", "value": 0 }],
+      "description": null,
+      "compnents": null,
+      "compnentOf": null
+    },
+    {
+      "name": "Rapid Rounds",
+      "cost": 500,
+      "effects": [
+        { "property": "Fire Rate", "value": 11 },
+        { "property": "Sprint Speed", "value": 1 }
+      ],
+      "activeEffects": [{ "property": "", "value": 0 }],
+      "conditionalEfffects": [{ "condition": "", "property": "", "value": 0 }],
+      "description": null,
+      "compnents": null,
+      "compnentOf": null
+    },
+    {
+      "name": "Active Reload",
+      "cost": 1250,
+      "effects": [
+        { "property": "Weapon Damage", "value": 10 },
+        { "property": "Ammo", "value": 18 },
+        { "property": "Bonus Health", "value": 50 }
+      ],
+      "activeEffects": [{ "property": "", "value": 0 }],
+      "conditionalEfffects": [
+        {
+          "condition": "Active Reload",
+          "property": "Fire Rate",
+          "value": 20,
+          "duration": 7
+        },
+        {
+          "condition": "Active Reload",
+          "property": "Bullet Lifesteal",
+          "value": 18,
+          "duration": 7
+        }
+      ],
+      "description": "While reloading, pressing reload during the highlited portion will <b>instantly finish your reload</b> and grant you <b>Fire Rate</b> and <b>Bullet Lifesteal</b>.",
+      "compnents": null,
+      "compnentOf": null
+    },
+    {
+      "name": "test",
+      "cost": 0,
+      "effects": [{ "property": "test", "value": 0 }],
+      "activeEffects": [{ "property": "test", "value": 0 }],
+      "conditionalEfffects": [{ "condition": "test", "property": "test", "value": 0 }],
+      "description": "test",
+      "compnents": null,
+      "compnentOf": null
+    }
+  ],
+  "vitality": [],
+  "spirit": []
+}
