@@ -19,9 +19,9 @@ export class ItemCardComponent {
     if (this.item.category === 'weapon') {
       return ['c97a03', '9e630c', '80550f', '67430a'];
     } else if (this.item.category === 'spirit') {
-      return ['c97a03', '9e630c', '80550f', '67430a'];
+      return ['68a51d', '366003', '507c16', '3f6311'];
     } else if (this.item.category === 'vitality') {
-      return ['c97a03', '9e630c', '80550f', '67430a'];
+      return ['8459af', '342445', '5c3880', '472a65'];
     } else {
       return ['', '', '', ''];
     }
