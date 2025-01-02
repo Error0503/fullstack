@@ -13,6 +13,6 @@ import { ItemCardComponent } from '../item-card/item-card.component';
 })
 export class ItemsComponent {
   weaponItems: Item[][] = itemsData.weapon;
-  spiritItems: Item[][] = itemsData.spirit;
   vitalityItems: Item[][] = itemsData.vitality;
+  spiritItems: Item[][] = itemsData.spirit;
 }

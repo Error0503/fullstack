@@ -1,14 +1,30 @@
-<!-- Weaons -->
-<div *ngFor="let items of weaponItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
-  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
-</div>
+<div
+  class="m-4 *:p-4 *:grid *:gap-10 *:2xl:grid-cols-6 *:xl:grid-cols-5 *:lg:grid-cols-4 *:md:grid-cols-3 *:sm:grid-cols-2 *:xs:grid-cols-1"
+>
+  <!-- Weaons -->
+  @for (items of weaponItems; track items) {
+  <div class="even:bg-[#565956] odd:bg-[#606360]">
+    @for (item of items; track item) {
+    <app-item-card [item]="item" />
+    }
+  </div>
+  }
 
-<!-- Vitality -->
-<div *ngFor="let items of spiritItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
-  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
-</div>
+  <!-- Vitality -->
+  @for (items of vitalityItems; track items) {
+  <div class="even:bg-[#565956] odd:bg-[#606360]">
+    @for (item of items; track item) {
+    <app-item-card [item]="item" />
+    }
+  </div>
+  }
 
-<!-- Spirit -->
-<div *ngFor="let items of vitalityItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
-  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
+  <!-- Spirit -->
+  @for (items of spiritItems; track items) {
+  <div class="even:bg-[#565956] odd:bg-[#606360]">
+    @for (item of items; track item) {
+    <app-item-card [item]="item" />
+    }
+  </div>
+  }
 </div>
