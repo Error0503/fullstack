@@ -673,7 +673,7 @@
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Status Effect", "value": "+Silences" },
+          { "property": "Status Effect", "value": "Silence" },
           { "property": "Silence Durations", "value": "+2s" },
           { "property": "Debuff Duration", "value": "+6s" },
           { "property": "Spirit Damage Reduction", "value": "-40%" },
@@ -818,7 +818,6 @@
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Melee Lifesteal", "value": "+18% of damage + 90" },
           { "property": "Effectiveness against non-heroes", "value": "+30%" }
         ],
         "description": "Your melee attacks heal you for 18% of the Melee Damage dealt plus 90. This heal is 30% effective vs non-heroes.",
@@ -1326,7 +1325,7 @@
         ],
         "activeEffects": [],
         "conditionalEffects": [
-          { "property": "Status Effect", "value": "+Invisible" },
+          { "property": "Status Effect", "value": "Invisible" },
           { "property": "Invis Move Speed", "value": "+4 m/s" },
           { "property": "Invisibility Duration", "value": "+7s" }
         ],
