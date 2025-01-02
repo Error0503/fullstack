@@ -9,11 +9,15 @@
     >
       Heroes
     </a>
-    <div
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#7bbb1c] bg-[#ccbea7] hover:bg-[#7bbb1c] transition-colors"
+    <a
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#7bbb1c] hover:bg-[#7bbb1c] transition-colors"
+      routerLink="/items"
+      #rla="routerLinkActive"
+      [ngClass]="{ 'bg-[#ccbea7]': !rla.isActive }"
+      [routerLinkActive]="['bg-[#7bbb1c]']"
     >
       Items
-    </div>
+    </a>
     <div
       class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#cd91fe] bg-[#ccbea7] hover:bg-[#cd91fe] transition-colors"
     >
