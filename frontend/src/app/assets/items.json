@@ -609,7 +609,7 @@
       },
       {
         "category": "weapon",
-        "name": "",
+        "name": "Glass Cannon",
         "cost": 6000,
         "effects": [
           { "property": "Bullet Slow Proc", "value": "+25%" },

@@ -1,19 +1,14 @@
-<!-- Weapon 500 cost -->
-<div class="grid mx-36 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2">
-  <div *ngFor="let item of weaponItems[0]">
-    <div class="text-center">
-      <div class="tooltip tooltip-right" [attr.data-tip]="item.description">
-        <button class="card bg-slate-50 w-40 shadow-xl" (click)="onSelect(item)">
-          <figure>
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" [alt]="item.name" />
-          </figure>
-          <div class="card-body py-2 min-w-full">
-            <h2 class="card-title text-sm mx-auto min-h-[3rem]">
-              {{item.name}}
-            </h2>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
+<!-- Weaons -->
+<div *ngFor="let items of weaponItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
+  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
+</div>
+
+<!-- Vitality -->
+<div *ngFor="let items of vitalityItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
+  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
+</div>
+
+<!-- Spirit -->
+<div *ngFor="let items of spiritItems" class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
+  <app-item-card *ngFor="let item of items" [item]="item"></app-item-card>
 </div>

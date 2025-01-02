@@ -10,4 +10,5 @@ export default interface Item {
   description: string | null;
   components: string | null;
   componentOf: string | null;
+  // image: string | null;
 }
