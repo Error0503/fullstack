@@ -1,0 +1,15 @@
+<div class="grid grid-cols-10 gap-1">
+  @for (hero of heroes; track hero; let i = $index) {
+  <a class="card w-fit" [routerLink]="['/heroes', $index]">
+    <img
+      class="w-32 h-48 rounded-md"
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      [alt]="hero.name"
+    />
+    <p class="text-center w-full absolute bottom-0 font-semibold">
+      {{ hero.name }}
+    </p>
+  </a>
+
+  }
+</div>
