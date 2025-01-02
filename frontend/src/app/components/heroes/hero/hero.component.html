@@ -2,10 +2,10 @@
   <div class="xl:col-span-3 md:col-span-2">
     <p class="text-center text-4xl font-bold">{{ hero.name }}</p>
     <p class="text-center font-semibold">{{ hero.shortDescription }}</p>
-    <div class="grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-4 mb-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-x-2 gap-y-4 mb-4">
       @for (ability of hero.abilities; track $index) {
-      <div class="w-full h-full pt-6">
-        <div class="join w-fit h-1/5 mx-auto">
+      <div class="card">
+        <div class="join mx-auto">
           <img
             class="w-20 h-20 mask mask-circle"
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -14,15 +14,11 @@
           <p class="pl-8 my-auto font-bold">{{ ability.name }}</p>
         </div>
         <p class="h-2/5">{{ ability.description }}</p>
-        <table class="h-2/5 table-auto border-collapse border">
-          <tbody>
-            <tr>
-              @for (upgrade of ability.upgrades; track $index) {
-              <td class="border w-1/3 h-24">{{ upgrade }}</td>
-              }
-            </tr>
-          </tbody>
-        </table>
+        <div class="flex w-fit h-3/5 sm:flex-row flex-col">
+          @for (upgrade of ability.upgrades; track $index) {
+          <p class="border sm:w-full lg:w-1/3 lg:h-full">{{ upgrade }}</p>
+          }
+        </div>
       </div>
       }
     </div>
