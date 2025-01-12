@@ -9,6 +9,7 @@ import { ClientService } from '../../../services/ClientService/client-service.se
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  submitted = false;
 
   constructor(private fb: FormBuilder, private clientService: ClientService) {
     this.loginForm = this.fb.group({
@@ -17,9 +18,19 @@ export class LoginComponent {
     });
   }
 
+  get username() {
+    return this.loginForm.get('username');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+
   submitForm() {
+    this.submitted = true;
     this.clientService.login(this.loginForm.value).subscribe((response) => {
       console.log('here');
+      this.submitted = false;
     });
   }
 }
