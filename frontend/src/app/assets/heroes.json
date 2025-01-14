@@ -28,7 +28,7 @@
         ]
       },
       {
-        "name": "Infernal Resillience",
+        "name": "Infernal Resilience",
         "description": "Regenerate a portion of Incoming damage over time.",
         "stats": [
           { "property": "Damage regenerated", "value": "11%", "scales": false },
@@ -77,31 +77,65 @@
   {
     "name": "Bebop",
     "shortDescription": "Hooks an enemy for a knockout combo",
-    "description": "",
+    "description": "Bebop can string together his abilities in many different ways. Disrupting enemy positions, saving an ally or dealing bursts of damage. When the situation doesn't require subtlety his giant laser still solves many problems.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Exploding Uppercut",
+        "description": "Deal Light Melee damage to nearby units and send them flying back, causing area damage and fire rate slow where they land. Does not damage allies.",
+        "stats": [
+          { "property": "Uppercut Damage", "value": "0.01", "scales": false },
+          { "property": "Area Damage", "value": "80", "scales": true },
+          { "property": "Landing Radius", "value": "14m", "scales": false },
+          { "property": "Fire Rate Slow", "value": "15%", "scales": true },
+          {
+            "property": "Fire Rate Slow Duration",
+            "value": "5s",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "-10.5s Cooldown",
+          "On Uppercut enemy Hero, gain fast spin-up time, 2x range, and +60% weapon damage for 12s",
+          "On Uppercut enemy Hero, set Hook cooldown to 0 and instantly +100% bullets to your current clip"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Sticky Bomb",
+        "description": "Attach a Sticky Bomb to a nearby target that deals explosive damage after a short fuse time. Gain +1.5% bomb damage for every enemy hero hurt. Gain +4% bomb damage for every enemy hero killed within 12.0s of taking bomb damage. Hold to attach the Sticky Bomb to yourself.",
+        "stats": [
+          { "property": "Damage", "value": "120", "scales": true },
+          { "property": "Fuse Time", "value": "3s", "scales": false }
+        ],
+        "upgrades": [
+          "-8s Cooldown",
+          "+80 Damage",
+          "On Attach, target deals -30% less damage for 5s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Hook",
+        "description": "Launch out a hook that grabs and reels in the first hero it hits and deals damage to enemies. Target will be placed where you are facing.",
+        "stats": [{ "property": "Damage", "value": "10", "scales": true }],
+        "upgrades": [
+          "Bebop deals 30% more weapon damage against hooked enemies for 10s",
+          "+30m Cast Range",
+          "-11.5s Cooldown"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Hyper Beam",
+        "description": "Charge up your laser to unleash a powerful torrent of energy that deals damage and slows enemies' movement and dashes. You have slow movement and turn rate for the duration. If activated in the air, you will hover while unleashing the beam.",
+        "stats": [
+          { "property": "DPS", "value": "205", "scales": true },
+          { "property": "Beam Width", "value": "2.9m", "scales": false },
+          { "property": "Beam Length", "value": "70m", "scales": false },
+          { "property": "Movement Slow", "value": " 25% ", "scales": false }
+        ],
+        "upgrades": [
+          "-30s Cooldown",
+          "+100 DPS",
+          "Hyper Beam heals Bebop for 80% of its damage on Heroes. 25% on non-hero"
+        ]
       }
     ],
     "weaponStats": {
@@ -126,31 +160,63 @@
     "name": "Dynamo",
 
     "shortDescription": "Locks down the enemy team",
-    "description": "",
+    "description": "Dynamo keeps himself and his allies healthy while waiting for his moment. Few things can warp a team fight more than a well-coordinated use of Singularity.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Kinetic Pulse",
+        "description": "Release an energy pulse that knocks enemies up into the air.",
+        "stats": [
+          { "property": "Damage", "value": "100", "scales": true },
+          { "property": "Stomp Range", "value": "15m", "scales": true },
+          { "property": "Ability Width", "value": "5m", "scales": false }
+        ],
+        "upgrades": [
+          "Hit enemies are fire rate and movement slowed by 35% for 4s.",
+          "Dynamo deals 30% more Weapon Damage to hit enemies for 8s",
+          "+125 Damage"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Quantum Entanglement",
+        "description": "Dynamo briefly disappears into the void and then reappears a short distance away. On reappearing, your weapon is reloaded and has a fire rate bonus for the next clip (Max 8s). Can be Alt-Cast to also bring nearby allies and give them half fire rate bonus.",
+        "stats": [
+          { "property": "Void Time", "value": "1.4s", "scales": false },
+          { "property": "Ally Distance", "value": "10m", "scales": false },
+          { "property": "Fire Rate Bonus", "value": "25%", "scales": false }
+        ],
+        "upgrades": [
+          "+4m Cast Range",
+          "+25% Fire Rate Bonus",
+          "-5s Ability Cooldown and +120% Base Ammo when reappearing"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Rejuvenating Aurora",
+        "description": "While channelling, restore health over time to you and any allies nearby. You can dash and melee without breaking the channel.",
+        "stats": [
+          { "property": "Health Restored", "value": "30/s", "scales": true },
+          { "property": "Channel Duration", "value": "5s", "scales": false },
+          { "property": "Friendly Heal Radius", "value": "8m", "scales": false }
+        ],
+        "upgrades": [
+          "Gain +4m/s movespeed bonus for 8s if Aurora is fully channeled. Gain instantly with 5AP Upgrade.",
+          "-14s Cooldown",
+          "Full move and ability use and additionaly heals +3.4% of Max Health per second"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Singularity",
+        "description": "Create a singularity in your hands that pulls in nearby enemies and damages them.",
+        "stats": [
+          { "property": "Channel Duration", "value": "2.75s", "scales": false },
+          { "property": "DPS", "value": "45", "scales": true },
+          { "property": "Singularity Radius", "value": "7m", "scales": false }
+        ],
+        "upgrades": [
+          "+2m Singularity Radius",
+          "+0.75s Channel Duration",
+          "Singularity takes 4% of the enemies' max health each second."
+        ]
       }
     ],
     "weaponStats": {
@@ -174,31 +240,61 @@
   {
     "name": "Grey Talon",
     "shortDescription": "Delivers long range skill-shots",
-    "description": "",
+    "description": "A cunning predator, Grey Talon uses a combination of deadly accuracy, traps, and clever positioning to bring down the toughest of opponents.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Charged Shot",
+        "description": "Charge up a powerful shot that pierces through enemies. Hold 1 to hold the shot.",
+        "stats": [{ "property": "Damage", "value": "100", "scales": true }],
+        "upgrades": [
+          "+1 Charges",
+          "+65 Damage",
+          "Improved damage scaling and -3s Charge Delay"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Rain of Arrows",
+        "description": "Launches you high in the air, allowing you to glide slowly. While airborne, you gain Weapon Damage and multishot on your weapon. Alt-Cast for reduced jump height. Press Space to cancel the glide.",
+        "stats": [
+          { "property": "Weapon Multishot", "value": "5", "scales": false },
+          { "property": "Weapon Damage", "value": "4", "scales": false }
+        ],
+        "upgrades": [
+          "-14s Cooldown",
+          "While airborne, +5 Weapon Damage and weapon damage applies 40% movement slow for 1.5s",
+          "While airborne, +40% Bullet Lifesteal and +40% Spirit Lifesteal"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Spirit Snare",
+        "description": "Throw out a trap that begins to arm itself. Once armed, the trap will trigger when an enemy enters its radius, applying Curse and Movement Slow that interrupts, Silences, Disarms, and prevents item usage. Hit the trap with a Charged Shot to detonate early with increased radius.",
+        "stats": [
+          { "property": "Tether Duration", "value": "1.75s", "scales": false },
+          { "property": "Damage", "value": "30", "scales": false },
+          { "property": "Lifetime", "value": "20s", "scales": false },
+          { "property": "Arm Time", "value": "2s", "scales": false },
+          { "property": "Movement Slow", "value": "30%", "scales": false },
+          { "property": "Charged Shot Radius", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "-20s Cooldown",
+          "+0.5s Tether Duration",
+          "Grey Talon deals +30% more Bullet Damage to enemies hit by Spirit Snare for 10s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Guided Owl",
+        "description": "After 1.5s cast time, launch a spirit owl that you control and which explodes on impact, damaging and stunning enemies. Hold to accelerate the owl. Press Space to release control. Gain permanent Spirit Power for each enemy hero killed with Guided Owl.",
+        "stats": [
+          { "property": "Damage", "value": "250", "scales": true },
+          { "property": "Explosion Radius", "value": "12m", "scales": false },
+          { "property": "Spirit Power Per Kill", "value": "5", "scales": false }
+        ],
+        "upgrades": [
+          "+100 Damage",
+          "-47s Cooldown",
+          "After hit, kills enemies that are below 22% Health"
+        ]
       }
     ],
     "weaponStats": {
@@ -222,31 +318,72 @@
   {
     "name": "Haze",
     "shortDescription": "Sneaks and sprays bullets",
-    "description": "",
+    "description": "When Haze fixates on a target she can hold her own in a firefight. She prefers to create one sided exchanges, avoiding damage then picking off unsuspecting targets up close.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Sleep Dagger",
+        "description": "Throw a dagger that damages and sleeps the target. Sleeping targets wake up shortly after being damaged. Throwing a Dagger does not break your invisibility. Sleep Dagger does not interrupt enemies' channeling abilities.",
+        "stats": [
+          { "property": "Damage", "value": "70", "scales": true },
+          { "property": "Wake Up Time", "value": "0.1s", "scales": true },
+          { "property": "Min Sleep Time", "value": "0.2s", "scales": false },
+          { "property": "Sleep Duration", "value": "3s", "scales": false },
+          { "property": "Sleep Movespeed", "value": "2 m/s", "scales": false }
+        ],
+        "upgrades": [
+          "Removes 1 stamina",
+          "-12s Cooldown",
+          "Applies -12% Bullet Resist and 40% Fire Rate Slow for 6s on wake-up."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Smoke Bomb",
+        "description": "Fade out of sight, becoming invisible and gaining sprint speed. Attacking removes invisibility, but using items does not. Close enemies can see through your invisibility.",
+        "stats": [
+          { "property": "Fade Time", "value": "1.5s", "scales": false },
+          { "property": "Spot Radius", "value": "18m", "scales": false },
+          {
+            "property": "Invis Sprint Speed",
+            "value": "2 m/s",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "+5m Invis Sprint Speed",
+          "After invis, gain +15% Bullet Lifesteal for 8s",
+          "Enable Ability Charges and Phase out of the world for +0.5s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Fixation",
+        "description": "Shooting a target increases your bullet damage on that target. Gain one stack per bullet hit, two if the hit is a headshot.",
+        "stats": [
+          {
+            "property": "Weapon Damage",
+            "value": "0.2 per stack",
+            "scales": false
+          },
+          { "property": "Max Stacks", "value": "40", "scales": false }
+        ],
+        "upgrades": [
+          "60 Spirit damage and 15% slow for 2s to target every 20 stacks",
+          "+40 Max Stacks and +5s Duration",
+          "+0.12 per stack Weapon Damage"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Bullet Dance",
+        "description": "Enter a flurry, firing your weapon at nearby enemies with perfect accuracy and added Spirit Damage.",
+        "stats": [
+          { "property": "Fire Rate", "value": "30%", "scales": false },
+          { "property": "Spirit Damage", "value": "6", "scales": true },
+          { "property": "Channel Move Speed", "value": "4", "scales": false }
+        ],
+        "upgrades": [
+          "+6 Spirit Damage",
+          "-40s Cooldown",
+          "+40% Bullet Evasion and +2m/s Dance Movespeed"
+        ]
       }
     ],
     "weaponStats": {
@@ -270,31 +407,73 @@
   {
     "name": "Infernus",
     "shortDescription": "Lights up enemies and watches them burn",
-    "description": "",
+    "description": "Infernus has many ways to deal damage over time, burning foes before swooping in for the kill. Due to Infernus' blazing speed, his enemies won't be able to escape the flames.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Catalyst",
+        "description": "Spew napalm that slows enemy movement and amplifies the damage Infernus does to them.",
+        "stats": [
+          {
+            "property": "Damage Amplification",
+            "value": " 20% ",
+            "scales": false
+          },
+          { "property": "Damage", "value": "50", "scales": true },
+          { "property": "Movement Slow", "value": "35%", "scales": false },
+          { "property": "Debuff Duration", "value": "8s", "scales": false },
+          { "property": "Slow Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "+1 Charges",
+          "Infernus gains 12% Lifesteal against victims",
+          "+20% Damage Amplification and -33% Heal/Regen"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Flame Dash",
+        "description": "Move forward at high speed and leave a flame trail that burns enemies. Infernus gains 50% slow resistance for the duration. Hold to dash faster.",
+        "stats": [
+          { "property": "Max Dash Speed", "value": "20 m/s", "scales": false },
+          { "property": "DPS", "value": "40", "scales": true },
+          { "property": "Dash Speed", "value": " 12 m/s", "scales": false },
+          { "property": "Trail Duration", "value": "4s", "scales": false },
+          { "property": "Trail Width", "value": "4.5m", "scales": false }
+        ],
+        "upgrades": [
+          "+30% Fire Rate Slow for 6s",
+          "+40 DPS",
+          "Enable Ability Charges and -15.0s Ability Cooldown"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Afterburn",
+        "description": "Your bullets build up to apply a burning effect on enemies. Infernus's bullets and abilities will refresh the duration.",
+        "stats": [
+          { "property": "DPS", "value": "15", "scales": true },
+          { "property": "Burn Duration", "value": "3s", "scales": false },
+          { "property": "Buildup per bullet", "value": "9%", "scales": false },
+          { "property": "Headshot Buildup", "value": "14%", "scales": false },
+          { "property": "Buildup Decay Time", "value": "17", "scales": false }
+        ],
+        "upgrades": [
+          "Victims deal -25% Spirit Damage.",
+          "+1s Burn Duration",
+          "+30 DPS"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Concussive Combustion",
+        "description": "Turns you into a living bomb that explodes after a short delay, stunning all enemies in its radius.",
+        "stats": [
+          { "property": "Stun Duration", "value": " 1.25s ", "scales": false },
+          { "property": "Damage", "value": "160", "scales": true },
+          { "property": "Explosion Delay", "value": " 3s ", "scales": false }
+        ],
+        "upgrades": [
+          "-38s Cooldown",
+          "+0.5s Stun Duration and +3m Radius",
+          "+115 Damage and 85% lifesteal from enemy heroes hit"
+        ]
       }
     ],
     "weaponStats": {
@@ -318,31 +497,63 @@
   {
     "name": "Ivy",
     "shortDescription": "Sets up a power duo with a lucky ally",
-    "description": "",
+    "description": "Ivy has disruptive combat tricks that slow and stun enemies. She's most effective when linking up with an ally, empowering her and her ally's guns as well as sharing heals.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Kudzu Bomb",
+        "description": "Summon a patch of choking vines that damages and slows enemies in its radius.",
+        "stats": [
+          { "property": "DPS", "value": "60", "scales": false },
+          { "property": "Movement Slow", "value": " 35% ", "scales": false }
+        ],
+        "upgrades": ["+1 Charges", "+2s Duration", "+50 DPS and +2m Radius"]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Watcher's Covenant",
+        "description": "Gain bonuses and automatically connect with a nearby ally to share them. Healing is replicated among all those connected. Connection requires line of sight. Press 2 to Lock on to a target",
+        "stats": [
+          { "property": "Fire Rate", "value": "10%", "scales": true },
+          { "property": "Bullet Lifesteal", "value": "12%", "scales": true },
+          { "property": "Replicated Healing", "value": "30%", "scales": false },
+          { "property": "Tether Count", "value": "1", "scales": false }
+        ],
+        "upgrades": [
+          "+10% Fire Rate",
+          "+2.0m/s movement bonus",
+          "+1 Tether Count"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Stone Form",
+        "description": "Turn yourself into impervious stone and smash into the ground, stunning and damaging enemies nearby. Heals you for a percentage of your max health. You have some air control before falling.",
+        "stats": [
+          { "property": "Damage", "value": "80", "scales": true },
+          { "property": "Stun Duration", "value": "0.75s", "scales": false },
+          { "property": "Max Health Heal", "value": "8%", "scales": false }
+        ],
+        "upgrades": [
+          "-19s Cooldown",
+          "+80 Damage and stuns for 0.5s.",
+          "+16% Max Health Heal"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Air Drop",
+        "description": "Take flight with an ally or a bomb. Drop your ally or bomb to cause a large explosion that causes movement slow. Ivy and ally gain a bullet shield when flying ends. While lifted, your ally gains bullet resist but cannot attack and deals -50% damage. Air Drop has faster cast time when targeting an ally. Hold Down at cast to reduce launch height. Left click to accelerate flying speed. Right click to drop ally/bomb.",
+        "stats": [
+          { "property": "Explode Damage", "value": "125", "scales": true },
+          { "property": "Bullet Shield", "value": "200", "scales": true },
+          { "property": "Debuff Duration", "value": "4s", "scales": false },
+          { "property": "Bullet Resist", "value": "40%", "scales": false },
+          { "property": "Buff Duration", "value": "12s", "scales": false },
+          { "property": "Landing Radius", "value": "14m", "scales": false },
+          { "property": "Movement Slow", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "-20% Bullet Resist on enemies hit for 12s",
+          "+300 Bullet Shield and +5m Explode Radius",
+          "Applies Silence on enemies hit for +4.5s"
+        ]
       }
     ],
     "weaponStats": {
@@ -366,31 +577,66 @@
   {
     "name": "Kelvin",
     "shortDescription": "Freezes enemies in their tracks",
-    "description": "",
+    "description": "Timely heals and splitting a teamfight properly is the difference between an easy victory or a ruinous defeat. Gliding around slowing enemies gives Kelvin's team the maneuvering advantage to make this happen.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Frost Grenade",
+        "description": "Throw a grenade that explodes in a cloud of freezing ice, damaging and slowing enemies.",
+        "stats": [
+          { "property": "Damage", "value": "80", "scales": true },
+          { "property": "Movement Slow", "value": "40%", "scales": false },
+          { "property": "Slow Duration", "value": "4s", "scales": false },
+          { "property": "Stamina Regen", "value": "-40%", "scales": false }
+        ],
+        "upgrades": [
+          "+1 Charges",
+          "Frost Grenade now heals 100 HP to friendly targets. Scales with Spirit.",
+          "+175 Damage"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Ice Path",
+        "description": "Kelvin creates a floating trail of ice and snow that gives movement bonuses to him and his allies. Kelvin gains 60% slow resistance for the duration. Enemies can also walk on the floating trail. Press Shift / Ctrl to travel up or down while in Ice Path.",
+        "stats": [
+          { "property": "Move Speed", "value": "2m/s", "scales": false },
+          { "property": "Sprint Speed", "value": "2m/s", "scales": false },
+          { "property": "Ice Trail Duration", "value": "18s", "scales": false }
+        ],
+        "upgrades": [
+          "+4m Sprint Speed",
+          "-15s Cooldown",
+          "While active, gain +1 Spirit Power per meter of Ice Path trail created. Max of 55 Spirit Power"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Arctic Beam",
+        "description": "Shoot freezing cold energy out in front of you, damaging targets and building up movement and fire rate slow against them the longer you sustain the beam on them. You have reduced move speed while using Arctic Beam. The beam may also claim Souls.",
+        "stats": [
+          { "property": "DPS", "value": "60", "scales": true },
+          { "property": "Max Slow", "value": "40%", "scales": false },
+          { "property": "Max Fire Rate Slow", "value": "40%", "scales": false },
+          { "property": "Max Slow Build Time", "value": "2s", "scales": false },
+          { "property": "Beam Length", "value": "25", "scales": false },
+          { "property": "Slow Linger Duration", "value": "2s", "scales": false }
+        ],
+        "upgrades": [
+          "-7.5s Cooldown",
+          "+40 DPS",
+          "Fires 2 additional Arctic Beams toward enemies within 13m of the last target hit"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Frozen Shelter",
+        "description": "Kelvin freezes the air around him, creating an impenetrable dome around himself. While in the dome, allies rapidly regenerate health and enemies are slowed. Objectives becomes Invulnerable and Frozen under Frozen Shelter.",
+        "stats": [
+          { "property": "Health Regen", "value": "110", "scales": true },
+          { "property": "Movement Slow", "value": "35%", "scales": false }
+        ],
+        "upgrades": [
+          "+40% Fire Rate Slow",
+          "-40s Cooldown",
+          "+60 Health Regen and now scales with Spirit Power"
+        ]
       }
     ],
     "weaponStats": {
@@ -414,31 +660,74 @@
   {
     "name": "Lady Geist",
     "shortDescription": "Sacrifices health then drains it back",
-    "description": "",
+    "description": "Expending health to achieve devastating effects is the source of Lady Geist's power. When running low, she can drain the life out of her rivals.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Essence Bomb",
+        "description": "Sacrifice some of your health to launch a bomb that deals damage after a brief arm time. Self damage type is Spirit and can be mitigated.",
+        "stats": [
+          { "property": "Damage", "value": "100", "scales": true },
+          { "property": "Self Damage", "value": "30", "scales": true },
+          { "property": "Arming Duration", "value": "0.5s", "scales": false }
+        ],
+        "upgrades": [
+          "+2m Radius",
+          "+60 Damage",
+          "Bombs leave a toxic mess on the ground, dealing 26% of the original damage per second, for 6s."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Life Drain",
+        "description": "Create a tether that drains enemy health over time and heals you. Target must be in line of sight and within max range to drain. You can shoot and use other abilities during the drain, but your move speed is reduced by half. [Alt-Cast] to give health to friendly Heroes. Press 2 to cancel.",
+        "stats": [
+          { "property": "Damage Per Second", "value": "35", "scales": true },
+          { "property": "Damage to Heal", "value": "100%", "scales": false },
+          { "property": "Max Tether Range", "value": "30m", "scales": false }
+        ],
+        "upgrades": [
+          "+20 Damage Per Second",
+          "+2s Duration",
+          "Ability becomes charged and grants +1 Charge"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Malice",
+        "description": "Sacrifice some of your health to launch blood shards that apply a stack of Malice. Each stack slows the victim and increases the damage they take from you. The slow effect decreases over time.",
+        "stats": [
+          { "property": "Health To Damage", "value": "32", "scales": true },
+          { "property": "Blood Shards", "value": "3", "scales": false },
+          { "property": "Max Stacks", "value": "5", "scales": false },
+          {
+            "property": "Damage Amplification per Stack",
+            "value": "8%",
+            "scales": false
+          },
+          {
+            "property": "Movement Slow per Stack",
+            "value": "15%",
+            "scales": false
+          },
+          { "property": "Debuff Duration", "value": "9s", "scales": false },
+          { "property": "Slow Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "-3s Cooldown",
+          "+40 Health To Damage and +7% Damage Amp",
+          "+6 Blood Shards"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Soul Exchange",
+        "description": "Swaps health levels with an enemy target. There is a minimum health percentage that enemies can be brought down to and a minimum amount of health received based on victims current health.",
+        "stats": [
+          { "property": "Enemy Min Health", "value": "30%", "scales": false },
+          { "property": "Min Health Received", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "-38s Cooldown",
+          "On cast, +40% Fire Rate for 8s.",
+          "Silence enemies within 15m for 3s"
+        ]
       }
     ],
     "weaponStats": {
@@ -462,31 +751,63 @@
   {
     "name": "Lash",
     "shortDescription": "Dives down to stomp his foes",
-    "description": "",
+    "description": "Lash gives his enemies little room to breathe, either by flying in from long distances to initiate combat with unsuspecting enemies, or pursuing said enemies when they try to run.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Ground Strike",
+        "description": "Stomp the ground beneath you, damaging enemies in front of you. If you perform Ground Strike while airborne, you quickly dive towards the ground. Damage grows slower after 25m.",
+        "stats": [
+          { "property": "Stomp Damage", "value": "90", "scales": true },
+          { "property": "Damage Per Meter", "value": "6", "scales": true }
+        ],
+        "upgrades": [
+          "-10s Cooldown",
+          "Struck enemies are popped into the air and slowed by 50% for 3s",
+          "Damage Per Meter +110% and improved scaling"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Grapple",
+        "description": "Pull yourself through the air toward a target. Using Grapple also resets your limit of air jumps and dashes.",
+        "stats": [
+          { "property": "Jump Velocity", "value": "20 m/s", "scales": false }
+        ],
+        "upgrades": [
+          "-19s Cooldown",
+          "+20m Cast Range and gain +6 Weapon Damage for 10s",
+          "+20% Fire Rate to Weapon Bonus Buff"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Flog",
+        "description": "Strike enemies with your whip, stealing life from them.",
+        "stats": [
+          { "property": "Damage", "value": "65", "scales": true },
+          { "property": "Heal vs heroes", "value": "65%", "scales": false },
+          { "property": "Attack Angle", "value": "30°", "scales": true },
+          { "property": "Heal vs non-heroes", "value": "20%", "scales": false }
+        ],
+        "upgrades": [
+          "Apply 35% Movement Slow for 3s",
+          "-14s Cooldown",
+          "+105 Damage and applies 35% Fire Rate Slow"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Death Slam",
+        "description": "Focus on enemies to connect whips to them. After channeling, connected enemies are lifted and stunned then slammed into the ground. Your victims and any enemies in the landing zone will be damaged and slowed. Press to throw connected enemies early. Enemies that are not in line of sight or go out of range during the latch time will not be grabbed.",
+        "stats": [
+          { "property": "Damage", "value": "115", "scales": true },
+          { "property": "Max Throw Distance", "value": "12m", "scales": true },
+          { "property": "Movement Slow", "value": "50%", "scales": false },
+          { "property": "Slow Duration", "value": "4s", "scales": false },
+          { "property": "Cast Delay", "value": "0.3s", "scales": false }
+        ],
+        "upgrades": [
+          "+8m Max Throw Distance",
+          "-30s Cooldown",
+          "Stun enemies in the landing zone for 1s"
+        ]
       }
     ],
     "weaponStats": {
@@ -510,31 +831,67 @@
   {
     "name": "McGinnis",
     "shortDescription": "Controls the battle with combat turrets",
-    "description": "",
+    "description": "Precise placement is everything for McGinnis, whether she's creating a killzone or splitting the enemy team. She can help keep her team running making them hard to dislodge when entrenched.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Mini Turret",
+        "description": "Deploy a Mini Turret that automatically shoots enemies. The turret expires after a limited lifetime. Turrets gain 30HP per Boon. They deal reduced damage to troopers and objectives.",
+        "stats": [
+          { "property": "Turret DPS", "value": "40", "scales": true },
+          { "property": "Turret Health", "value": "150", "scales": false },
+          { "property": "Attack Range", "value": "25m", "scales": false },
+          { "property": "Lifetime", "value": "24s", "scales": false }
+        ],
+        "upgrades": [
+          "Turrets apply +25% Movement Slow",
+          "+10m Attack Range and +10% turret fire rate",
+          "+45 Turret DPS"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Medicinal Specter",
+        "description": "Deploy a spirit that heals nearby units.",
+        "stats": [
+          { "property": "Health Regen", "value": "25/sec", "scales": false },
+          { "property": "Heal Radius", "value": "5m", "scales": true }
+        ],
+        "upgrades": [
+          "+35% Fire Rate on units being healed by Medicinal Specter",
+          "-17s Cooldown",
+          "+4.5% Max Health regen per second"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Spectral Wall",
+        "description": "Creates a wall that divides the terrain in half. On creation, the wall deals damage and applies slow to enemies nearby. After casting, press or 3 to left click erupt the wall early.",
+        "stats": [
+          { "property": "Damage", "value": "64", "scales": true },
+          { "property": "Movement Slow", "value": "20%", "scales": false },
+          { "property": "Minimum Range", "value": "6m", "scales": false },
+          { "property": "Impact Range", "value": "5m", "scales": false },
+          { "property": "Slow Duration", "value": "2.5s", "scales": false }
+        ],
+        "upgrades": [
+          "Removes 1 stamina and amplifies McGinnis's damage by 15% on hit enemies for 7s",
+          "-22s Cooldown",
+          "Adds a 1s Stun to enemies hit by Spectral Wall"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Heavy Barrage",
+        "description": "Unleashes a volley of rockets that home in on a targeted location.",
+        "stats": [
+          { "property": "Damage Per Rocket", "value": "30", "scales": true },
+          { "property": "Rockets per second", "value": "6", "scales": false },
+          { "property": "Explosion Radius", "value": "5m", "scales": false },
+          { "property": "Min Range", "value": "7m", "scales": false },
+          { "property": "Channel Duration", "value": "13s", "scales": false }
+        ],
+        "upgrades": [
+          "Applies 30% movement slow",
+          "-50s Cooldown",
+          "+30 Damage per Rocket"
+        ]
       }
     ],
     "weaponStats": {
@@ -558,31 +915,91 @@
   {
     "name": "Mirage",
     "shortDescription": "Times his shots and catches fleeing targets",
-    "description": "",
+    "description": "Mirage can envelop himself in a violent tornado to catch up to enemies and lift them up. His scarabs help him sustain against multiple enemies, and he's always ready to help an ally or punish an enemy anywhere.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Fire Scarabs",
+        "description": "Start launching fire scarabs. Each scarab can be launched separately, stealing max health from enemies over time and applying bullet resist reduction. Applying multiple scarabs to the same enemy will extend the health stealing duration. The health gain from hitting heroes is 3x as effective as against non-heroes.",
+        "stats": [
+          {
+            "property": "Max HP Steal Per Bullet",
+            "value": "75",
+            "scales": true
+          },
+          { "property": "Bullet Resist", "value": "-10%", "scales": false },
+          { "property": "Launch Window", "value": "8s", "scales": false },
+          { "property": "Debuff Duration", "value": "14s", "scales": false },
+          { "property": "Cooldown", "value": "40s", "scales": false },
+          {
+            "property": "Health Steal Duration",
+            "value": "4s",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "-15s Cooldown",
+          "-8% Bullet Resist",
+          "+80 Max HP Steal Per Bullet"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Tornado",
+        "description": "Transform yourself into a tornado that travels forward, damaging enemies and lifting them up in the air. After emerging from the tornado you gain bullet evasion.",
+        "stats": [
+          { "property": "Damage", "value": "70", "scales": true },
+          { "property": "Lift Duration", "value": "1s", "scales": false },
+          {
+            "property": "Bullet Evasion Chance",
+            "value": "25%",
+            "scales": false
+          },
+          {
+            "property": "Bullet Evasion Duration",
+            "value": "3.5s",
+            "scales": false
+          },
+          { "property": "Radius", "value": "3.5m", "scales": false }
+        ],
+        "upgrades": [
+          "+0.4s Lift Duration",
+          "-14s Cooldown",
+          "+20% Bullet Evasion Chance"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Djinn's Mark",
+        "description": "Passive: Your shots apply an increasing multiplier on the target. When the multiplier on a target expires or you reach the max, it's consumed and the target suffers Spirit Damage and is briefly revealed on the map. The final damage is the base damage times the multiplier. Active: Consume multiplier of Djinn's Mark to deal its damage now.",
+        "stats": [
+          { "property": "Base Damage", "value": "12", "scales": true },
+          { "property": "Max Stacks", "value": "8", "scales": false },
+          { "property": "Max Frequency", "value": "2.5s", "scales": false },
+          {
+            "property": "Multiplier Duration",
+            "value": "4.5s",
+            "scales": false
+          },
+          { "property": "Reveal Duration", "value": "3s", "scales": false }
+        ],
+        "upgrades": [
+          "Apply 80% Slow for 0.5s whenever you apply 2x multiplier or higher",
+          "+4.0s Multiplier Duration and +10 Base Damage",
+          "-0.75s Cooldown Between Multiplier and +4 Max Multiplier"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Traveler",
+        "description": "Channeled. Target an ally or visible enemy hero on the minimap, then teleport to where they were when your channel started. After teleporting, you gain move speed as well as fire rate until your next reload.",
+        "stats": [
+          { "property": "Channel Duration", "value": "2.5s", "scales": false },
+          { "property": "Move Speed", "value": "2 m/s", "scales": false },
+          { "property": "Fire Rate", "value": "30%", "scales": false },
+          { "property": "Move Speed Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "+2m Move Speed",
+          "Grants Traveller Buffs to Ally",
+          "On arrival, become Immune to Stun, Silence, Sleep, Root, and Disarm for 3s."
+        ]
       }
     ],
     "weaponStats": {
@@ -606,31 +1023,64 @@
   {
     "name": "Mo & Krill",
     "shortDescription": "Borrows underneath his enemies",
-    "description": "",
+    "description": "By burrowing through the ground, Mo and Krill can get the drop on almost anyone; and once they get in close the results can be devastating.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Scorn",
+        "description": "Deal damage to nearby enemies and heal yourself based on the damage done. Heal is stronger against enemy heroes.",
+        "stats": [
+          { "property": "Damage", "value": "60", "scales": true },
+          {
+            "property": "Hero Damage to Heal",
+            "value": "1.6x",
+            "scales": false
+          },
+          { "property": "Damage to Heal", "value": "0.6x", "scales": false }
+        ],
+        "upgrades": [
+          "-3.75s Cooldown",
+          "+25 Damage",
+          "Adds a debuff to enemies that lets Mo & Krill deal +15% Damage to them. Stacks and lasts 16s."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Burrow",
+        "description": "Burrow underground, moving faster, and gaining spirit and bullet armor. Damage from enemy heroes will reduce the speed bonus. When you jump out, knock enemies into the air and perform a spin attack that damages and slows. Cooldown starts when Burrow ends.",
+        "stats": [
+          { "property": "Move Speed", "value": "4 m/s", "scales": false },
+          { "property": "DPS", "value": "80", "scales": true },
+          { "property": "Spin Duration", "value": "1.5s", "scales": false },
+          { "property": "Bullet Resist", "value": "80%", "scales": false },
+          { "property": "Spirit Resist", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "Burrow time +3s",
+          "+140 Spin DPS and +2 radius",
+          "-19.0 Cooldown and +2m/s Move Speed"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Sand Blast",
+        "description": "Spray sand that disarms enemies in front of you and deals damage.",
+        "stats": [{ "property": "Damage", "value": "40", "scales": true }],
+        "upgrades": ["+1s Duration", "-19s Cooldown", "Slow targets by -40%"]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Combo",
+        "description": "Hold the target in place, stunning them and dealing damage during the channel. If they die during, or within 3 seconds of Combo ending, you permanently gain max health.",
+        "stats": [
+          { "property": "DPS", "value": "60", "scales": true },
+          {
+            "property": "Bonus Max Health Per Kill",
+            "value": "70",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "+30% Bullet Resist during Combo",
+          "Combo Duration +0.75s",
+          "+40 Damage Per Second and 100% lifesteal"
+        ]
       }
     ],
     "weaponStats": {
@@ -654,31 +1104,81 @@
   {
     "name": "Paradox",
     "shortDescription": "Manipulates Space and Time",
-    "description": "",
+    "description": "Manipulating time lets Paradox outpace an enemy in one on one combat. She thrives by subjecting her enemies to timely swaps into a waiting pulse grenade, her wall, or into the middle of her teammates.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Pulse Grenade",
+        "description": "Throw a grenade that begins pulsing when it lands. Each pulse applies damage, movement slow, and stacking damage amplification for Paradox against the victim.",
+        "stats": [
+          { "property": "Pulse Damage", "value": "45", "scales": true },
+          {
+            "property": "Bonus Damage per Stack",
+            "value": "6%",
+            "scales": false
+          },
+          { "property": "Pulse Interval", "value": "0.8s", "scales": false },
+          { "property": "Debuff Duration", "value": "8s", "scales": false },
+          { "property": "Movement Slow", "value": "30%", "scales": false },
+          { "property": "Slow Duration", "value": "2s", "scales": false }
+        ],
+        "upgrades": [
+          "+0.8s Duration",
+          "-8s Cooldown",
+          "+45 Pulse Damage and +0.75m Radius per pulse."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Time Wall",
+        "description": "Create a time warping wall that stops time for all enemy projectiles and bullets that touch it. Enemies that touch the wall will be briefly slowed.",
+        "stats": [
+          {
+            "property": "Time Stop Duration",
+            "value": "0.5s",
+            "scales": false
+          },
+          { "property": "Damage on Touch", "value": "50", "scales": false },
+          { "property": "Movement Slow", "value": "80%", "scales": false },
+          { "property": "Wall Width", "value": "7m", "scales": false },
+          { "property": "Wall Height", "value": "3.5m", "scales": false }
+        ],
+        "upgrades": [
+          "+2m Width, +1m Height",
+          "+10% Max Health Damage on Touch",
+          "Enemies that touch Time Wall will be Silenced for 2.5s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Kinetic Carbine",
+        "description": "Start charging your weapon and gain increased move speed once it's fully charged. Your next shot will release the energy, dealing spirit damage and applying a time stop to the enemy hit. The damage dealt is an amplification of your current weapon damage. You can slow time on yourself by pressing right click while an empowered shot is available.",
+        "stats": [
+          { "property": "Max Damage Amp", "value": "100%", "scales": false },
+          { "property": "Max Stop Duration", "value": "0.4s", "scales": false },
+          { "property": "Bonus Speed", "value": "25%", "scales": true },
+          { "property": "Bullet Damage", "value": "5", "scales": false },
+          { "property": "Headshot Damage", "value": "15%", "scales": false },
+          { "property": "Min Damage Amp", "value": "25%", "scales": false },
+          {
+            "property": "Min Stop Duration",
+            "value": "0.25s",
+            "scales": false
+          },
+          { "property": "Full Charge Time", "value": "2.5s", "scales": false },
+          { "property": "Speed Duration", "value": "3.5s", "scales": false }
+        ],
+        "upgrades": [
+          "+0.4s Max Stop Duration",
+          "+2s Speed Duration, 2s Charge Time",
+          "+50% Max Damage Amp"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Paradoxical Swap",
+        "description": "Fire a projectile that swaps your position with the target enemy hero. While the effect occurs, you gain spirit lifesteal and the enemy takes damage over time. Spirit Power#Spirit Power Scaling",
+        "stats": [
+          { "property": "Swap Damage", "value": "125", "scales": true },
+          { "property": "Spell Lifesteal", "value": "100%", "scales": false }
+        ],
+        "upgrades": ["-15s Cooldown", "+100 Swap Damage", "+15m Cast Range"]
       }
     ],
     "weaponStats": {
@@ -702,31 +1202,72 @@
   {
     "name": "Pocket",
     "shortDescription": "Infiltrates and disrupts the backline",
-    "description": "",
+    "description": "With a powerful shotgun and a thin frame, Pocket relies on their ability to briefly escape into a mystic suitcase and teleport via a flying cloak in order to survive close encounters.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Barrage",
+        "description": "Channel to start launching projectiles that deal damage and apply movement slow around their impact point. Each projectile landed on a hero grants you a stacking buff that amplifies all of your damage. If you cast it while in the air, you'll float and maintain any horizontal momentum you started with.",
+        "stats": [
+          { "property": "Amp Per Stack", "value": "6%", "scales": false },
+          {
+            "property": "Damage Per Projectile",
+            "value": "35",
+            "scales": true
+          },
+          { "property": "Movement Slow", "value": "30", "scales": false },
+          { "property": "Projectile Amount", "value": "4", "scales": false },
+          { "property": "Slow Duration", "value": "1.5s", "scales": false },
+          { "property": "Amp Duration", "value": "15%", "scales": false }
+        ],
+        "upgrades": [
+          "+15 Damage Per Projectile",
+          "-14s Cooldown",
+          "+4% Amp Per Stack and 2m Radius"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Flying Cloak",
+        "description": "Launch a sentient cloak that travels forward and damages enemies. You can press 2 to teleport to its location.",
+        "stats": [
+          { "property": "Damage", "value": "90", "scales": true },
+          { "property": "Lifetime", "value": "3.4s", "scales": false }
+        ],
+        "upgrades": [
+          "-14s Cooldown",
+          "+80 Damage",
+          "+7 Weapon Damage for 10s after teleporting with Flying Cloak."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Enchanter's Satchel",
+        "description": "Escape into your suitcase. When the duration ends, deal damage to nearby enemies. Duration can be ended early by performing any action.",
+        "stats": [
+          { "property": "Channel Duration", "value": "1.5s", "scales": false },
+          { "property": "Damage", "value": "100", "scales": true }
+        ],
+        "upgrades": [
+          "-5s Cooldown",
+          "+80 Damage",
+          "Applies 40% Fire Rate Slow for 4.0s and +0.5s Escape Duration"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Affliction",
+        "description": "Deals % Current Health damage, and then applies damage over time to all enemies nearby. Affliction's damage is non-lethal and does not apply item procs.",
+        "stats": [
+          {
+            "property": "Current Health Damage",
+            "value": "18%",
+            "scales": true
+          },
+          { "property": "DPS", "value": "12", "scales": false },
+          { "property": "Debuff Duration", "value": "18s", "scales": false }
+        ],
+        "upgrades": [
+          "-28s Cooldown",
+          "Suppress targets' healing by -50%",
+          "+12 DPS, +5% Current Health Damage and +5m Radius"
+        ]
       }
     ],
     "weaponStats": {
@@ -750,31 +1291,62 @@
   {
     "name": "Seven",
     "shortDescription": "Electrocutes crowds of enemies",
-    "description": "",
+    "description": "Seven thrives in a skirmish waiting for the time to strike. Then he rolls into the fight like a storm and batters his enemies with a cascade of lightning.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Lightning Ball",
+        "description": "Shoot a ball of lightning that travels in a straight line. Does damage to all targets in its radius. Slows down when damaging enemies and stops if it hits the world.",
+        "stats": [
+          { "property": "DPS", "value": "80", "scales": true },
+          { "property": "Radius", "value": "3.5m", "scales": false },
+          { "property": "Lifetime", "value": "5s", "scales": false }
+        ],
+        "upgrades": [
+          "+1 Charges",
+          "+35% Movement Slow",
+          "+70 DPS and +1m radius"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Static Charge",
+        "description": "Apply a charge to a target enemy hero. After a short duration, the static charge stuns and damages enemies within the radius. Alt-Cast to cast on yourself.",
+        "stats": [
+          { "property": "Stun Duration", "value": "0.9s", "scales": false },
+          { "property": "Delay Before Stun", "value": "3.5s", "scales": false },
+          { "property": "Damage", "value": "40", "scales": true },
+          { "property": "Radius", "value": "5m", "scales": false }
+        ],
+        "upgrades": ["-19s Cooldown", "+8m Radius", "+0.9s Stun Duration"]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Power Surge",
+        "description": "Power up your weapon with a shock effect, making your bullets proc shock damage on your target. This shock damage bounces to enemies near your target. Occurs once per burst shot.",
+        "stats": [
+          { "property": "Shock Damage", "value": "10", "scales": true },
+          { "property": "Max Jumps", "value": "3", "scales": false },
+          { "property": "Jump Radius", "value": "10m", "scales": false }
+        ],
+        "upgrades": [
+          "Sock Damage applies -15% Spirit Resist for 8s",
+          "-15s Cooldown",
+          "+12 Shock Damage, improved Spirit scaling, and +3 Max Jumps"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Storm Cloud",
+        "description": "Channel an expanding storm cloud around you that damages all enemies within its radius. Enemies do not take damage when they are out of line-of-sight. You have increased Bullet Resist during the channel. While channeling, press left click to mark the targeted area to be struck with a powerful lightning bolt that knocks enemies away after a 2s delay. One use per cast.",
+        "stats": [
+          { "property": "DPS", "value": "120", "scales": true },
+          { "property": "Initial Radius", "value": "12m", "scales": false },
+          { "property": "Bullet Resist", "value": "20%", "scales": false },
+          { "property": "Strike Damage", "value": "150", "scales": true },
+          { "property": "Strike Radius", "value": "6m", "scales": false }
+        ],
+        "upgrades": [
+          "+35% Bullet Resist while channeling Storm Cloud",
+          "+7s Channel Time and +10m Radius",
+          "+75 DPS and allows movement control"
+        ]
       }
     ],
     "weaponStats": {
@@ -798,31 +1370,82 @@
   {
     "name": "Shiv",
     "shortDescription": "Bleeds out foes, then goes in for a kill",
-    "description": "",
+    "description": "Shiv has zero interest in playing fair, which is why he relies on hit and run tactics to weaken enemies before he dives in for the kill.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Serrated Knives",
+        "description": "Throw a knife that damages and bleeds an enemy. Each additional hit adds a stack and refreshes the bleed duration, causing the bleed to increase per stack. Ultimate Unlock: While rage is full knives will ricochet to another enemy and apply a slow to enemies they bleed.",
+        "stats": [
+          { "property": "Damage", "value": "35", "scales": true },
+          { "property": "Bleed DPS Per Knife", "value": "5", "scales": true },
+          { "property": "Bleed Duration", "value": "5s", "scales": false },
+          { "property": "Movement Slow", "value": "35%", "scales": false }
+        ],
+        "upgrades": [
+          "+1 Charges",
+          "+2s Bleed Duration",
+          "+40 Damage and +7 Bleed DPS"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Slice and Dice",
+        "description": "Perform a dash forward, damaging enemies along the path. Ultimate Unlock: While rage is full an echo of Shiv retraces the dash path after a short delay, damaging enemies again.",
+        "stats": [
+          { "property": "Damage", "value": "110", "scales": true },
+          { "property": "Dash Range", "value": "12m", "scales": false }
+        ],
+        "upgrades": [
+          "-3s Cooldown",
+          "+70 Damage",
+          "Reduce cooldown by 2s per enemy hero hit (1s for Non-Hero). Max -6s per Dash."
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Bloodletting",
+        "description": "Take only a portion of incoming damage immediately and defer the rest to be taken over time. Activate to clear a portion of the deferred damage.",
+        "stats": [
+          {
+            "property": "Incoming Damage Deferred",
+            "value": "20%",
+            "scales": false
+          },
+          {
+            "property": "Deferred Damage Duration",
+            "value": "13s",
+            "scales": false
+          },
+          {
+            "property": "Deferred Damage Cleared on Activation",
+            "value": "40%",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "+6% Incoming Damage Deferred",
+          "-25s Cooldown",
+          "+25% Deferred Damage Cleared"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Killing Blow",
+        "description": "Activate to leap towards an enemy hero and instantly kill them if their health is below the kill threshold, otherwise deal 200 damage to them. Passive: Damaging enemies fills you with rage. While at full rage, Shiv gains increased damage and special properties on his other abilities.",
+        "stats": [
+          {
+            "property": "Enemy health threshold",
+            "value": "22%",
+            "scales": false
+          },
+          {
+            "property": "Full Rage Damage Bonus",
+            "value": "17%",
+            "scales": false
+          }
+        ],
+        "upgrades": [
+          "Gain +2 m/s move speed while at full rage.",
+          "+6% Enemy Health Threshold and +8% Full Rage Bonus Damage",
+          "Finishing off an enemy with Killing Blow resets its cooldown."
+        ]
       }
     ],
     "weaponStats": {
@@ -846,31 +1469,80 @@
   {
     "name": "Vindicta",
     "shortDescription": "Snipes the unsuspecting",
-    "description": "",
+    "description": "Vindicta has the mobility to engage at her leisure, picking at her prey and bleeding them out slowly. Injured enemies at any distance should fear being picked off when she is on the map.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Stake",
+        "description": "Throw a stake that tethers enemies to the location where the stake lands. Enemy movement is restricted to the length of the tether.",
+        "stats": [
+          { "property": "Tether Duration", "value": "2s", "scales": false },
+          { "property": "Damage", "value": "60", "scales": true },
+          { "property": "Capture Radius", "value": "9m", "scales": false },
+          { "property": "Tether Length", "value": "6m", "scales": false },
+          { "property": "Movement Slow", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "+40% Fire Rate Slow",
+          "-20s Cooldown",
+          "0.5s Tether Duration and +2m Capture Radius"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Flight",
+        "description": "Leap into the air and fly. While in flight your weapon deals bonus spirit damage.",
+        "stats": [
+          {
+            "property": "Spirit Damage Per Bullet",
+            "value": "10",
+            "scales": true
+          }
+        ],
+        "upgrades": [
+          "+50% base Ammo while flying",
+          "+6s Duration",
+          "+12 Spirit Damage Per Bullet"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Crow Familiar",
+        "description": "Your crow familiar deals impact damage, reduces their bullet resist and applies a bleed that deals damage based on the target's current health.",
+        "stats": [
+          { "property": "Damage", "value": "40", "scales": true },
+          { "property": "Bleed Damage", "value": "3%/sec", "scales": false },
+          { "property": "Debuff Duration", "value": "6s", "scales": true },
+          {
+            "property": "Bullet Resist Reduction",
+            "value": "-6%",
+            "scales": false
+          },
+          { "property": "-6%", "value": "Spirit Resist", "scales": false }
+        ],
+        "upgrades": [
+          "Crow Ricochets up to 2 times towards other enemies within 15m",
+          "-16s Cooldown",
+          "-12% Bullet Resist and -12% Spirit Resist"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Assassinate",
+        "description": "Use your scoped rifle to fire a powerful shot over long distances. Deal only partial damage until fully charged after 1.0s of being scoped. Does bonus damage to enemies with less than 50% health remaining. Landing a killing blow on a player with Assassinate grants you bonus souls.",
+        "stats": [
+          { "property": "Damage", "value": "100", "scales": true },
+          { "property": "Max Bonus Damage", "value": "100", "scales": true },
+          {
+            "property": "Bonus Souls Per Assassination",
+            "value": "250",
+            "scales": false
+          },
+          { "property": "Full Charge Time", "value": "1s", "scales": false },
+          { "property": "No Charge Damage", "value": "50%", "scales": false },
+          { "property": "Headshot Damage", "value": "20%", "scales": false }
+        ],
+        "upgrades": [
+          "-19s Cooldown",
+          "+120 Max Bonus Damage",
+          "Assassinate kills grant +600 souls"
+        ]
       }
     ],
     "weaponStats": {
@@ -894,31 +1566,59 @@
   {
     "name": "Viscous",
     "shortDescription": "Rolls around deflecting bullets",
-    "description": "",
+    "description": "Viscous vexes his opponents through clever evasion and strategic uses of healing, enabling him to withstand the most brutal of enemy attacks.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Splatter",
+        "description": "Throw a ball of goo that deals damage and leaves puddles of goo behind that apply movement slow to enemies in the radius.",
+        "stats": [{ "property": "Damage", "value": "90", "scales": true }],
+        "upgrades": [
+          "-5.75s Cooldown",
+          "+50 Damage and +1m Radius",
+          "Bounces 2 times"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "The Cube",
+        "description": "Encase the target in a cube of restorative goo that protects from damage, and increases health regen. Target is unable to take any new actions while cubed. Can be used on self. Press Space to escape early.",
+        "stats": [
+          { "property": "Health Regen", "value": "35", "scales": true },
+          { "property": "Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "Increases Move Speed and Stamina Recovery",
+          "+30 Health Regen",
+          "Removes all Debuffs and -21.0s Cooldown"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Puddle Punch",
+        "description": "Materialize a fist in the world that punches units in the area and send them flying. Enemies will be dealt damage, have their dash distance reduced for a brief moment, and have their movement slowed. This is considered a Light Melee attack.",
+        "stats": [
+          { "property": "Movement Slow", "value": "15%", "scales": false },
+          { "property": "Slow Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "+1 Charges",
+          "+35 Damage and +15% Movement Slow",
+          "-11.5 Cooldown and now deals Heavy Melee Damage"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Goo Ball",
+        "description": "Morph into a large goo ball that deals damage and stuns enemies on impact. The ball grants large amounts of Bullet and Spirit resist, bounces off walls and can double jump.",
+        "stats": [
+          { "property": "Damage", "value": "140", "scales": true },
+          { "property": "Stun Duration", "value": "0.7s", "scales": false },
+          { "property": "Ball Radius", "value": "1.4m", "scales": false },
+          { "property": "Spirit Resist", "value": "60%", "scales": false },
+          { "property": "Bullet Resist", "value": "60%", "scales": false }
+        ],
+        "upgrades": [
+          "+5s Duration",
+          "+90 Damage",
+          "Can cast abilities and use items while rolling"
+        ]
       }
     ],
     "weaponStats": {
@@ -927,7 +1627,7 @@
       "ammo": 20,
       "bulletsPerSec": 5,
       "lightMelee": 63,
-      "heavyMelee":116
+      "heavyMelee": 116
     },
     "vitalityStats": {
       "maxHealth": 550,
@@ -942,31 +1642,76 @@
   {
     "name": "Warden",
     "shortDescription": "Weakens his enemies and chases them down",
-    "description": "",
+    "description": "Warden leads from the front, jumping into the fray and hindering his opponents' ability to fight effectively. But what Warden considers brave, others consider reckless, and if he's not careful he can easily find himself in over his head.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Alchemical Flask",
+        "description": "Throw a flask that damages, slows movement, and reduces the weapon damage of enemies it hits.",
+        "stats": [
+          { "property": "Damage", "value": "65", "scales": true },
+          { "property": "Move Speed Slow", "value": "20%", "scales": false },
+          { "property": "Weapon Damage", "value": "-30%", "scales": false },
+          { "property": "Slow Duration", "value": "3s", "scales": false },
+          { "property": "Debuff Duration", "value": "7s", "scales": false }
+        ],
+        "upgrades": [
+          "Hit enemies lose 1 Stamina",
+          "+50 Damage",
+          "-6.5s Cooldown and Weapon Debuff applies 35% Fire Rate Slow"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Willpower",
+        "description": "Gain a spirit shield and bonus move speed.",
+        "stats": [
+          {
+            "property": "Spirit Shield Health",
+            "value": "150",
+            "scales": true
+          },
+          { "property": "Move Speed bonus", "value": "15%", "scales": false }
+        ],
+        "upgrades": [
+          "+20% Move Speed bonus",
+          "-19s Cooldown",
+          "+200 Spirit Shield Health and now scales with Spirit Power"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Binding Word",
+        "description": "Curse an enemy hero. If they don't move away from their initial position within the escape time, they will be damaged and immobilized.",
+        "stats": [
+          { "property": "Damage", "value": "120", "scales": true },
+          {
+            "property": "Immobilize Duration",
+            "value": "1.75s",
+            "scales": false
+          },
+          { "property": "Escape Time", "value": "2.8s", "scales": false },
+          { "property": "Escape Range", "value": "19m", "scales": false }
+        ],
+        "upgrades": [
+          "+1s Immobilize Duration",
+          "-19s Cooldown",
+          "Warden deals +20% more Bullet Damage to trapped Heroes for 6s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Last Stand",
+        "description": "After charging for 2s, release pulses that damage enemies and heal you based on the damage done. While channeling Last Stand you are have greatly increased bullet and spirit resist. Goes on a reduced cooldown if interrupted while charging.",
+        "stats": [
+          { "property": "DPS", "value": "90", "scales": true },
+          { "property": "Hero Lifesteal", "value": "80%", "scales": false },
+          { "property": "Pulse Interval", "value": "0.5s", "scales": false },
+          { "property": "Non-Hero Lifesteal", "value": "20%", "scales": false },
+          { "property": "Bullet Resist", "value": "30%", "scales": false },
+          { "property": "Spirit Resist", "value": "30%", "scales": false }
+        ],
+        "upgrades": [
+          "+3m Radius",
+          "+70 DPS -35.0s Cooldown",
+          "+50.0% Bullet Resist +50.0% Spirit Resist +2.5s Duration"
+        ]
       }
     ],
     "weaponStats": {
@@ -990,31 +1735,49 @@
   {
     "name": "Wraith",
     "shortDescription": "Melts isolated targets",
-    "description": "",
+    "description": "Excelling at one-on-one combat, Wraith isolates targets, eliminating them with ruthless efficiency. Then teleporting away before anyone can retaliate.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Card Trick",
+        "description": "Deal weapon damage to summon cards. Activate to throw a card that flies towards the enemy or point under your crosshair.",
+        "stats": [
+          { "property": "Damage", "value": "70", "scales": true },
+          { "property": "Charges", "value": "1", "scales": false }
+        ],
+        "upgrades": ["+1 Charges", "+50 Damage", "+50% Card Summon Rate"]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Project Mind",
+        "description": "Teleport to the targeted location.",
+        "stats": [],
+        "upgrades": [
+          "+15m Cast Range",
+          "Provides a 300 bullet shield for 8s on teleport. Shield amount scales with Spirit Power.",
+          "-28s Cooldown"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Full Auto",
+        "description": "Temporarily boosts your fire rate. Nearby allies receive half the fire rate bonus.",
+        "stats": [{ "property": "Fire Rate", "value": "20%", "scales": false }],
+        "upgrades": [
+          "-14s Cooldown",
+          "+5 Spirit Damage Per Bullet",
+          "+20% Bullet and Spirit Lifesteal and Increased Scaling on Spirit Damage Per Bullet"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Telekinesis",
+        "description": "Lift an enemy hero into the air, stunning them, then slam them into the ground. Targets are silenced and disarmed afterwards.",
+        "stats": [
+          { "property": "Damage", "value": "175", "scales": true },
+          { "property": "Duration", "value": "2.5s", "scales": false }
+        ],
+        "upgrades": [
+          "-30s Cooldown",
+          "+0.75s Duration",
+          "Telekinesis will bounce to an additional nearby target"
+        ]
       }
     ],
     "weaponStats": {
@@ -1038,31 +1801,66 @@
   {
     "name": "Yamato",
     "shortDescription": "Delivers charged attacks with finesse",
-    "description": "",
+    "description": "Yamato uses precise strikes to decimate her rivals. However, such damaging attacks often will leave her exposed, so she needs to make every shot count.",
     "abilities": [
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Power Slash",
+        "description": "Channel to increase damage over 1.4 seconds, then release a fully-charged sword strike. Press 1 or left click to trigger the strike early, dealing partial damage.",
+        "stats": [
+          { "property": "Full Charge Damage", "value": "160", "scales": true },
+          { "property": "Slash Length", "value": "25m", "scales": false }
+        ],
+        "upgrades": [
+          "Gain +60 Bullet Resist while channeling",
+          "-2s Ability Cooldown and apply 40% movement slow for 3s",
+          "+200 Full Charge Damage"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Flying Strike",
+        "description": "Throw a grappling hook to reel yourself towards an enemy, damaging and slowing the target when you arrive.",
+        "stats": [
+          { "property": "Damage", "value": "70", "scales": true },
+          { "property": "Movement Slow", "value": "30%", "scales": false },
+          { "property": "Slow Duration", "value": "2.5", "scales": false }
+        ],
+        "upgrades": [
+          "+25% Movement Slow",
+          "+20m Cast Range",
+          "Can Grapple to ally Heroes and +6 Weapon Damage for 10s"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Crimson Slash",
+        "description": "Slash enemies in front of you, damaging them and slowing their fire rate. If any enemy heroes are hit, you heal.",
+        "stats": [
+          { "property": "Damage", "value": "60", "scales": true },
+          { "property": "Heal on hero hit", "value": "70", "scales": true },
+          { "property": "Fire Rate Slow", "value": "20%", "scales": false },
+          { "property": "Debuff Duration", "value": "4s", "scales": false }
+        ],
+        "upgrades": [
+          "+30% Fire Rate Slow",
+          "+10% of Max Health Heal on hero hit",
+          "-5.75s Cooldown"
+        ]
       },
       {
-        "name": "",
-        "description": "",
-        "stats": [{ "property": "", "value": "", "scales": false }],
-        "upgrades": ["", "", ""]
+        "name": "Shadow Transformation",
+        "description": "Become infused with Yamato's shadow soul. After an initial invincible transformation your abilities are refreshed and are 60% faster. You gain immunity to negative status effects and have greatly increased bullet and spirit resist. When you get a hero kill, you heal and the duration is extended.",
+        "stats": [
+          { "property": "Duration", "value": "5s", "scales": false },
+          { "property": "Ability Speed", "value": "60%", "scales": false },
+          { "property": "Max Health Heal", "value": "15%", "scales": false },
+          { "property": "Bullet Resist", "value": "40%", "scales": false },
+          { "property": "Spirit Resist", "value": "40%", "scales": false },
+          { "property": "Duration On Kill", "value": "2s", "scales": false }
+        ],
+        "upgrades": [
+          "+20% Fire Rate",
+          "+4m Move Speed",
+          "+3.0s Duration +20% Bullet Resist +20% Spirit Resist"
+        ]
       }
     ],
     "weaponStats": {
