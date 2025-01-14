@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import heroesData from '../../../assets/heroes.json';
 import { Hero } from '../hero';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
