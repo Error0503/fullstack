@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { publicGuard } from './guards/public.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 export const routes: Routes = [
   {
@@ -10,5 +12,15 @@ export const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
     canActivate: [publicGuard],
+  },
+  {
+    title: 'Profile',
+    path: 'profile/:id',
+    component: ProfileComponent,
+  },
+  {
+    title: 'Profile',
+    path: 'profile/:id/edit',
+    component: ProfileEditComponent,
   },
 ];
