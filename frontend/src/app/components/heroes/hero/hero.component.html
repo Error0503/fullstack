@@ -1,0 +1,153 @@
+<div class="grid xl:grid-cols-6 md:grid-cols-2 m-2">
+  <div class="xl:col-span-3 md:col-span-2 overflow-scroll h-[calc(100vh-80px)]">
+    <p class="text-center text-4xl font-bold">{{ hero.name }}</p>
+    <p class="text-center font-semibold">{{ hero.shortDescription }}</p>
+    <p class="mt-8 mb-4">{{ hero.description }}</p>
+    <div class="grid grid-cols-2 gap-2">
+      @for (ability of hero.abilities; track ability) {
+      <div class="bg-[#424242] rounded-xl h-fit">
+        <div class="join gap-2 bg-[#121212] w-full">
+          <img
+            [src]="
+              'assets/abilities/' + ability.name.replaceAll(' ', '_') + '.png'
+            "
+            [alt]="ability.name"
+          />
+          <p class="my-auto">{{ ability.name }}</p>
+        </div>
+        <div class="m-2">
+          <p class="mb-2">{{ ability.description }}</p>
+          <div class="grid grid-cols-3 gap-2">
+            @for (stat of ability.stats; track stat) {
+            <div
+              class="w-full bg-[#2a2a2a] rounded-md p-5 relative"
+              [class.border]="stat.scales"
+              [class.border-[#583d6f]]="stat.scales"
+              [class.border2]="stat.scales"
+              [class.bg-[#2e2b31]]="stat.scales"
+            >
+              <p class="text-center text-lg">{{ stat.value }}</p>
+              <p class="text-center text-sm">{{ stat.property }}</p>
+              @if (stat.scales) {
+              <img
+                src="/assets/Spirit_scaling.png"
+                alt="Scaling"
+                class="absolute -top-2 -right-2"
+              />
+              }
+            </div>
+            }
+          </div>
+          <div class="grid grid-cols-3 grid-rows-1 gap-2 mt-4">
+            @for (upgrade of ability.upgrades; track upgrade) {
+            <div class="card bg-[#555555] rounded-md">
+              <div class="card-title bg-[#121212] w-full rounded-t-md">
+                <div class="join gap-1 w-fit mx-auto">
+                  <img
+                    src="assets/Ability_point.png"
+                    alt="Ability Point"
+                    class="w-fit h-fit my-auto"
+                  />
+                  <p class="text-center text-lg join">
+                    @switch ($index) { @case (0) { 1 } @case (1) { 2 } @case(2)
+                    { 5 }}
+                  </p>
+                </div>
+              </div>
+              <p class="text-center m-auto p-4">{{ upgrade }}</p>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="xl:col-span-2">
+    <img
+      class="p-7 w-fit h-fit"
+      [src]="'assets/heroes/' + hero.name.replaceAll(' ', '_') + '_Render.png'"
+      [alt]="hero.name"
+    />
+  </div>
+  <div>
+    <div>
+      <p class="text-[#dd8e18]">Weapon</p>
+      <div class="grid grid-cols-2 bg-[#2f2f2f]">
+        <div>
+          <p class="text-center font-bold">{{ hero.weaponStats.dps }}</p>
+          <p class="text-center text-sm">DPS</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.weaponStats.bulletDamage }}
+          </p>
+          <p class="text-center text-sm">Bullet Damage</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">{{ hero.weaponStats.ammo }}</p>
+          <p class="text-center text-sm">Ammo</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.weaponStats.bulletsPerSec }}
+          </p>
+          <p class="text-center text-sm">Bullets per sec</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">{{ hero.weaponStats.lightMelee }}</p>
+          <p class="text-center text-sm">Light Melee</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">{{ hero.weaponStats.heavyMelee }}</p>
+          <p class="text-center text-sm">Heavy Melee</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="text-[#73ad1b]">Vitality</p>
+      <div class="grid grid-cols-2 bg-[#2f2f2f] p-2">
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.maxHealth }}
+          </p>
+          <p class="text-center text-sm">Max Health</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.healthRegen }}
+          </p>
+          <p class="text-center text-sm">Health Regen</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.bulletResist }}
+          </p>
+          <p class="text-center text-sm">Bullet Resist</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.spiritResist }}
+          </p>
+          <p class="text-center text-sm">Spirit Resist</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.moveSpeed }}
+          </p>
+          <p class="text-center text-sm">Move Speed</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">
+            {{ hero.vitalityStats.sprintSpeed }}
+          </p>
+          <p class="text-center text-sm">Sprint Speed</p>
+        </div>
+        <div>
+          <p class="text-center font-bold">{{ hero.vitalityStats.stamina }}</p>
+          <p class="text-center text-sm">Stamina</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

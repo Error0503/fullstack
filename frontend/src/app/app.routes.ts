@@ -1,7 +1,12 @@
 import { Routes } from '@angular/router';
+import { LoginComponent } from './components/auth/login/login.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroComponent } from './components/heroes/hero/hero.component';
+import { ItemsComponent } from './components/items/items.component';
 import { publicGuard } from './guards/public.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +17,31 @@ export const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
     canActivate: [publicGuard],
+  },
+  {
+    title: 'Login',
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    title: 'Register',
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    title: 'Heroes',
+    path: 'heroes',
+    component: HeroesComponent,
+  },
+  {
+    title: 'Heroes',
+    path: 'heroes/:id',
+    component: HeroComponent,
+  },
+  {
+    title: 'Items',
+    path: 'items',
+    component: ItemsComponent,
   },
   {
     title: 'Profile',
