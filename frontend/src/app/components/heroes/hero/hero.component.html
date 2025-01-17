@@ -20,7 +20,7 @@
           <div class="grid grid-cols-3 gap-2">
             @for (stat of ability.stats; track stat) {
             <div
-              class="w-full bg-[#2a2a2a] rounded-md p-5"
+              class="w-full bg-[#2a2a2a] rounded-md p-5 relative"
               [class.border]="stat.scales"
               [class.border-[#583d6f]]="stat.scales"
               [class.border2]="stat.scales"
@@ -28,6 +28,13 @@
             >
               <p class="text-center text-lg">{{ stat.value }}</p>
               <p class="text-center text-sm">{{ stat.property }}</p>
+              @if (stat.scales) {
+              <img
+                src="/assets/Spirit_scaling.png"
+                alt="Scaling"
+                class="absolute -top-2 -right-2"
+              />
+              }
             </div>
             }
           </div>
