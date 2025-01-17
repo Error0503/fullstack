@@ -209,7 +209,7 @@
       },
       {
         "category": "weapon",
-        "name": "Melee Damage",
+        "name": "Melee Charge",
         "cost": 1250,
         "effects": [
           { "property": "Weapon Damage", "value": "+20%" },
@@ -918,7 +918,7 @@
       },
       {
         "category": "vitality",
-        "name": "Enchantress's Barrier",
+        "name": "Enchanter's Barrier",
         "cost": 1250,
         "effects": [{ "property": "Spirit Shield Health", "value": "+300" }],
         "activeEffects": [],
