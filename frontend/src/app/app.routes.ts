@@ -7,6 +7,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/heroes/hero/hero.component';
 import { ItemsComponent } from './components/items/items.component';
+import { BuildListComponent } from './components/builds/build-list/build-list.component';
+import { BuildEditorComponent } from './components/builds/build-editor/build-editor.component';
 
 export const routes: Routes = [
   {
@@ -52,5 +54,15 @@ export const routes: Routes = [
     title: 'Profile',
     path: 'profile/:id/edit',
     component: ProfileEditComponent,
+  },
+  {
+    title: 'Builds',
+    path: 'builds',
+    component: BuildListComponent,
+  },
+  {
+    title: 'Build Editor',
+    path: 'builds/editor',
+    component: BuildEditorComponent,
   },
 ];

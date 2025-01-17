@@ -1,0 +1,173 @@
+<div class="grid grid-cols-2">
+  <div class="mx-auto grid grid-cols-2 w-full px-20">
+    <div>
+      <p>Hero</p>
+      <button class="btn btn-square px-10 w-64 h-96">
+        <p class="text-4xl font-bold m-auto">+</p>
+      </button>
+    </div>
+    <div>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Build Title</span>
+        </div>
+        <input
+          type="text"
+          placeholder="Title"
+          class="input input-bordered w-full"
+        />
+        <!-- TODO: Errors -->
+        @if (false) {
+        <div class="label">
+          <span class="label-text-alt text-error">Error</span>
+        </div>
+        }
+      </label>
+      <label class="form-control">
+        <div class="label">
+          <span class="label-text">Short Description</span>
+        </div>
+        <textarea
+          class="textarea textarea-bordered h-24 w-full"
+          placeholder="Short Description"
+        ></textarea>
+        <!-- TODO: Errors -->
+        @if (false){
+        <div class="label">
+          <span class="label-text-alt text-error">Error</span>
+        </div>
+        }
+      </label>
+      <label class="form-control">
+        <div class="label">
+          <span class="label-text">Description</span>
+        </div>
+        <textarea
+          class="textarea textarea-bordered h-24 w-full"
+          placeholder="Description"
+        ></textarea>
+        <!-- TODO: Errors -->
+        @if (false){
+        <div class="label">
+          <span class="label-text-alt text-error">Error</span>
+        </div>
+        }
+      </label>
+      <div class="mt-4 flex flex-col items-center">
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto">
+    <h1 class="text-2xl text-center">Items</h1>
+    <div class="w-full">
+      <div class="border w-fit mt-3 mx-auto">
+        <div class="join mx-1">
+          <div class="m-3">
+            <p class="text-center">Weapon</p>
+            <div class="grid grid-cols-2 grid-rows-2">
+              @for (item of selectedWeaponItems; track item) { @if (item !==
+              undefined) {
+              <img
+                class="border w-10 h-10"
+                [src]="
+                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                "
+              />
+              } @else {
+              <div class="border w-10 h-10"></div>
+              } }
+            </div>
+          </div>
+          <div class="m-3">
+            <p class="text-center">Vitality</p>
+            <div class="grid grid-cols-2 grid-rows-2">
+              @for (item of selectedVitalityItems; track item) { @if (item !==
+              undefined) {
+              <img
+                class="border w-10 h-10"
+                [src]="
+                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                "
+              />
+              } @else {
+              <div class="border w-10 h-10"></div>
+              } }
+            </div>
+          </div>
+          <div class="m-3">
+            <p class="text-center">Spirit</p>
+            <div class="grid grid-cols-2 grid-rows-2">
+              @for (item of selectedSpiritItems; track item) { @if (item !==
+              undefined) {
+              <img
+                class="border w-10 h-10"
+                [src]="
+                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                "
+              />
+              } @else {
+              <div class="border w-10 h-10"></div>
+              } }
+            </div>
+          </div>
+          <div class="m-3">
+            <p class="text-center">Flex</p>
+            <div class="grid grid-cols-2 grid-rows-2">
+              @for (item of selectedFlexItems; track item) { @if (item !== undefined)
+              {
+              <img
+                class="border w-10 h-10"
+                [src]="
+                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                "
+              />
+              } @else {
+              <div class="border w-10 h-10"></div>
+              } }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="border w-[calc(100%-5px)] h-[calc(100vh-20rem)] overflow-scroll grid grid-cols-6 gap-2"
+    >
+      @for (category of items; track category) { @for (priceCategory of
+      category; track priceCategory) { @for (item of priceCategory; track item)
+      {
+      <button
+        class="card rounded-md w-24 gap-1"
+        [class]="{
+          'bg-[#dc9b32]': item.category === 'weapon',
+          'bg-[#7bbb1c]': item.category === 'vitality',
+          'bg-[#cd91fe]': item.category === 'spirit'
+        }"
+        (click)="itemClick(item)"
+      >
+        <!-- TODO: OnClick -->
+        <p
+          class="text-center text-[#98ffde] font-semibold h-fit rounded-t-md"
+          [class]="{
+            'bg-[#c97a03]': item.category === 'weapon',
+            'bg-[#659818]': item.category === 'vitality',
+            'bg-[#c288f0]': item.category === 'spirit'
+          }"
+        >
+          {{ item.cost }}
+        </p>
+        <img
+          class="w-14 h-14 mx-auto invert"
+          [src]="'assets/items/' + item.name.replaceAll(' ', '_') + '.png'"
+          alt="{{ item.name }}"
+        />
+        <p class="text-center text-black bg-[#FFF0D7] h-full rounded-b-md">
+          {{ item.name }}
+        </p>
+      </button>
+      } }
+      <div class="col-start-1 -col-end-1"></div>
+      }
+    </div>
+  </div>
+</div>

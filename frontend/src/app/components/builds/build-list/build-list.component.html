@@ -1,0 +1,10 @@
+@if(userService.isLoggedIn) {
+<a href="/builds/editor" class="btn">+ Create</a>
+}
+<div class="grid grid-cols-4">
+  @for (build of data; track $index) {
+  <div class="card shadow-md bg-black p-2">
+    <p>{{ build.body }}</p>
+  </div>
+  }
+</div>
