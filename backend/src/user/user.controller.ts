@@ -78,7 +78,7 @@ export class UserController {
   @Put(':id')
   async update(
     @Param('id') id: string,
-    @Body() { username, password }: { username: string; password: string },
+    @Body() { username, password }: { username: string; password?: string },
     @Res() res: Response,
   ) {
     const result = await this.userService.update(id, username, password);

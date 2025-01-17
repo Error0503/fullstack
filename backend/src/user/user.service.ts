@@ -96,7 +96,7 @@ export class UserService {
     }
   }
 
-  async update(id: string, username: string, password: string): Promise<User> {
+  async update(id: string, username: string, password?: string): Promise<User> {
     try {
       return await this.sequelize.transaction(async (t) => {
         const user = await this.findOneById(id);
@@ -104,8 +104,10 @@ export class UserService {
           throw new NotFoundException(`User with id ${id} not found`);
         }
         user.username = username;
-        const hashedPwd = bcrypt.hashSync(password, bcrypt.genSaltSync(12));
-        user.password = hashedPwd;
+        if (password) {
+          const hashedPwd = bcrypt.hashSync(password, bcrypt.genSaltSync(12));
+          user.password = hashedPwd;
+        }
         return await user.save({ transaction: t });
       });
     } catch (error) {

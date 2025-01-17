@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { publicGuard } from './guards/public.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
@@ -37,13 +39,18 @@ export const routes: Routes = [
     component: HeroComponent,
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
     title: 'Items',
     path: 'items',
     component: ItemsComponent,
+  },
+  {
+    title: 'Profile',
+    path: 'profile/:id',
+    component: ProfileComponent,
+  },
+  {
+    title: 'Profile',
+    path: 'profile/:id/edit',
+    component: ProfileEditComponent,
   },
 ];

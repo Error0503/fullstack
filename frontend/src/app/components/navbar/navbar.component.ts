@@ -12,12 +12,19 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   userService: UserService;
+  userId: number;
 
   constructor(userService: UserService) {
     this.userService = userService;
+    this.userId = 0;
   }
 
   logout() {
     this.userService.removeToken();
+  }
+
+  getUserId(): number {
+    this.userId = this.userService.getUserId();
+    return this.userId;
   }
 }

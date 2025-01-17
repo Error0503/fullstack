@@ -28,8 +28,8 @@
     <div
       class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
     >
-      @if (this.userService.isLoggedIn ) { <a href="/profile">Profile</a> }
-      @else { <a href="/login">Login</a> }
+      @if (this.userService.isLoggedIn ) { <a href="/profile/{{this.getUserId()}}">Profile</a> }
+      @else { <a href="/auth/login">Login</a> }
     </div>
     @if (this.userService.isLoggedIn ) {
     <div
