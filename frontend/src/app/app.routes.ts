@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/auth/login/login.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroComponent } from './components/heroes/hero/hero.component';
-import { ItemsComponent } from './components/items/items.component';
 import { publicGuard } from './guards/public.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroComponent } from './components/heroes/hero/hero.component';
+import { ItemsComponent } from './components/items/items.component';
 
 export const routes: Routes = [
   {
