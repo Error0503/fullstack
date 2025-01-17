@@ -1,0 +1,49 @@
+<div class="w-full">
+  <form class="w-1/4 mx-auto" [formGroup]="loginForm" (submit)="submitForm()">
+    <label class="form-control w-full max-w-xs">
+      <input
+        type="text"
+        class="input input-bordered w-full max-w-xs"
+        placeholder="Username"
+        formControlName="username"
+        [ngClass]="{
+          'input-error': username?.hasError('required') && username?.dirty
+        }"
+      />
+      @if (username?.hasError('required') && username?.dirty) {
+      <div class="label">
+        <span class="label-text-alt text-error">Username is required</span>
+      </div>
+      }
+    </label>
+    <label class="form-control w-full max-w-xs">
+      <input
+        type="password"
+        class="input input-bordered w-full max-w-xs"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{
+          'input-error': password?.hasError('required') && password?.dirty
+        }"
+      />
+      @if (password?.hasError('required') && password?.dirty) {
+      <div class="label">
+        <span class="label-text-alt text-error">Password is required</span>
+      </div>
+      }
+    </label>
+    <div>
+      <button class="btn btn-primary" [disabled]="!loginForm.valid">
+        Login
+      </button>
+    </div>
+
+    <p class="w-full text-center">Don't have an account yet?</p>
+    <p class="link w-full text-center"><a href="/auth/register">Register</a></p>
+    @if (submitted) {
+    <div>
+      <span class="mx-auto loading loading-spinner loading-lg"></span>
+    </div>
+    }
+  </form>
+</div>
