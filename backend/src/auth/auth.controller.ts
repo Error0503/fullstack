@@ -10,8 +10,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
-import { UserRoles } from 'src/user/user.model';
-import { Roles } from 'src/decorators/roles.decorator';
+import { UserRoles } from '../user/user.model';
+import { Roles } from '../decorators/roles.decorator';
 import { RolesGuard } from './roles.guard';
 
 @Controller('auth')
