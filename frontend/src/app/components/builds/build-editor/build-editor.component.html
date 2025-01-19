@@ -61,70 +61,135 @@
   <div class="mx-auto">
     <h1 class="text-2xl text-center">Items</h1>
     <div class="w-full">
-      <div class="border w-fit mt-3 mx-auto">
+      <div class="w-fit mt-3 mx-auto">
         <div class="join mx-1">
-          <div class="m-3">
-            <p class="text-center">Weapon</p>
-            <div class="grid grid-cols-2 grid-rows-2">
-              @for (item of selectedWeaponItems; track item) { @if (item !==
-              undefined) {
+          <div
+            class="border border-[#dc9b32] rounded-xl m-3 p-1 bg-[#2d2208] bg-opacity-30 h-36"
+          >
+            <div class="relative w-full">
               <img
-                class="border w-10 h-10"
-                [src]="
-                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                "
+                class="absolute left-1/2 top-0 -translate-x-1/2"
+                src="assets/Weapon_Icon.png"
               />
-              } @else {
-              <div class="border w-10 h-10"></div>
-              } }
+              <p
+                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+              >
+                WEAPON
+              </p>
+            </div>
+            <div
+              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+            >
+              @for (item of selectedWeaponItems; track item) {
+              <button
+                class="bg-[#dc9b32] w-10 h-10 rounded-md"
+                (click)="selectedItemClick('weapon', item)"
+              >
+                <img
+                  class="invert"
+                  [src]="
+                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                  "
+                />
+              </button>
+              }
             </div>
           </div>
-          <div class="m-3">
-            <p class="text-center">Vitality</p>
-            <div class="grid grid-cols-2 grid-rows-2">
-              @for (item of selectedVitalityItems; track item) { @if (item !==
-              undefined) {
+          <div
+            class="border border-[#7bbb1c] rounded-xl m-3 p-1 bg-[#1f3104] bg-opacity-30 h-36"
+          >
+            <div class="relative w-full">
               <img
-                class="border w-10 h-10"
-                [src]="
-                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                "
+                class="absolute left-1/2 top-0 -translate-x-1/2"
+                src="assets/Vitality_Icon.png"
               />
-              } @else {
-              <div class="border w-10 h-10"></div>
-              } }
+              <p
+                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+              >
+                VITALITY
+              </p>
+            </div>
+            <div
+              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+            >
+              @for (item of selectedVitalityItems; track item) {
+              <button
+                class="bg-[#7bbb1c] w-10 h-10 rounded-md"
+                (click)="selectedItemClick('vitality', item)"
+              >
+                <img
+                  class="invert"
+                  [src]="
+                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                  "
+                />
+              </button>
+              }
             </div>
           </div>
-          <div class="m-3">
-            <p class="text-center">Spirit</p>
-            <div class="grid grid-cols-2 grid-rows-2">
-              @for (item of selectedSpiritItems; track item) { @if (item !==
-              undefined) {
+          <div
+            class="border border-[#cd91fe] rounded-xl m-3 p-1 bg-[#332142] bg-opacity-30 h-36"
+          >
+            <div class="relative w-full">
               <img
-                class="border w-10 h-10"
-                [src]="
-                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                "
+                class="absolute left-1/2 top-0 -translate-x-1/2"
+                src="assets/Spirit_Icon.png"
               />
-              } @else {
-              <div class="border w-10 h-10"></div>
-              } }
+              <p
+                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+              >
+                SPIRIT
+              </p>
+            </div>
+            <div
+              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+            >
+              @for (item of selectedSpiritItems; track item) {
+              <button
+                class="bg-[#cd91fe] w-10 h-10 rounded-md"
+                (click)="selectedItemClick('spirit', item)"
+              >
+                <img
+                  class="invert"
+                  [src]="
+                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                  "
+                />
+              </button>
+              }
             </div>
           </div>
-          <div class="m-3">
-            <p class="text-center">Flex</p>
-            <div class="grid grid-cols-2 grid-rows-2">
-              @for (item of selectedFlexItems; track item) { @if (item !== undefined)
-              {
-              <img
-                class="border w-10 h-10"
-                [src]="
-                  'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                "
-              />
-              } @else {
-              <div class="border w-10 h-10"></div>
-              } }
+          <div
+            class="border border-slate-800 rounded-xl m-3 p-1 bg-[#2c2c2c] bg-opacity-30 h-36"
+          >
+            <div class="relative w-full">
+              <p
+                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+              >
+                FLEX
+              </p>
+            </div>
+            <div
+              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+            >
+              @for (item of selectedFlexItems; track item) {
+              <button
+                class="w-10 h-10 rounded-md"
+                (click)="selectedItemClick('flex', item)"
+                [class]="{
+                  'bg-[#dc9b32]': item.category === 'weapon',
+                  'bg-[#7bbb1c]': item.category === 'vitality',
+                  'bg-[#cd91fe]': item.category === 'spirit'
+                }"
+              >
+                <img
+                  class="invert"
+                  [src]="
+                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
+                  "
+                />
+              </button>
+              }
             </div>
           </div>
         </div>
@@ -143,7 +208,7 @@
           'bg-[#7bbb1c]': item.category === 'vitality',
           'bg-[#cd91fe]': item.category === 'spirit'
         }"
-        (click)="itemClick(item)"
+        (click)="itemListClick(item)"
       >
         <!-- TODO: OnClick -->
         <p
