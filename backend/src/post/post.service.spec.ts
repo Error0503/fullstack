@@ -84,28 +84,41 @@ describe('PostService', () => {
       const post = new Post({
         id: 1,
         title: 'title',
+        heroId: 1,
+        shortDescription: 'short description',
         body: 'body',
         userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
       });
       jest.spyOn(postModel, 'create').mockResolvedValue(post);
 
-      const result = await service.create('title', 'body', 1);
-      expect(result).toEqual(
-        expect.objectContaining({
-          id: 1,
-          title: 'title',
-          body: 'body',
-          userId: 1,
-        }),
+      const result = await service.create(
+        'title',
+        1,
+        'short description',
+        'body',
+        1,
       );
+
+      expect(result).toMatchObject({
+        id: 1,
+        title: 'title',
+        heroId: 1,
+        shortDescription: 'short description',
+        body: JSON.stringify('body'),
+        userId: 1,
+      });
     });
 
     it('should return null if user is not found', async () => {
       jest.spyOn(User, 'findOne').mockResolvedValue(null);
 
-      const result = await service.create('title', 'body', 1);
+      const result = await service.create(
+        'title',
+        1,
+        'short description',
+        'body',
+        1,
+      );
       expect(result).toBeNull();
     });
 
@@ -142,7 +155,13 @@ describe('PostService', () => {
       jest.spyOn(service, 'findOne').mockResolvedValue(post);
       jest.spyOn(post, 'save').mockResolvedValue(post);
 
-      const result = await service.update('1', 'new title', 'new body');
+      const result = await service.update(
+        '1',
+        'title',
+        1,
+        'short description',
+        'body',
+      );
       expect(result).toBe(post);
     });
 

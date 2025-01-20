@@ -16,6 +16,12 @@ export class Post extends Model<Post> {
   title: string;
 
   @Column
+  heroId: number;
+
+  @Column
+  shortDescription: string;
+
+  @Column
   body: string;
 
   @ForeignKey(() => User)
