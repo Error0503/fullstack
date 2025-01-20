@@ -49,10 +49,21 @@ export class CommentController {
     {
       postId,
       userId,
+      commenterUsername,
       content,
-    }: { postId: number; userId: number; content: string },
+    }: {
+      postId: number;
+      userId: number;
+      commenterUsername: string;
+      content: string;
+    },
   ): Promise<Comment> {
-    const result = await this.commentService.create(postId, userId, content);
+    const result = await this.commentService.create(
+      postId,
+      userId,
+      commenterUsername,
+      content,
+    );
 
     if (result === null) {
       res

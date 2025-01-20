@@ -41,6 +41,22 @@ export class UserService {
     }
   }
 
+  getUsername(): string {
+    const token = this.getToken();
+    if (!token) {
+      return '';
+    }
+
+    try {
+      const user: User = jwtDecode(token);
+
+      return user.username;
+    } catch (Error) {
+      console.error(Error);
+      return '';
+    }
+  }
+
   getRole(): string {
     const token = this.getToken();
     if (!token) {
