@@ -74,12 +74,20 @@ export class PostService {
     }
   }
 
-  async update(id: string, title: string, body: string): Promise<Post> {
+  async update(
+    id: string,
+    title: string,
+    heroId: number,
+    shortDescription: string,
+    body: string,
+  ): Promise<Post> {
     try {
       return await this.sequelize.transaction(async (t) => {
         const post = await this.findOne(id);
         post.title = title;
-        post.body = body;
+        post.heroId = heroId;
+        post.shortDescription = shortDescription;
+        post.body = JSON.stringify(body);
         return await post.save({ transaction: t });
       });
     } catch (error) {
