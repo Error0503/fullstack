@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import heroesData from '../../../assets/heroes.json';
 import itemsData from '../../../assets/items.json';
@@ -34,11 +34,49 @@ export class BuildEditorComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.buildForm = this.formBuilder.group({
-      hero: new FormControl(undefined),
-      title: new FormControl(undefined),
-      shortDescription: new FormControl(undefined),
-      description: new FormControl(undefined),
+      hero: [undefined, [Validators.required]],
+      title: [
+        undefined,
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(50),
+        ],
+      ],
+      shortDescription: [
+        undefined,
+        [
+          Validators.required,
+          Validators.minLength(20),
+          Validators.maxLength(100),
+        ],
+      ],
+      description: [
+        undefined,
+        [
+          Validators.required,
+          Validators.minLength(100),
+          Validators.maxLength(5000),
+        ],
+      ],
+      items: [false, [Validators.requiredTrue]],
     });
+  }
+
+  get hero() {
+    return this.buildForm.get('hero');
+  }
+
+  get title() {
+    return this.buildForm.get('title');
+  }
+
+  get shortDescription() {
+    return this.buildForm.get('shortDescription');
+  }
+
+  get description() {
+    return this.buildForm.get('description');
   }
 
   itemListClick(item: Item): void {
@@ -133,6 +171,14 @@ export class BuildEditorComponent {
         }
         break;
     }
+    this.buildForm.setValue({
+      ...this.buildForm.getRawValue(),
+      items:
+        this.weaponItemCount === 4 &&
+        this.vitalityItemCount === 4 &&
+        this.spiritItemCount === 4 &&
+        this.flexItemCount === 4,
+    });
   }
 
   selectedItemClick(category: string, item: Item): void {
@@ -181,6 +227,19 @@ export class BuildEditorComponent {
 
   onSubmit(): void {
     console.log(this.buildForm.value);
+    console.log(this.buildForm.errors);
+  }
+
+  onReset(): void {
+    this.buildForm.reset();
+    this.selectedWeaponItems = [];
+    this.selectedVitalityItems = [];
+    this.selectedSpiritItems = [];
+    this.selectedFlexItems = [];
+    this.weaponItemCount = 0;
+    this.vitalityItemCount = 0;
+    this.spiritItemCount = 0;
+    this.flexItemCount = 0;
   }
 
   suppress(e: any): void {

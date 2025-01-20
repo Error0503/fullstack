@@ -8,6 +8,9 @@
       <p>Hero</p>
       <button
         class="btn btn-square w-[254px] h-[344px] relative"
+        [class]="{
+          'border-error': hero?.hasError('required') && hero?.dirty
+        }"
         onclick="my_modal_2.showModal()"
         (click)="suppress($event)"
       >
@@ -85,12 +88,28 @@
           type="text"
           placeholder="Title"
           class="input input-bordered w-full"
+          [class]="{
+            'border-error': title?.hasError('required') && title?.dirty
+          }"
           formControlName="title"
+          required
+          minlength="5"
+          maxlength="50"
         />
-        <!-- TODO: Errors -->
-        @if (false) {
+        @if ((title?.hasError('required') || title?.hasError('minlength') ||
+        title?.hasError('maxlength')) && title?.dirty) {
         <div class="label">
-          <span class="label-text-alt text-error">Error</span>
+          @if (title?.hasError('required')) {
+          <span class="label-text-alt text-error">This field is required</span>
+          } @else if (title?.hasError('minlength')) {
+          <span class="label-text-alt text-error"
+            >Min length is 5 characters</span
+          >
+          } @else if (title?.hasError('maxlength')) {
+          <span class="label-text-alt text-error"
+            >Max length is 50 characters</span
+          >
+          }
         </div>
         }
       </label>
@@ -102,11 +121,25 @@
           class="textarea textarea-bordered h-24 w-full"
           placeholder="Short Description"
           formControlName="shortDescription"
+          required
+          minlength="20"
+          maxlength="100"
         ></textarea>
-        <!-- TODO: Errors -->
-        @if (false){
+        @if ((shortDescription?.hasError('required') ||
+        shortDescription?.hasError('minlength') ||
+        shortDescription?.hasError('maxlength')) && shortDescription?.dirty) {
         <div class="label">
-          <span class="label-text-alt text-error">Error</span>
+          @if (shortDescription?.hasError('required')) {
+          <span class="label-text-alt text-error">This field is required</span>
+          } @else if (shortDescription?.hasError('minlength')) {
+          <span class="label-text-alt text-error"
+            >Min length is 20 characters</span
+          >
+          } @else if (shortDescription?.hasError('maxlength')) {
+          <span class="label-text-alt text-error"
+            >Max length is 100 characters</span
+          >
+          }
         </div>
         }
       </label>
@@ -118,21 +151,42 @@
           class="textarea textarea-bordered h-24 w-full"
           placeholder="Description"
           formControlName="description"
+          required
+          minlength="100"
+          maxlength="5000"
         ></textarea>
-        <!-- TODO: Errors -->
-        @if (false){
+        @if ((description?.hasError('required') ||
+        description?.hasError('minlength') ||
+        description?.hasError('maxlength')) && description?.dirty) {
         <div class="label">
-          <span class="label-text-alt text-error">Error</span>
+          @if (description?.hasError('required')) {
+          <span class="label-text-alt text-error">This field is required</span>
+          } @else if (description?.hasError('minlength')) {
+          <span class="label-text-alt text-error"
+            >Min length is 100 characters</span
+          >
+          } @else if (description?.hasError('maxlength')) {
+          <span class="label-text-alt text-error"
+            >Max length is 5000 characters</span
+          >
+          }
         </div>
         }
       </label>
-      <div class="mt-4 flex flex-col items-center">
+      <div class="mt-4 flex flex-row justify-around">
         <button
           class="btn btn-primary"
           type="submit"
           [disabled]="!buildForm.valid"
         >
           Save
+        </button>
+        <button
+          class="btn btn-primary"
+          type="reset"
+          (click)="onReset()"
+        >
+          Reset
         </button>
       </div>
     </div>
