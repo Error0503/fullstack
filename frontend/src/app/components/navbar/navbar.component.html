@@ -3,17 +3,17 @@
     <a
       class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#dc9b32] bg-[#ccbea7] hover:bg-[#dc9b32] transition-colors"
       routerLink="/heroes"
-      #rla="routerLinkActive"
-      [ngClass]="{ 'bg-[#ccbea7]': !rla.isActive }"
+      #heroesActive="routerLinkActive"
+      [ngClass]="{'bg-[#ccbea7]' : !heroesActive.isActive}"
       [routerLinkActive]="['bg-[#dc9b32]']"
     >
       Heroes
     </a>
     <a
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#7bbb1c] hover:bg-[#7bbb1c] transition-colors"
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#7bbb1c] bg-[#ccbea7] hover:bg-[#7bbb1c] transition-colors"
       routerLink="/items"
-      #rla="routerLinkActive"
-      [ngClass]="{ 'bg-[#ccbea7]': !rla.isActive }"
+      #itemsActive="routerLinkActive"
+      [ngClass]="{ 'bg-[#ccbea7]': !itemsActive.isActive }"
       [routerLinkActive]="['bg-[#7bbb1c]']"
     >
       Items
@@ -25,25 +25,37 @@
     </div>
   </div>
   <div class="flex-none gap-2">
+      @if (this.userService.isLoggedIn ) {
+        <a
+          class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+          routerLink="/profile/{{this.getUserId()}}"
+          #profileActive="routerLinkActive"
+          [ngClass]="{ 'bg-[#ccbea7]': !profileActive.isActive }"
+          [routerLinkActive]="['bg-[#85b6fd]']"
+        >
+        Profile
+      </a>
+       }
+      @else
+      {
+        <a
+          class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+          routerLink="/auth/login"
+          #loginActive="routerLinkActive"
+          [ngClass]="{ 'bg-[#ccbea7]': !loginActive.isActive }"
+          [routerLinkActive]="['bg-[#85b6fd]']"
+        >
+        Login
+      </a>
+    }
     @if (this.userService.isLoggedIn ) {
     <a
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
-      href="/profile/{{ this.getUserId() }}"
-      >Profile</a
-    >
-    } @else {
-    <a
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
-      href="/auth/login"
-      >Login</a
-    >
-    } @if (this.userService.isLoggedIn ) {
-    <button
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-red-400 bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-red-400 bg-[#ccbea7] hover:bg-red-400 transition-colors"
       (click)="logout()"
-    >
-      <p>Logout</p>
-    </button>
+      routerLink=""
+      >
+        Logout
+    </a>
     }
   </div>
 </div>
