@@ -8,6 +8,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/heroes/hero/hero.component';
 import { ItemsComponent } from './components/items/items.component';
 import { BuildListComponent } from './components/builds/build-list/build-list.component';
+import { BuildViewerComponent } from './components/builds/build-viewer/build-viewer.component';
 import { BuildEditorComponent } from './components/builds/build-editor/build-editor.component';
 
 export const routes: Routes = [
@@ -64,5 +65,10 @@ export const routes: Routes = [
     title: 'Build Editor',
     path: 'builds/editor',
     component: BuildEditorComponent,
+  },
+  {
+    title: 'Builds',
+    path: 'builds/:id',
+    component: BuildViewerComponent,
   },
 ];
