@@ -25,18 +25,25 @@
     </div>
   </div>
   <div class="flex-none gap-2">
-    <div
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
-    >
-      @if (this.userService.isLoggedIn ) { <a href="/profile/{{this.getUserId()}}">Profile</a> }
-      @else { <a href="/auth/login">Login</a> }
-    </div>
     @if (this.userService.isLoggedIn ) {
-    <div
-      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-red-400 bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+    <a
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+      href="/profile/{{ this.getUserId() }}"
+      >Profile</a
     >
-      <button class="btn-ghost" (click)="logout()">Logout</button>
-    </div>
+    } @else {
+    <a
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+      href="/auth/login"
+      >Login</a
+    >
+    } @if (this.userService.isLoggedIn ) {
+    <button
+      class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-red-400 bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"
+      (click)="logout()"
+    >
+      <p>Logout</p>
+    </button>
     }
   </div>
 </div>
