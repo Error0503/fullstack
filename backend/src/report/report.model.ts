@@ -7,8 +7,8 @@ import {
   Model,
   Table,
 } from 'sequelize-typescript';
-import { Post } from 'src/post/post.model';
-import { User } from 'src/user/user.model';
+import { Post } from '../post/post.model';
+import { User } from '../user/user.model';
 
 // TODO: More?
 export enum Reasons {

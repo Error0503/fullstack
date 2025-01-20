@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Post } from './post.model';
 import { Sequelize } from 'sequelize-typescript';
-import { User } from 'src/user/user.model';
-import { Comment } from 'src/comment/comment.model';
-import { Report } from 'src/report/report.model';
+import { User } from '../user/user.model';
+import { Comment } from '../comment/comment.model';
+import { Report } from '../report/report.model';
 
 @Injectable()
 export class PostService {
