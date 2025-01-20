@@ -9,8 +9,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Post.init(
     {
+      heroId: DataTypes.INTEGER,
       title: DataTypes.STRING,
-      body: DataTypes.STRING,
+      shortDescription: DataTypes.STRING,
+      body: DataTypes.JSON,
       UserId: DataTypes.INTEGER,
     },
     {

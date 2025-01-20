@@ -11,13 +11,23 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      heroId: {
+        type: Sequelize.INTEGER,
+        field: 'heroId',
+        allowNull: false,
+      },
       title: {
         type: Sequelize.STRING,
         field: 'title',
         allowNull: false,
       },
-      body: {
+      shortDescription: {
         type: Sequelize.STRING,
+        field: 'shortDescription',
+        allowNull: false,
+      },
+      body: {
+        type: Sequelize.JSON,
         field: 'body',
         allowNull: false,
       },
