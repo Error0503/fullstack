@@ -12,8 +12,10 @@ module.exports = {
     });
 
     const testPost = await Post.create({
+      heroId: 0,
       title: 'Test Post',
-      body: 'Test',
+      shortDescription: 'This is a test post',
+      body: { description: 'This is a test post created by the seeder' },
       UserId: testUser.id,
     });
 
