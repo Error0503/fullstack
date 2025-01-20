@@ -20,6 +20,7 @@ module.exports = {
     });
 
     await Comment.create({
+      commenterUsername: testUser.username,
       content: 'test',
       UserId: testUser.id,
       PostId: testPost.id,
