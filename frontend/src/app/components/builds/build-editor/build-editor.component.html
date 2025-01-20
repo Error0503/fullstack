@@ -9,12 +9,12 @@
       <button
         class="btn btn-square w-[254px] h-[344px] relative"
         [class]="{
-          'border-error': hero?.hasError('required') && hero?.dirty
+          'border-error': heroId?.hasError('required') && heroId?.dirty
         }"
         onclick="my_modal_2.showModal()"
         (click)="suppress($event)"
       >
-        @if (buildForm.value.hero === null) {
+        @if (buildForm.value.heroId === null) {
         <p class="text-4xl font-bold m-auto">+</p>
         } @else {
 
@@ -22,15 +22,15 @@
           class="rounded-md bg-[#a29582]"
           [src]="
             'assets/heroes/' +
-            heroes[buildForm.value.hero].name.replaceAll(' ', '_') +
+            heroes[buildForm.value.heroId].name.replaceAll(' ', '_') +
             '_card.png'
           "
-          [alt]="heroes[buildForm.value.hero].name"
+          [alt]="heroes[buildForm.value.heroId].name"
         />
         <p
           class="text-center w-full absolute bottom-0 font-semibold text-2xl text-[#ffefd7]"
         >
-          {{ heroes[buildForm.value.hero].name }}
+          {{ heroes[buildForm.value.heroId].name }}
         </p>
         }
       </button>
@@ -45,7 +45,7 @@
               <input
                 type="radio"
                 class="hidden"
-                formControlName="hero"
+                formControlName="heroId"
                 [value]="i"
                 onclick="my_modal_2.close()"
               />
