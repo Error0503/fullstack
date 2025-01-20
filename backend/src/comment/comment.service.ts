@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Sequelize } from 'sequelize-typescript';
 import { Comment } from './comment.model';
-import { Post } from 'src/post/post.model';
-import { User } from 'src/user/user.model';
+import { Post } from '../post/post.model';
+import { User } from '../user/user.model';
 
 @Injectable()
 export class CommentService {

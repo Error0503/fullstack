@@ -32,6 +32,13 @@
       </div>
       }
     </label>
+
+    @if (errorMessage != null) {
+      <div class="label">
+        <span class="label-text-alt text-error">{{errorMessage}}</span>
+      </div>
+      }
+
     <div>
       <button class="btn btn-primary" [disabled]="!loginForm.valid">
         Login

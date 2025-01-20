@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/UserService/user-service.service';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,13 +14,14 @@ export class NavbarComponent {
   userService: UserService;
   userId: number;
 
-  constructor(userService: UserService) {
+  constructor(userService: UserService, private router: Router) {
     this.userService = userService;
     this.userId = 0;
   }
 
   logout() {
     this.userService.removeToken();
+    this.router.navigate(['/']);
   }
 
   getUserId(): number {

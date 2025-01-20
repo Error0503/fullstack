@@ -8,9 +8,9 @@ import { InjectModel } from '@nestjs/sequelize';
 import { User, UserRoles } from './user.model';
 import { Sequelize } from 'sequelize-typescript';
 import * as bcrypt from 'bcrypt';
-import { Post } from 'src/post/post.model';
-import { Report } from 'src/report/report.model';
-import { Comment } from 'src/comment/comment.model';
+import { Post } from '../post/post.model';
+import { Report } from '../report/report.model';
+import { Comment } from '../comment/comment.model';
 
 @Injectable()
 export class UserService {

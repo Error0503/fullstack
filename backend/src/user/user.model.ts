@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
-import { Comment } from 'src/comment/comment.model';
-import { Post } from 'src/post/post.model';
-import { Report } from 'src/report/report.model';
+import { Comment } from '../comment/comment.model';
+import { Post } from '../post/post.model';
+import { Report } from '../report/report.model';
 
 export enum UserRoles {
   USER = 'user',
