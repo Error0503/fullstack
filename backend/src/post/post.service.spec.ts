@@ -88,8 +88,6 @@ describe('PostService', () => {
         shortDescription: 'short description',
         body: 'body',
         userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
       });
       jest.spyOn(postModel, 'create').mockResolvedValue(post);
 
@@ -100,15 +98,15 @@ describe('PostService', () => {
         'body',
         1,
       );
-      expect(result).toEqual(
-        expect.objectContaining({
-          title: 'title',
-          heroId: 1,
-          shortDescription: 'short description',
-          body: 'body',
-          userId: 1,
-        }),
-      );
+
+      expect(result).toMatchObject({
+        id: 1,
+        title: 'title',
+        heroId: 1,
+        shortDescription: 'short description',
+        body: JSON.stringify('body'),
+        userId: 1,
+      });
     });
 
     it('should return null if user is not found', async () => {

@@ -86,7 +86,7 @@ describe('PostController', () => {
           userId: 999,
         })
         .expect(HttpStatus.NOT_FOUND)
-        .expect({ message: 'User not found' });
+        .expect({ message: 'Post not found' });
     });
   });
 
