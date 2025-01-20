@@ -42,6 +42,7 @@ export class AuthService {
     }
 
     await this.userService.create(username, password);
-    return { status: 201, message: 'User created successfully' };
+    const { access_token } = await this.login(username, password);
+    return { status: 201, message: 'User created successfully', access_token };
   }
 }
