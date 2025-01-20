@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import heroesData from '../../../assets/heroes.json';
 import itemsData from '../../../assets/items.json';
 import Item from '../../../interfaces/item';
 
 @Component({
   selector: 'app-build-editor',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './build-editor.component.html',
   styleUrl: './build-editor.component.css',
 })
@@ -18,7 +26,20 @@ export class BuildEditorComponent {
   selectedSpiritItems: Item[] = [];
   flexItemCount = 0;
   selectedFlexItems: Item[] = [];
+
   items: Item[][][] = [itemsData.weapon, itemsData.vitality, itemsData.spirit];
+  heroes = Object.values(heroesData);
+
+  buildForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.buildForm = this.formBuilder.group({
+      hero: new FormControl(undefined),
+      title: new FormControl(undefined),
+      shortDescription: new FormControl(undefined),
+      description: new FormControl(undefined),
+    });
+  }
 
   itemListClick(item: Item): void {
     switch (item.category) {
@@ -156,5 +177,13 @@ export class BuildEditorComponent {
           }
         });
     }
+  }
+
+  onSubmit(): void {
+    console.log(this.buildForm.value);
+  }
+
+  suppress(e: any): void {
+    e.preventDefault();
   }
 }

@@ -1,11 +1,81 @@
 <div class="grid grid-cols-2">
-  <div class="mx-auto grid grid-cols-2 w-full px-20">
+  <form
+    class="mx-auto grid grid-cols-2 w-full px-20"
+    [formGroup]="buildForm"
+    (ngSubmit)="onSubmit()"
+  >
     <div>
       <p>Hero</p>
-      <button class="btn btn-square px-10 w-64 h-96">
+      <button
+        class="btn btn-square w-[254px] h-[344px] relative"
+        onclick="my_modal_2.showModal()"
+        (click)="suppress($event)"
+      >
+        @if (buildForm.value.hero === null) {
         <p class="text-4xl font-bold m-auto">+</p>
+        } @else {
+
+        <img
+          class="rounded-md bg-[#a29582]"
+          [src]="
+            'assets/heroes/' +
+            heroes[buildForm.value.hero].name.replaceAll(' ', '_') +
+            '_card.png'
+          "
+          [alt]="heroes[buildForm.value.hero].name"
+        />
+        <p
+          class="text-center w-full absolute bottom-0 font-semibold text-2xl text-[#ffefd7]"
+        >
+          {{ heroes[buildForm.value.hero].name }}
+        </p>
+        }
       </button>
     </div>
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal_2" class="modal">
+      <div class="modal-box max-w-7xl">
+        <div class="grid xl:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-4">
+          @for (hero of heroes; track hero; let i = $index) {
+          <div class="relative card w-fit bg-[#a29582] form-control">
+            <label class="label cursor-pointer p-0">
+              <input
+                type="radio"
+                class="hidden"
+                formControlName="hero"
+                [value]="i"
+                onclick="my_modal_2.close()"
+              />
+              <img
+                class="rounded-md min-w-40 min-h-40 max-w-70 max-h-70"
+                [src]="
+                  'assets/heroes/' +
+                  hero.name.replaceAll(' ', '_') +
+                  '_card.png'
+                "
+                [alt]="hero.name"
+              />
+              <p
+                class="text-center w-full absolute bottom-0 font-semibold text-2xl text-[#ffefd7]"
+              >
+                {{ hero.name }}
+              </p>
+              <a
+                class="absolute -top-1 right-0 text-black font-extrabold text-4xl"
+                href="heroes/{{ i }}"
+                target="_blank"
+                >&#x2197;</a
+              >
+            </label>
+          </div>
+
+          }
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
     <div>
       <label class="form-control w-full">
         <div class="label">
@@ -15,6 +85,7 @@
           type="text"
           placeholder="Title"
           class="input input-bordered w-full"
+          formControlName="title"
         />
         <!-- TODO: Errors -->
         @if (false) {
@@ -30,6 +101,7 @@
         <textarea
           class="textarea textarea-bordered h-24 w-full"
           placeholder="Short Description"
+          formControlName="shortDescription"
         ></textarea>
         <!-- TODO: Errors -->
         @if (false){
@@ -45,6 +117,7 @@
         <textarea
           class="textarea textarea-bordered h-24 w-full"
           placeholder="Description"
+          formControlName="description"
         ></textarea>
         <!-- TODO: Errors -->
         @if (false){
@@ -54,10 +127,16 @@
         }
       </label>
       <div class="mt-4 flex flex-col items-center">
-        <button class="btn btn-primary">Save</button>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!buildForm.valid"
+        >
+          Save
+        </button>
       </div>
     </div>
-  </div>
+  </form>
   <div class="mx-auto">
     <h1 class="text-2xl text-center">Items</h1>
     <div class="w-full">
@@ -196,7 +275,7 @@
       </div>
     </div>
     <div
-      class="border w-[calc(100%-5px)] h-[calc(100vh-20rem)] overflow-scroll grid grid-cols-6 gap-2"
+      class="w-fit h-[calc(100vh-20rem)] overflow-y-scroll grid grid-cols-6 gap-2 pr-2 rounded-md"
     >
       @for (category of items; track category) { @for (priceCategory of
       category; track priceCategory) { @for (item of priceCategory; track item)
