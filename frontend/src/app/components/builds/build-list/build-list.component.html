@@ -1,10 +1,12 @@
 @if(userService.isLoggedIn) {
-<a href="/builds/editor" class="btn">+ Create</a>
+<div class="w-full flex justify-center mb-4">
+  <a href="/builds/editor" class="btn text-xl font-bold">+ Create</a>
+</div>
 }
-<div class="grid grid-cols-4">
+<div class="grid grid-cols-4 gap-4">
   @for (build of data; track $index) {
   <a
-    class="card shadow-md bg-[#ccbea7] p-2"
+    class="card shadow-xl bg-[#ccbea7] p-2"
     [routerLink]="['/builds', build.id]"
   >
     <div class="join">
@@ -15,10 +17,10 @@
           heroes[build.heroId].name.replaceAll(' ', '_') +
           '_card.png'
         "
-        alt=""
+        [alt]="heroes[build.heroId].name"
       />
       <div class="w-full p-2 text-gray-800">
-        <p class="text-center text-xl">{{ build.title }}</p>
+        <p class="text-center text-xl font-semibold">{{ build.title }}</p>
         <p>{{ build.shortDescription }}</p>
       </div>
     </div>
