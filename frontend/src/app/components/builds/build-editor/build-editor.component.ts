@@ -21,13 +21,13 @@ import { UserService } from '../../../services/UserService/user-service.service'
 })
 export class BuildEditorComponent {
   weaponItemCount = 0;
-  selectedWeaponItems: Item[] = [];
+  selectedWeaponItems: string[] = [];
   vitalityItemCount = 0;
-  selectedVitalityItems: Item[] = [];
+  selectedVitalityItems: string[] = [];
   spiritItemCount = 0;
-  selectedSpiritItems: Item[] = [];
+  selectedSpiritItems: string[] = [];
   flexItemCount = 0;
-  selectedFlexItems: Item[] = [];
+  selectedFlexItems: { name: string; category: string }[] = [];
 
   items: Item[][][] = [itemsData.weapon, itemsData.vitality, itemsData.spirit];
   heroes = Object.values(heroesData);
@@ -110,21 +110,21 @@ export class BuildEditorComponent {
     return this.buildForm.get('description');
   }
 
-  itemListClick(item: Item): void {
-    switch (item.category) {
+  itemListClick(name: string, category: string): void {
+    switch (category) {
       case 'weapon':
-        if (this.selectedWeaponItems.includes(item)) {
+        if (this.selectedWeaponItems.includes(name)) {
           this.selectedWeaponItems = this.selectedWeaponItems.filter((i) => {
-            if (i === item) {
+            if (i === name) {
               this.weaponItemCount--;
               return false;
             } else {
               return true;
             }
           });
-        } else if (this.selectedFlexItems.includes(item)) {
+        } else if (this.selectedFlexItems.includes({ name, category })) {
           this.selectedFlexItems = this.selectedFlexItems.filter((i) => {
-            if (i === item) {
+            if (i.name === name) {
               this.flexItemCount--;
               return false;
             } else {
@@ -134,18 +134,18 @@ export class BuildEditorComponent {
         } else {
           if (this.weaponItemCount < 4) {
             this.weaponItemCount++;
-            this.selectedWeaponItems.push(item);
+            this.selectedWeaponItems.push(name);
           } else if (this.flexItemCount < 4) {
             this.flexItemCount++;
-            this.selectedFlexItems.push(item);
+            this.selectedFlexItems.push({ name, category });
           }
         }
         break;
       case 'vitality':
-        if (this.selectedVitalityItems.includes(item)) {
+        if (this.selectedVitalityItems.includes(name)) {
           this.selectedVitalityItems = this.selectedVitalityItems.filter(
             (i) => {
-              if (i === item) {
+              if (i === name) {
                 this.vitalityItemCount--;
                 return false;
               } else {
@@ -153,9 +153,9 @@ export class BuildEditorComponent {
               }
             }
           );
-        } else if (this.selectedFlexItems.includes(item)) {
+        } else if (this.selectedFlexItems.includes({ name, category })) {
           this.selectedFlexItems = this.selectedFlexItems.filter((i) => {
-            if (i === item) {
+            if (i.name === name) {
               this.flexItemCount--;
               return false;
             } else {
@@ -165,26 +165,26 @@ export class BuildEditorComponent {
         } else {
           if (this.vitalityItemCount < 4) {
             this.vitalityItemCount++;
-            this.selectedVitalityItems.push(item);
+            this.selectedVitalityItems.push(name);
           } else if (this.flexItemCount < 4) {
             this.flexItemCount++;
-            this.selectedFlexItems.push(item);
+            this.selectedFlexItems.push({ name, category });
           }
         }
         break;
       case 'spirit':
-        if (this.selectedSpiritItems.includes(item)) {
+        if (this.selectedSpiritItems.includes(name)) {
           this.selectedSpiritItems = this.selectedSpiritItems.filter((i) => {
-            if (i === item) {
+            if (i === name) {
               this.spiritItemCount--;
               return false;
             } else {
               return true;
             }
           });
-        } else if (this.selectedFlexItems.includes(item)) {
+        } else if (this.selectedFlexItems.includes({ name, category })) {
           this.selectedFlexItems = this.selectedFlexItems.filter((i) => {
-            if (i === item) {
+            if (i.name === name) {
               this.flexItemCount--;
               return false;
             } else {
@@ -194,10 +194,10 @@ export class BuildEditorComponent {
         } else {
           if (this.spiritItemCount < 4) {
             this.spiritItemCount++;
-            this.selectedSpiritItems.push(item);
+            this.selectedSpiritItems.push(name);
           } else if (this.flexItemCount < 4) {
             this.flexItemCount++;
-            this.selectedFlexItems.push(item);
+            this.selectedFlexItems.push({ name, category });
           }
         }
         break;
@@ -212,7 +212,7 @@ export class BuildEditorComponent {
     });
   }
 
-  selectedItemClick(category: string, item: Item): void {
+  selectedItemClick(item: string, category: string): void {
     switch (category) {
       case 'weapon':
         this.selectedWeaponItems = this.selectedWeaponItems.filter((i) => {
@@ -246,7 +246,7 @@ export class BuildEditorComponent {
         break;
       case 'flex':
         this.selectedFlexItems = this.selectedFlexItems.filter((i) => {
-          if (i === item) {
+          if (i.name === item) {
             this.flexItemCount--;
             return false;
           } else {
