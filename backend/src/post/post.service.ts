@@ -31,7 +31,13 @@ export class PostService {
     });
   }
 
-  async create(title: string, body: string, userId: number): Promise<Post> {
+  async create(
+    title: string,
+    heroId: number,
+    shortDescription: string,
+    body: string,
+    userId: number,
+  ): Promise<Post> {
     try {
       const user = await User.findOne({
         where: {
@@ -46,7 +52,9 @@ export class PostService {
       return await this.sequelize.transaction(async (t) => {
         const post = new Post();
         post.title = title;
-        post.body = body;
+        post.heroId = heroId;
+        post.shortDescription = shortDescription;
+        post.body = JSON.stringify(body);
         post.userId = user.id;
         return await post.save({ transaction: t });
       });

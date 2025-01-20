@@ -9,6 +9,8 @@ import {
 import heroesData from '../../../assets/heroes.json';
 import itemsData from '../../../assets/items.json';
 import Item from '../../../interfaces/item';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../../services/UserService/user-service.service';
 
 @Component({
   selector: 'app-build-editor',
@@ -32,9 +34,13 @@ export class BuildEditorComponent {
 
   buildForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private userService: UserService
+  ) {
     this.buildForm = this.formBuilder.group({
-      hero: [undefined, [Validators.required]],
+      heroId: [undefined, [Validators.required]],
       title: [
         undefined,
         [
@@ -63,7 +69,32 @@ export class BuildEditorComponent {
     });
   }
 
-  get hero() {
+  postBuild(): void {
+    const dirtyData = this.buildForm.getRawValue();
+    delete dirtyData['items'];
+    delete dirtyData['description'];
+    const cleanData = {
+      userId: this.userService.getUserId(),
+      ...dirtyData,
+      body: {
+        description: this.buildForm.get('description')!.value,
+        weaponItems: this.selectedWeaponItems,
+        vitalityItems: this.selectedVitalityItems,
+        spiritItems: this.selectedSpiritItems,
+        flexItems: this.selectedFlexItems,
+      },
+    };
+    this.http.post(`http://localhost:3000/post`, cleanData).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
+
+  get heroId() {
     return this.buildForm.get('hero');
   }
 
@@ -228,6 +259,7 @@ export class BuildEditorComponent {
   onSubmit(): void {
     console.log(this.buildForm.value);
     console.log(this.buildForm.errors);
+    this.postBuild();
   }
 
   onReset(): void {

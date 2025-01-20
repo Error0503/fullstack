@@ -46,12 +46,30 @@ export class PostController {
   async create(
     @Res() res: Response,
     @Body()
-    { title, body, userId }: { title: string; body: string; userId: number },
+    {
+      title,
+      heroId,
+      shortDescription,
+      body,
+      userId,
+    }: {
+      title: string;
+      heroId: number;
+      shortDescription: string;
+      body: string;
+      userId: number;
+    },
   ): Promise<PostModel> {
-    const result = await this.postService.create(title, body, userId);
+    const result = await this.postService.create(
+      title,
+      heroId,
+      shortDescription,
+      body,
+      userId,
+    );
 
     if (result === null) {
-      res.status(HttpStatus.NOT_FOUND).send({ message: 'User not found' });
+      res.status(HttpStatus.NOT_FOUND).send({ message: 'Post not found' });
       return null;
     }
 
