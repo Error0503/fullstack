@@ -6,7 +6,6 @@ import User from '../../interfaces/user';
   providedIn: 'root',
 })
 export class UserService {
-
   STORAGE_KEY = 'sessionToken';
   isLoggedIn: boolean = !!this.getToken();
 
@@ -39,6 +38,22 @@ export class UserService {
     } catch (Error) {
       console.error(Error);
       return 0;
+    }
+  }
+
+  getRole(): string {
+    const token = this.getToken();
+    if (!token) {
+      return '';
+    }
+
+    try {
+      const user: User = jwtDecode(token);
+
+      return user.role;
+    } catch (Error) {
+      console.error(Error);
+      return '';
     }
   }
 }

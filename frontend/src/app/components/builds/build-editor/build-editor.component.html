@@ -1,8 +1,13 @@
+@if (loading) {
+<div class="flex items-center justify-around h-full">
+  <p class="w-1/12 loading"></p>
+</div>
+} @else {
 <div class="grid grid-cols-2">
   <form
     class="mx-auto grid grid-cols-2 w-full px-20"
     [formGroup]="buildForm"
-    (ngSubmit)="onSubmit()"
+    (ngSubmit)="saveBuild()"
   >
     <div>
       <p>Hero</p>
@@ -175,7 +180,7 @@
       </label>
       <div class="mt-4 flex flex-row justify-around">
         <button
-          class="btn btn-primary"
+          class="btn btn-success"
           type="submit"
           [disabled]="!buildForm.valid"
         >
@@ -298,7 +303,7 @@
               @for (item of selectedFlexItems; track item) {
               <button
                 class="w-10 h-10 rounded-md"
-                (click)="selectedItemClick(item.name, 'flex')"
+                (click)="selectedItemClick('flex', item.name)"
                 [class]="{
                   'bg-[#dc9b32]': item.category === 'weapon',
                   'bg-[#7bbb1c]': item.category === 'vitality',
@@ -358,3 +363,4 @@
     </div>
   </div>
 </div>
+}

@@ -1,10 +1,10 @@
 @if (loading || buildData === undefined) {
 <div class="flex items-center justify-around h-full">
-  <p class="w-1/12 loading text-xl"></p>
+  <p class="w-1/12 loading"></p>
 </div>
 } @else {
 <div class="flex flex-row gap-4">
-  <div class="relative">
+  <div class="relative h-fit">
     <img
       class="rounded-md bg-[#a29582] min-w-fit"
       [src]="
@@ -21,142 +21,161 @@
     </p>
   </div>
   <div class="w-full">
+    @if (userService.getUserId() === buildData.user.id || userService.getRole()
+    === 'admin') {
+    <div class="relative">
+      <div class="absolute top-10 right-10 flex flex-col gap-2">
+        <a class="btn px-5 btn-primary" routerLink="./edit">Edit ✏️</a>
+        <button class="btn px-5 btn-error" onclick="my_modal_2.showModal()">
+          Delete 🗑️
+        </button>
+        <dialog id="my_modal_2" class="modal">
+          <div class="modal-box">
+            <p class="text-center mb-4">
+              Are you sure you want to delete this build?
+            </p>
+            <div class="flex flex-row justify-around">
+              <button class="btn px-5 btn-error" (click)="deleteBuild()">
+                Delete
+              </button>
+              <form method="dialog">
+                <button class="btn px-5 btn-primary">Cancel</button>
+              </form>
+            </div>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
+    </div>
+    }
     <p class="text-center font-bold text-4xl">{{ buildData.title }}</p>
     <p class="font-semibold text-xl">{{ buildData.shortDescription }}</p>
     <p>{{ buildData.body.description }}</p>
     <div class="mx-auto">
       <h1 class="text-2xl text-center">Items</h1>
-    <div class="w-full">
-      <div class="w-fit mt-3 mx-auto">
-        <div class="join mx-1">
-          <div
-            class="border border-[#dc9b32] rounded-xl m-3 p-1 bg-[#2d2208] bg-opacity-30 h-36"
-          >
-            <div class="relative w-full">
-              <img
-                class="absolute left-1/2 top-0 -translate-x-1/2"
-                src="assets/Weapon_Icon.png"
-              />
-              <p
-                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+      <div class="w-full">
+        <div class="w-fit mt-3 mx-auto">
+          <div class="join mx-1">
+            <div
+              class="border border-[#dc9b32] rounded-xl m-3 p-1 bg-[#2d2208] bg-opacity-30 h-36"
+            >
+              <div class="relative w-full">
+                <img
+                  class="absolute left-1/2 top-0 -translate-x-1/2"
+                  src="assets/Weapon_Icon.png"
+                />
+                <p
+                  class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                >
+                  WEAPON
+                </p>
+              </div>
+              <div
+                class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
               >
-                WEAPON
-              </p>
+                @for (item of buildData.body.weaponItems; track item) {
+                <div class="bg-[#dc9b32] w-10 h-10 rounded-md">
+                  <img
+                    class="invert"
+                    [src]="'assets/items/' + item.replaceAll(' ', '_') + '.png'"
+                  />
+                </div>
+                }
+              </div>
             </div>
             <div
-              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+              class="border border-[#7bbb1c] rounded-xl m-3 p-1 bg-[#1f3104] bg-opacity-30 h-36"
             >
-              @for (item of buildData.body.weaponItems; track item) {
-              <button
-                class="bg-[#dc9b32] w-10 h-10 rounded-md"
-              >
+              <div class="relative w-full">
                 <img
-                  class="invert"
-                  [src]="
-                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                  "
+                  class="absolute left-1/2 top-0 -translate-x-1/2"
+                  src="assets/Vitality_Icon.png"
                 />
-              </button>
-              }
-            </div>
-          </div>
-          <div
-            class="border border-[#7bbb1c] rounded-xl m-3 p-1 bg-[#1f3104] bg-opacity-30 h-36"
-          >
-            <div class="relative w-full">
-              <img
-                class="absolute left-1/2 top-0 -translate-x-1/2"
-                src="assets/Vitality_Icon.png"
-              />
-              <p
-                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                <p
+                  class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                >
+                  VITALITY
+                </p>
+              </div>
+              <div
+                class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
               >
-                VITALITY
-              </p>
+                @for (item of buildData.body.vitalityItems; track item) {
+                <div class="bg-[#7bbb1c] w-10 h-10 rounded-md">
+                  <img
+                    class="invert"
+                    [src]="'assets/items/' + item.replaceAll(' ', '_') + '.png'"
+                  />
+                </div>
+                }
+              </div>
             </div>
             <div
-              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+              class="border border-[#cd91fe] rounded-xl m-3 p-1 bg-[#332142] bg-opacity-30 h-36"
             >
-              @for (item of buildData.body.vitalityItems; track item) {
-              <button
-                class="bg-[#7bbb1c] w-10 h-10 rounded-md"
-              >
+              <div class="relative w-full">
                 <img
-                  class="invert"
-                  [src]="
-                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                  "
+                  class="absolute left-1/2 top-0 -translate-x-1/2"
+                  src="assets/Spirit_Icon.png"
                 />
-              </button>
-              }
-            </div>
-          </div>
-          <div
-            class="border border-[#cd91fe] rounded-xl m-3 p-1 bg-[#332142] bg-opacity-30 h-36"
-          >
-            <div class="relative w-full">
-              <img
-                class="absolute left-1/2 top-0 -translate-x-1/2"
-                src="assets/Spirit_Icon.png"
-              />
-              <p
-                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                <p
+                  class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                >
+                  SPIRIT
+                </p>
+              </div>
+              <div
+                class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
               >
-                SPIRIT
-              </p>
+                @for (item of buildData.body.spiritItems; track item) {
+                <div class="bg-[#cd91fe] w-10 h-10 rounded-md">
+                  <img
+                    class="invert"
+                    [src]="'assets/items/' + item.replaceAll(' ', '_') + '.png'"
+                  />
+                </div>
+                }
+              </div>
             </div>
             <div
-              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
+              class="border border-slate-800 rounded-xl m-3 p-1 bg-[#2c2c2c] bg-opacity-30 h-36"
             >
-              @for (item of buildData.body.spiritItems; track item) {
-              <button
-                class="bg-[#cd91fe] w-10 h-10 rounded-md"
+              <div class="relative w-full">
+                <p
+                  class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
+                >
+                  FLEX
+                </p>
+              </div>
+              <div
+                class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
               >
-                <img
-                  class="invert"
-                  [src]="
-                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                  "
-                />
-              </button>
-              }
-            </div>
-          </div>
-          <div
-            class="border border-slate-800 rounded-xl m-3 p-1 bg-[#2c2c2c] bg-opacity-30 h-36"
-          >
-            <div class="relative w-full">
-              <p
-                class="absolute left-1/2 top-5 -translate-x-1/2 text-center font-bold"
-              >
-                FLEX
-              </p>
-            </div>
-            <div
-              class="relative top-12 grid grid-cols-2 grid-rows-2 w-[82px] h-[82px] rounded-md"
-            >
-              @for (item of buildData.body.flexItems; track item) {
-              <button
-                class="w-10 h-10 rounded-md"
-                [class]="{
-                  'bg-[#dc9b32]': item.category === 'weapon',
-                  'bg-[#7bbb1c]': item.category === 'vitality',
-                  'bg-[#cd91fe]': item.category === 'spirit'
-                }"
-              >
-                <img
-                  class="invert"
-                  [src]="
-                    'assets/items/' + item.name.replaceAll(' ', '_') + '.png'
-                  "
-                />
-              </button>
-              }
+                @for (item of buildData.body.flexItems; track item) {
+                <div
+                  class="w-10 h-10 rounded-md"
+                  [class]="{
+                    'bg-[#dc9b32]': item.category === 'weapon',
+                    'bg-[#7bbb1c]': item.category === 'vitality',
+                    'bg-[#cd91fe]': item.category === 'spirit'
+                  }"
+                >
+                  <img
+                    class="invert"
+                    [src]="
+                      'assets/items/' +
+                      item.name.toString().replaceAll(' ', '_') +
+                      '.png'
+                    "
+                  />
+                </div>
+                }
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>

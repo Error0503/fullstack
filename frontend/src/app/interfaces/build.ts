@@ -1,15 +1,18 @@
-import Item from "./item";
+import Comment from './comment';
+import User from './user';
 
 export default interface Build {
+  user: { id: number};
   id: number;
   heroId: number;
   title: string;
   shortDescription: string;
   body: {
     description: string;
-    weaponItems: Item[];
-    vitalityItems: Item[];
-    spiritItems: Item[];
-    flexItems: Item[];
+    weaponItems: string[];
+    vitalityItems: string[];
+    spiritItems: string[];
+    flexItems: { name: string; category: string }[];
   };
+  comments: Comment[];
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   FormBuilder,
@@ -33,6 +33,45 @@ export class BuildEditorComponent {
   heroes = Object.values(heroesData);
 
   buildForm: FormGroup;
+
+  loading: boolean = true;
+
+  buildId: number | undefined;
+
+  @Input()
+  set id(id: number) {
+    this.loadData(id);
+  }
+
+  loadData(id: number | undefined): void {
+    this.buildId = id;
+    if (id !== undefined) {
+      this.http.get(`http://localhost:3000/post/${id}`).subscribe({
+        next: (data) => {
+          const parsedDate = JSON.parse(JSON.stringify({ ...data }));
+          this.buildForm.setValue({
+            heroId: parsedDate.heroId,
+            title: parsedDate.title,
+            shortDescription: parsedDate.shortDescription,
+            description: parsedDate.body.description,
+            items: true,
+          });
+          this.selectedWeaponItems = parsedDate.body.weaponItems;
+          this.weaponItemCount = this.selectedWeaponItems.length;
+          this.selectedVitalityItems = parsedDate.body.vitalityItems;
+          this.vitalityItemCount = this.selectedVitalityItems.length;
+          this.selectedSpiritItems = parsedDate.body.spiritItems;
+          this.spiritItemCount = this.selectedSpiritItems.length;
+          this.selectedFlexItems = parsedDate.body.flexItems;
+          this.flexItemCount = this.selectedFlexItems.length;
+        },
+        error: console.error,
+        complete: () => (this.loading = false),
+      });
+    } else {
+      this.loading = false;
+    }
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -69,7 +108,27 @@ export class BuildEditorComponent {
     });
   }
 
-  postBuild(): void {
+  saveBuild(): void {
+    const cleanData = this.parseData();
+    console.log(this.buildId);
+    if (this.buildId === undefined) {
+      console.log('POST');
+      this.http.post(`http://localhost:3000/post`, cleanData).subscribe({
+        next: console.log,
+        error: console.error,
+      });
+    } else {
+      console.log('PUT');
+      this.http
+        .put(`http://localhost:3000/post/${this.buildId}`, cleanData)
+        .subscribe({
+          next: console.log,
+          error: console.error,
+        });
+    }
+  }
+
+  parseData() {
     const dirtyData = this.buildForm.getRawValue();
     delete dirtyData['items'];
     delete dirtyData['description'];
@@ -84,14 +143,7 @@ export class BuildEditorComponent {
         flexItems: this.selectedFlexItems,
       },
     };
-    this.http.post(`http://localhost:3000/post`, cleanData).subscribe(
-      (resp) => {
-        console.log(resp);
-      },
-      (err) => {
-        console.error(err);
-      }
-    );
+    return cleanData;
   }
 
   get heroId() {
@@ -202,6 +254,12 @@ export class BuildEditorComponent {
         }
         break;
     }
+
+    console.log(this.weaponItemCount);
+    console.log(this.vitalityItemCount);
+    console.log(this.spiritItemCount);
+    console.log(this.flexItemCount);
+
     this.buildForm.setValue({
       ...this.buildForm.getRawValue(),
       items:
@@ -212,9 +270,10 @@ export class BuildEditorComponent {
     });
   }
 
-  selectedItemClick(item: string, category: string): void {
+  selectedItemClick(category: string, item: string): void {
     switch (category) {
       case 'weapon':
+        console.log(item);
         this.selectedWeaponItems = this.selectedWeaponItems.filter((i) => {
           if (i === item) {
             this.weaponItemCount--;
@@ -254,24 +313,30 @@ export class BuildEditorComponent {
           }
         });
     }
-  }
-
-  onSubmit(): void {
-    console.log(this.buildForm.value);
-    console.log(this.buildForm.errors);
-    this.postBuild();
+    this.buildForm.setValue({
+      ...this.buildForm.getRawValue(),
+      items:
+        this.weaponItemCount === 4 &&
+        this.vitalityItemCount === 4 &&
+        this.spiritItemCount === 4 &&
+        this.flexItemCount === 4,
+    });
   }
 
   onReset(): void {
-    this.buildForm.reset();
-    this.selectedWeaponItems = [];
-    this.selectedVitalityItems = [];
-    this.selectedSpiritItems = [];
-    this.selectedFlexItems = [];
-    this.weaponItemCount = 0;
-    this.vitalityItemCount = 0;
-    this.spiritItemCount = 0;
-    this.flexItemCount = 0;
+    if (this.id !== undefined) {
+      this.buildForm.reset();
+      this.selectedWeaponItems = [];
+      this.selectedVitalityItems = [];
+      this.selectedSpiritItems = [];
+      this.selectedFlexItems = [];
+      this.weaponItemCount = 0;
+      this.vitalityItemCount = 0;
+      this.spiritItemCount = 0;
+      this.flexItemCount = 0;
+    } else {
+      this.loadData(this.buildId);
+    }
   }
 
   suppress(e: any): void {

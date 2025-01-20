@@ -71,4 +71,9 @@ export const routes: Routes = [
     path: 'builds/:id',
     component: BuildViewerComponent,
   },
+  {
+    title: 'Builds',
+    path: 'builds/:id/edit',
+    component: BuildEditorComponent,
+  },
 ];
