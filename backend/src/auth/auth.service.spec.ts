@@ -94,12 +94,16 @@ describe('AuthService', () => {
   it('should register a new user and return a success message', async () => {
     userService.findOneByUsername = jest.fn().mockResolvedValue(null);
     userService.create = jest.fn().mockResolvedValue(undefined);
+    authService.login = jest
+      .fn()
+      .mockResolvedValue({ access_token: 'someAccessToken' });
 
     const result = await authService.register('newUser', 'password');
 
     expect(result).toEqual({
       status: 201,
       message: 'User created successfully',
+      access_token: 'someAccessToken',
     });
     expect(userService.create).toHaveBeenCalledWith('newUser', 'password');
   });
