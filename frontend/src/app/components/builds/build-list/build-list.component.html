@@ -3,8 +3,25 @@
 }
 <div class="grid grid-cols-4">
   @for (build of data; track $index) {
-  <div class="card shadow-md bg-black p-2">
-    <p>{{ build.body }}</p>
-  </div>
+  <a
+    class="card shadow-md bg-[#ccbea7] p-2"
+    [routerLink]="['/builds', build.id]"
+  >
+    <div class="join">
+      <img
+        class="h-32 rounded-md"
+        [src]="
+          'assets/heroes/' +
+          heroes[build.heroId].name.replaceAll(' ', '_') +
+          '_card.png'
+        "
+        alt=""
+      />
+      <div class="w-full p-2 text-gray-800">
+        <p class="text-center text-xl">{{ build.title }}</p>
+        <p>{{ build.shortDescription }}</p>
+      </div>
+    </div>
+  </a>
   }
 </div>

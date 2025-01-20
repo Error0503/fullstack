@@ -1,15 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserService } from '../../../services/UserService/user-service.service';
+import heroesData from '../../../assets/heroes.json';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-build-list',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './build-list.component.html',
   styleUrl: './build-list.component.css',
 })
 export class BuildListComponent {
+  heroes = Object.values(heroesData);
+
   userService: UserService;
   data: any = [];
   constructor(private http: HttpClient, userService: UserService) {
