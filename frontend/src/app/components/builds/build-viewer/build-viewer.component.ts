@@ -12,7 +12,6 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-
 enum Reasons {
   OFFENSIVE = 'offensive',
   SPAM = 'spam',
