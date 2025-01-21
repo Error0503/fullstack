@@ -2,7 +2,7 @@
 <div class="card min-w-60 max-w-80 text-white mx-auto shadow-xl" *ngIf="item">
   <div class="card-body rounded-t-md p-5" [ngStyle]="{'background-color': '#' + getColors()[0]}">
     <div>
-      <!-- <img *ngIf="item.image" src="assets/{{item.image}}" alt="{{item.name}}" class="w-6 h-6 float-right"> -->
+      <img src="assets/items/{{item.name.replaceAll(' ', '_')}}.png" alt="{{item.name.replaceAll(' ', '_')}}" class="w-6 h-6 float-right">
       <h2 class="card-title font-bold">{{item.name}}</h2>
       <span class="text-cyan-300 font-semibold font-[#b3f0ca]">{{item.cost}} cost</span>
     </div>
