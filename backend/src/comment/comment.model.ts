@@ -11,6 +11,9 @@ import { User } from '../user/user.model';
 @Table
 export class Comment extends Model<Comment> {
   @Column
+  commenterUsername: string;
+
+  @Column
   content: string;
 
   @ForeignKey(() => User)

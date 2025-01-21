@@ -12,6 +12,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+
 enum Reasons {
   OFFENSIVE = 'offensive',
   SPAM = 'spam',
@@ -33,24 +34,23 @@ export class BuildViewerComponent {
   errorMessage?: string;
   userService: UserService;
 
+  commentForm: FormGroup;
+
   @Input()
   set id(id: number) {
-    this.http.get(`http://localhost:3000/post/${id}`).subscribe({
-      next: (data) => {
-        this.buildData = JSON.parse(JSON.stringify({ ...data }));
-      },
-      error: console.error,
-      complete: () => (this.loading = false),
-    });
+    this.fetchData(id);
   }
 
   constructor(
-    private fb: FormBuilder,
     private http: HttpClient,
     userService: UserService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {
     this.userService = userService;
+    this.commentForm = this.formBuilder.group({
+      content: ['', [Validators.required]],
+    });
     this.reportForm = this.fb.group({
       body: ['', [Validators.required, Validators.minLength(10)]],
       reason: [
@@ -60,6 +60,16 @@ export class BuildViewerComponent {
           Validators.pattern(Object.values(Reasons).join('|')),
         ],
       ],
+    });
+  }
+
+  private fetchData(id: number) {
+    this.http.get(`http://localhost:3000/post/${id}`).subscribe({
+      next: (data) => {
+        this.buildData = JSON.parse(JSON.stringify({ ...data }));
+      },
+      error: console.error,
+      complete: () => (this.loading = false),
     });
   }
 
@@ -118,5 +128,36 @@ export class BuildViewerComponent {
     if (modal) {
       modal.close();
     }
+    
+  saveComment() {
+    this.http
+      .post(`http://localhost:3000/comment`, {
+        postId: this.buildData?.id,
+        userId: this.userService.getUserId(),
+        commenterUsername: this.userService.getUsername(),
+        content: this.commentForm.value.content,
+      })
+      .subscribe({
+        error: console.error,
+        complete: () => {
+          this.fetchData(this.buildData!.id);
+          this.commentForm.reset();
+        },
+      });
+  }
+
+  deleteComment(commentId: number) {
+    this.http
+      .delete(`http://localhost:3000/comment/${commentId}`)
+      .subscribe({ complete: () => this.fetchData(this.buildData!.id) });
+  }
+
+  convertToDate(date: Date) {
+    const convertedDate = new Date(date);
+    return (
+      convertedDate.toLocaleDateString() +
+      ' ' +
+      convertedDate.toLocaleTimeString()
+    );
   }
 }

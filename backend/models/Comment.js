@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Comment.init(
     {
+      commenterUsername: DataTypes.STRING,
       content: DataTypes.STRING,
     },
     {

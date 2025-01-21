@@ -32,6 +32,7 @@ export class CommentService {
   async create(
     postId: number,
     userId: number,
+    commenterUsername: string,
     content: string,
   ): Promise<Comment> {
     try {
@@ -55,6 +56,7 @@ export class CommentService {
         const comment = new Comment();
         comment.postId = postId;
         comment.userId = userId;
+        comment.commenterUsername = commenterUsername;
         comment.content = content;
         return await comment.save({ transaction: t });
       });

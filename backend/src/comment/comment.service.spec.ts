@@ -62,7 +62,12 @@ describe('CommentService', () => {
       .model(User)
       .create({ username: 'TestUser', password: 'password', role: 'user' });
 
-    const comment = await service.create(post.id, user.id, 'Test comment');
+    const comment = await service.create(
+      post.id,
+      user.id,
+      'TestUser',
+      'Test comment',
+    );
     expect(comment).toBeDefined();
     expect(comment.content).toBe('Test comment');
   });
@@ -78,6 +83,7 @@ describe('CommentService', () => {
     const createdComment = await service.create(
       post.id,
       user.id,
+      'TestUser',
       'Test comment',
     );
     const comment = await service.findOne(createdComment.id);
@@ -96,6 +102,7 @@ describe('CommentService', () => {
     const createdComment = await service.create(
       post.id,
       user.id,
+      'TestUser',
       'Test comment',
     );
     const updatedComment = await service.update(
@@ -117,6 +124,7 @@ describe('CommentService', () => {
     const createdComment = await service.create(
       post.id,
       user.id,
+      'TestUser',
       'Test comment',
     );
     await service.delete(createdComment.id);
@@ -132,8 +140,8 @@ describe('CommentService', () => {
       .model(User)
       .create({ username: 'TestUser', password: 'password', role: 'user' });
 
-    await service.create(post.id, user.id, 'Test comment 1');
-    await service.create(post.id, user.id, 'Test comment 2');
+    await service.create(post.id, user.id, 'TestUser', 'Test comment 1');
+    await service.create(post.id, user.id, 'TestUser', 'Test comment 2');
 
     const comments = await service.findAll();
     expect(comments).toHaveLength(2);
@@ -165,6 +173,7 @@ describe('CommentService', () => {
     const commentWithInvalidPost = await service.create(
       999,
       user.id,
+      'TestUser',
       'Test comment',
     );
     expect(commentWithInvalidPost).toBeNull();
@@ -172,6 +181,7 @@ describe('CommentService', () => {
     const commentWithInvalidUser = await service.create(
       post.id,
       999,
+      'TestUser',
       'Test comment',
     );
     expect(commentWithInvalidUser).toBeNull();
