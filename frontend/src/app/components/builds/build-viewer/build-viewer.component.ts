@@ -12,7 +12,6 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-
 enum Reasons {
   OFFENSIVE = 'offensive',
   SPAM = 'spam',
@@ -51,7 +50,7 @@ export class BuildViewerComponent {
     this.commentForm = this.formBuilder.group({
       content: ['', [Validators.required]],
     });
-    this.reportForm = this.fb.group({
+    this.reportForm = this.formBuilder.group({
       body: ['', [Validators.required, Validators.minLength(10)]],
       reason: [
         'Select an option',
@@ -128,7 +127,8 @@ export class BuildViewerComponent {
     if (modal) {
       modal.close();
     }
-    
+  }
+
   saveComment() {
     this.http
       .post(`http://localhost:3000/comment`, {
