@@ -10,6 +10,7 @@ import { BuildViewerComponent } from './components/builds/build-viewer/build-vie
 import { BuildEditorComponent } from './components/builds/build-editor/build-editor.component';
 import { ReportListComponent } from './components/reports/report-list/report-list.component';
 import { ReportViewerComponent } from './components/reports/report-viewer/report-viewer.component';
+import { privateGuard } from './guards/private.guard';
 
 export const routes: Routes = [
   {
@@ -40,11 +41,13 @@ export const routes: Routes = [
     title: 'Profile',
     path: 'profile/:id',
     component: ProfileComponent,
+    canActivate: [privateGuard],
   },
   {
     title: 'Profile',
     path: 'profile/:id/edit',
     component: ProfileEditComponent,
+    canActivate: [privateGuard],
   },
   {
     title: 'Builds',
@@ -60,11 +63,13 @@ export const routes: Routes = [
     title: 'Builds',
     path: 'builds/:id',
     component: BuildViewerComponent,
+    canActivate: [privateGuard],
   },
   {
     title: 'Builds',
     path: 'builds/:id/edit',
     component: BuildEditorComponent,
+    canActivate: [privateGuard],
   },
   {
     title: 'Reports',
@@ -75,5 +80,6 @@ export const routes: Routes = [
     title: 'Report Viewer',
     path: 'reports/:id',
     component: ReportViewerComponent,
+    canActivate: [privateGuard],
   },
 ];

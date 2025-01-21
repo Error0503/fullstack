@@ -14,13 +14,13 @@ module.exports = {
     await User.create({
       username: 'admin',
       password: 'admin',
-      role: 'user',
+      role: 'admin',
     });
 
     await User.create({
       username: 'moderator',
       password: 'moderator',
-      role: 'user',
+      role: 'moderator',
     });
 
     const testPost = await Post.create({
