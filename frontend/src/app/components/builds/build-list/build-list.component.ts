@@ -3,19 +3,20 @@ import { Component } from '@angular/core';
 import { UserService } from '../../../services/UserService/user-service.service';
 import heroesData from '../../../assets/heroes.json';
 import { RouterModule } from '@angular/router';
+import { BuildCardComponent } from "../../build-card/build-card.component";
 
 @Component({
   selector: 'app-build-list',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, BuildCardComponent],
   templateUrl: './build-list.component.html',
   styleUrl: './build-list.component.css',
 })
 export class BuildListComponent {
   heroes = Object.values(heroesData);
-
   userService: UserService;
   data: any = [];
+
   constructor(private http: HttpClient, userService: UserService) {
     this.userService = userService;
     this.getBuilds();

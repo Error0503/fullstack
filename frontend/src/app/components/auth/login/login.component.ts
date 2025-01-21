@@ -35,12 +35,12 @@ export class LoginComponent {
   submitForm() {
     this.submitted = true;
     this.errorMessage = undefined;
-    this.clientService.login(this.loginForm.value).subscribe(
-      (response) => {
+    this.clientService.login(this.loginForm.value).subscribe({
+      next: (response) => {
         this.submitted = false;
         this.router.navigate(['/']);
       },
-      (error) => {
+      error: (error) => {
         console.error(error);
         this.submitted = false;
         if (error.error.statusCode === 401) {
@@ -50,7 +50,7 @@ export class LoginComponent {
         } else {
           this.errorMessage = 'An error occurred';
         }
-      }
-    );
+      },
+    });
   }
 }
