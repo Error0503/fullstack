@@ -1,4 +1,4 @@
-import Post from "./post";
+import Build from "./build";
 
 export default interface Report {
   id: number;
@@ -6,5 +6,5 @@ export default interface Report {
   body: string;
   reason: string;
   userId: number;
-  post: Post;
+  post: Build;
 }
