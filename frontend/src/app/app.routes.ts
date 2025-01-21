@@ -82,4 +82,9 @@ export const routes: Routes = [
     component: ReportViewerComponent,
     canActivate: [privateGuard],
   },
+  {
+    path: '**',
+    redirectTo: 'builds',
+    pathMatch: 'full',
+  }
 ];
