@@ -10,6 +10,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { BuildListComponent } from './components/builds/build-list/build-list.component';
 import { BuildViewerComponent } from './components/builds/build-viewer/build-viewer.component';
 import { BuildEditorComponent } from './components/builds/build-editor/build-editor.component';
+import { ReportListComponent } from './components/reports/report-list/report-list.component';
 
 export const routes: Routes = [
   {
@@ -76,4 +77,9 @@ export const routes: Routes = [
     path: 'builds/:id/edit',
     component: BuildEditorComponent,
   },
+  {
+    title: 'Reports',
+    path: 'reports',
+    component: ReportListComponent,
+  }
 ];

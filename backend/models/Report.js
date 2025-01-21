@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Report.init(
     {
-      body: DataTypes.STRING,
+      status: DataTypes.ENUM('open', 'in-progress', 'resolved'),
       reason: DataTypes.ENUM('offensive', 'misleading', 'spam'),
+      body: DataTypes.STRING,
     },
     {
       sequelize,

@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
 import { Sequelize } from 'sequelize-typescript';
 import { ReportService } from './report.service';
-import { Report, Reasons } from './report.model';
+import { Report, Reasons, Statuses } from './report.model';
 import { User } from '../user/user.model';
 import { Post } from '../post/post.model';
 import { Comment } from '../comment/comment.model';
@@ -79,8 +79,9 @@ describe('ReportService', () => {
 
       const result = new Report({
         id: 1,
-        body: 'body',
+        status: Statuses.OPEN,
         reason: Reasons.SPAM,
+        body: 'body',
         userId: user.id,
         postId: post.id,
         createdAt: new Date(),
@@ -91,8 +92,9 @@ describe('ReportService', () => {
       jest.spyOn(reportModel, 'create').mockResolvedValue(result);
 
       const createdReport = await service.create(
-        'body',
+        Statuses.OPEN,
         Reasons.SPAM,
+        'body',
         user.id,
         post.id,
       );
@@ -100,8 +102,9 @@ describe('ReportService', () => {
       expect(createdReport).toEqual(
         expect.objectContaining({
           id: 1,
-          body: 'body',
+          status: Statuses.OPEN,
           reason: Reasons.SPAM,
+          body: 'body',
           userId: user.id,
           postId: post.id,
           createdAt: expect.any(Date),
@@ -114,46 +117,34 @@ describe('ReportService', () => {
       jest.spyOn(User, 'findOne').mockResolvedValue(null);
       jest.spyOn(Post, 'findOne').mockResolvedValue(new Post());
 
-      expect(await service.create('body', Reasons.SPAM, 1, 1)).toBeNull();
+      expect(
+        await service.create(Statuses.OPEN, Reasons.SPAM, 'body', 1, 1),
+      ).toBeNull();
     });
 
     it('should return null if post is not found', async () => {
       jest.spyOn(User, 'findOne').mockResolvedValue(new User());
       jest.spyOn(Post, 'findOne').mockResolvedValue(null);
 
-      expect(await service.create('body', Reasons.SPAM, 1, 1)).toBeNull();
-    });
-  });
-
-  describe('delete', () => {
-    it('should delete a report', async () => {
-      const result = new Report();
-      jest.spyOn(service, 'findOne').mockResolvedValue(result);
-      jest.spyOn(result, 'destroy').mockResolvedValue(undefined);
-
-      expect(await service.delete('1')).toBeUndefined();
-    });
-
-    it('should return null if report is not found', async () => {
-      jest.spyOn(service, 'findOne').mockResolvedValue(null);
-
-      expect(await service.delete('1')).toBeNull();
+      expect(
+        await service.create(Statuses.OPEN, Reasons.SPAM, 'body', 1, 1),
+      ).toBeNull();
     });
   });
 
   describe('update', () => {
-    it('should update and return a report', async () => {
+    it('should update to RESOLVED status and return a report', async () => {
       const result = new Report();
       jest.spyOn(service, 'findOne').mockResolvedValue(result);
       jest.spyOn(result, 'save').mockResolvedValue(result);
 
-      expect(await service.update('1', 'new body', Reasons.SPAM)).toBe(result);
+      expect(await service.update('1', Statuses.RESOLVED)).toBe(result);
     });
 
     it('should return null if report is not found', async () => {
       jest.spyOn(service, 'findOne').mockResolvedValue(null);
 
-      expect(await service.update('1', 'new body', Reasons.SPAM)).toBeNull();
+      expect(await service.update('1', Statuses.RESOLVED)).toBeNull();
     });
   });
 });

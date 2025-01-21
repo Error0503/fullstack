@@ -1,6 +1,6 @@
 'use strict';
 
-const { User, Post, Comment } = require('../models');
+const { User, Post, Comment, Report } = require('../models');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -22,6 +22,28 @@ module.exports = {
     await Comment.create({
       commenterUsername: testUser.username,
       content: 'test',
+      UserId: testUser.id,
+      PostId: testPost.id,
+    });
+
+    await Report.create({
+      status: 'open',
+      reason: 'spam',
+      body: 'test',
+      UserId: testUser.id,
+      PostId: testPost.id,
+    });
+    await Report.create({
+      status: 'in-progress',
+      reason: 'misleading',
+      body: 'test',
+      UserId: testUser.id,
+      PostId: testPost.id,
+    });
+    await Report.create({
+      status: 'resolved',
+      reason: 'offensive',
+      body: 'test',
       UserId: testUser.id,
       PostId: testPost.id,
     });

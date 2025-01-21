@@ -29,6 +29,17 @@
     </a>
   </div>
   <div class="flex-none gap-2">
+    @if (this.userService.getRole() === 'user') {
+      <a
+        class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-yellow-300 bg-yellow-300 hover:bg-yellow-300 transition-colors"
+        routerLink="/reports"
+        #reportsActive="routerLinkActive"
+        [ngClass]="{ 'bg-[#ccbea7]': !reportsActive.isActive }"
+        [routerLinkActive]="['bg-yellow-300']"
+      >
+        Reports
+      </a>
+    }
       @if (this.userService.isLoggedIn ) {
         <a
           class="px-8 py-3 font-bold text-gray-800 rounded-t border-t-4 border-[#85b6fd] bg-[#ccbea7] hover:bg-[#85b6fd] transition-colors"

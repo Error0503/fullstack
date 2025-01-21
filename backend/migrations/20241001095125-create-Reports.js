@@ -11,14 +11,19 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      body: {
-        type: Sequelize.STRING,
-        field: 'body',
+      status: {
+        type: Sequelize.ENUM('open', 'in-progress', 'resolved'),
+        field: 'status',
         allowNull: false,
       },
       reason: {
         type: Sequelize.ENUM('offensive', 'misleading', 'spam'),
         field: 'reason',
+        allowNull: false,
+      },
+      body: {
+        type: Sequelize.STRING,
+        field: 'body',
         allowNull: false,
       },
       createdAt: {
