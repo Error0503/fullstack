@@ -1,0 +1,13 @@
+<a class="card shadow-xl bg-[#ccbea7] p-2" [routerLink]="['/builds', build.id]">
+  <div class="join">
+    <img class="h-32 rounded-md" [src]="
+          'assets/heroes/' +
+          heroes[build.heroId].name.replaceAll(' ', '_') +
+          '_card.png'
+        " [alt]="heroes[build.heroId].name" />
+    <div class="w-full p-2 text-gray-800">
+      <p class="text-center text-xl font-semibold">{{ build.title }}</p>
+      <p class="break-words">{{ build.shortDescription }}</p>
+    </div>
+  </div>
+</a>

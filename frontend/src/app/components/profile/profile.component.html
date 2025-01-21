@@ -1,6 +1,6 @@
 <div class="flex items-center">
   <h1 class="m-5 text-4xl text-white font-bold">{{user?.username}}'s builds</h1>
-  @if (this.user?.id == loggedInUserId  ) {
+  @if (this.user?.id == loggedInUserId ) {
   <button class="btn btn-primary font-bold text-white" [routerLink]="['/profile', user?.id, 'edit']">Edit profile
   </button>
   }
@@ -13,15 +13,6 @@
 }
 <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-10 p-4 text-white gap-3">
   @for (build of this.user?.posts; track build;) {
-  <a class="card bg-base-100 w-52 shadow-xl" [routerLink]="['/builds', build.id]">
-    <figure class="px-3 pt-5">
-      <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="alt"
-        class="rounded-xl" />
-    </figure>
-    <div class="card-body items-center text-center">
-      <h2 class="card-title">{{build.title}}</h2>
-      <p>{{build.body}}</p>
-    </div>
-  </a>
+  <app-build-card [build]="build"></app-build-card>
   }
 </div>

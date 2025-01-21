@@ -10,8 +10,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import User from '../../../interfaces/user';
-import { Observable, Subject, tap } from 'rxjs';
 
 @Component({
   selector: 'app-build-viewer',
