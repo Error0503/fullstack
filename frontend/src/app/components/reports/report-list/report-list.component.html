@@ -23,7 +23,7 @@
           <th>Status</th>
           <th>Reason</th>
           <th>Body</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -57,7 +57,13 @@
             <p>{{ report.body }}</p>
           </td>
           <!-- TODO -->
-          <td>Link</td>
+          <td>
+            <a
+              class="btn btn-sm btn-primary"
+              [routerLink]="['/reports', report.id]"
+              >View</a
+            >
+          </td>
         </tr>
         }
       </tbody>

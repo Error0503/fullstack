@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import Report from '../../../interfaces/report';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-report-list-component',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './report-list.component.html',
   styleUrl: './report-list.component.css',
 })
