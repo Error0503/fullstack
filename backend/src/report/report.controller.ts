@@ -1,18 +1,18 @@
 import {
   Body,
   Controller,
-  Delete,
   Get,
   HttpCode,
   HttpStatus,
   Param,
   Post,
   Put,
+  Query,
   Res,
 } from '@nestjs/common';
 import { ReportService } from './report.service';
 import { Response } from 'express';
-import { Reasons } from './report.model';
+import { Reasons, Statuses } from './report.model';
 
 @Controller('report')
 export class ReportController {
@@ -24,8 +24,23 @@ export class ReportController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
-  async findAll() {
-    return await this.reportService.findAll();
+  async filter(@Query('status') status: Statuses, @Res() res: Response) {
+    console.log('status:', status);
+    if (status === undefined) {
+      console.log('findAll');
+      const result = await this.reportService.findAll();
+      res.status(HttpStatus.OK).send(result);
+      return result;
+    } else {
+      console.log('filter');
+      const result = await this.reportService.filter(status);
+      if (result === null) {
+        res.status(HttpStatus.NOT_FOUND).send({ message: 'Report not found' });
+        return null;
+      }
+      res.status(HttpStatus.OK).send(result);
+      return result;
+    }
   }
 
   @Get(':id')
@@ -44,15 +59,23 @@ export class ReportController {
     @Res() res: Response,
     @Body()
     {
-      body,
       reason,
+      status,
+      body,
       userId,
       postId,
-    }: { body: string; reason: Reasons; userId: number; postId: number },
+    }: {
+      status: Statuses;
+      reason: Reasons;
+      body: string;
+      userId: number;
+      postId: number;
+    },
   ) {
     const result = await this.reportService.create(
-      body,
+      status,
       reason,
+      body,
       userId,
       postId,
     );
@@ -67,23 +90,13 @@ export class ReportController {
     return result;
   }
 
-  @Delete(':id')
-  async delete(@Param('id') id: string, @Res() res: Response) {
-    const result = await this.reportService.delete(id);
-    if (result === null) {
-      res.status(HttpStatus.NOT_FOUND).send({ message: 'Report not found' });
-      return null;
-    }
-    res.status(HttpStatus.NO_CONTENT).send();
-  }
-
   @Put(':id')
   async update(
     @Param('id') id: string,
-    @Body() { body, reason }: { body: string; reason: Reasons },
+    @Body() { status }: { status: Statuses },
     @Res() res: Response,
   ) {
-    const result = await this.reportService.update(id, body, reason);
+    const result = await this.reportService.update(id, status);
     if (result === null) {
       res.status(HttpStatus.NOT_FOUND).send({ message: 'Report not found' });
       return null;

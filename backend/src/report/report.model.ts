@@ -17,12 +17,25 @@ export enum Reasons {
   MISLEADING = 'misleading',
 }
 
+export enum Statuses {
+  OPEN = 'open',
+  IN_PROGRESS = 'in-progress',
+  RESOLVED = 'resolved',
+}
+
 const reasons: string[] = _.values(Reasons);
+const statuses: string[] = _.values(Statuses);
 
 @Table
 export class Report extends Model<Report> {
-  @Column
-  body: string;
+  @Column({
+    type: DataType.ENUM({ values: statuses }),
+    allowNull: false,
+    validate: {
+      isIn: [statuses],
+    },
+  })
+  status: string;
 
   @Column({
     type: DataType.ENUM({ values: reasons }),
@@ -32,6 +45,9 @@ export class Report extends Model<Report> {
     },
   })
   reason: string;
+
+  @Column
+  body: string;
 
   @ForeignKey(() => User)
   @Column

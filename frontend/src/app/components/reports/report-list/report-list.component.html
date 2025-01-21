@@ -1,0 +1,73 @@
+@if (loading) {
+<div class="flex items-center justify-around h-full">
+  <p class="w-1/12 loading"></p>
+</div>
+} @else {
+<div class="w-full">
+  <div class="overflow-x-auto w-4/5 mx-auto">
+    <div class="form-control w-fit">
+      <label class="label cursor-pointer gap-4">
+        <span class="label-text">Only show open</span>
+        <input
+          type="checkbox"
+          class="toggle toggle-error"
+          (click)="toggle()"
+          checked="checked"
+        />
+      </label>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Status</th>
+          <th>Reason</th>
+          <th>Body</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (report of reports; track report) {
+        <tr>
+          <th>
+            <p>{{ report.id }}</p>
+          </th>
+          <th>
+            @switch (report.status) { @case ('open') {
+            <p class="font-semibold badge badge-error">⚠️ OPEN</p>
+            } @case ('in-progress') {
+            <p class="font-semibold badge badge-info">✏️ IN PROGRESS</p>
+            } @case ('resolved') {
+            <p class="font-semibold badge badge-success">&check; RESOLVED</p>
+            } }
+          </th>
+          <td>
+            <p
+              class="font-semibold badge"
+              [class]="{
+                'badge-info': report.reason === 'spam',
+                'badge-warning': report.reason === 'misleading',
+                'badge-error': report.reason === 'offensive'
+              }"
+            >
+              {{ report.reason.toUpperCase() }}
+            </p>
+          </td>
+          <td>
+            <p>{{ report.body }}</p>
+          </td>
+          <!-- TODO -->
+          <td>
+            <a
+              class="btn btn-sm btn-primary"
+              [routerLink]="['/reports', report.id]"
+              >View</a
+            >
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+}

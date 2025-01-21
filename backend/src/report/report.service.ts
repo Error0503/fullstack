@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Reasons, Report } from './report.model';
+import { Reasons, Report, Statuses } from './report.model';
 import { Sequelize } from 'sequelize-typescript';
 import { User } from '../user/user.model';
 import { Post } from '../post/post.model';
@@ -29,9 +29,18 @@ export class ReportService {
     });
   }
 
+  async filter(statusFilter: Statuses): Promise<Report[]> {
+    return await this.reportModel.findAll({
+      where: {
+        status: statusFilter,
+      },
+    });
+  }
+
   async create(
-    body: string,
+    status: Statuses,
     reason: Reasons,
+    body: string,
     userId: number,
     postId: number,
   ): Promise<Report> {
@@ -54,8 +63,9 @@ export class ReportService {
 
       return await this.sequelize.transaction(async (t) => {
         const report = new Report();
-        report.body = body;
+        report.status = status;
         report.reason = reason;
+        report.body = body;
         report.userId = userId;
         report.postId = postId;
         return await report.save({ transaction: t });
@@ -66,22 +76,11 @@ export class ReportService {
     }
   }
 
-  async delete(id: string): Promise<void> {
-    try {
-      const report = await this.findOne(id);
-      return await report.destroy();
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
-  }
-
-  async update(id: string, body: string, reason: Reasons): Promise<Report> {
+  async update(id: string, status: Statuses): Promise<Report> {
     try {
       return await this.sequelize.transaction(async (t) => {
         const report = await this.findOne(id);
-        report.body = body;
-        report.reason = reason;
+        report.status = status;
         return await report.save({ transaction: t });
       });
     } catch (error) {

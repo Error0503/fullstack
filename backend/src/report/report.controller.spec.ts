@@ -3,6 +3,7 @@ import { ReportController } from './report.controller';
 import { ReportService } from './report.service';
 import { HttpStatus } from '@nestjs/common';
 import * as request from 'supertest';
+import { Reasons, Statuses } from './report.model';
 
 describe('ReportController', () => {
   let app;
@@ -11,6 +12,7 @@ describe('ReportController', () => {
   beforeAll(async () => {
     reportServiceMock = {
       findAll: jest.fn(),
+      filter: jest.fn(),
       findOne: jest.fn(),
       create: jest.fn(),
       delete: jest.fn(),
@@ -33,7 +35,14 @@ describe('ReportController', () => {
 
   describe('GET /report', () => {
     it('should return a list of all reports', () => {
-      const reports = [{ id: '1', body: 'Test Report', reason: 'Spam' }];
+      const reports = [
+        {
+          id: '1',
+          status: Statuses.OPEN,
+          reason: Reasons.SPAM,
+          body: 'Test Report',
+        },
+      ];
       reportServiceMock.findAll.mockResolvedValue(reports);
       return request(app.getHttpServer())
         .get('/report')
@@ -42,9 +51,32 @@ describe('ReportController', () => {
     });
   });
 
+  describe('GET /report?status=open', () => {
+    it('should return a list of open reports', () => {
+      const reports = [
+        {
+          id: '1',
+          status: Statuses.OPEN,
+          reason: Reasons.SPAM,
+          body: 'Test Report',
+        },
+      ];
+      reportServiceMock.filter.mockResolvedValue(reports);
+      return request(app.getHttpServer())
+        .get('/report?status=open')
+        .expect(HttpStatus.OK)
+        .expect(reports);
+    });
+  });
+
   describe('GET /report/:id', () => {
     it('should return a report by ID', () => {
-      const report = { id: '1', body: 'Test Report', reason: 'Spam' };
+      const report = {
+        id: '1',
+        status: Statuses.OPEN,
+        reason: Reasons.SPAM,
+        body: 'Test Report',
+      };
       reportServiceMock.findOne.mockResolvedValue(report);
       return request(app.getHttpServer())
         .get('/report/1')
@@ -63,13 +95,20 @@ describe('ReportController', () => {
 
   describe('POST /report', () => {
     it('should create a new report', () => {
-      const newReport = { id: '1', body: 'Test Report', reason: 'Spam' };
+      const newReport = {
+        id: '1',
+        status: Statuses.OPEN,
+        reason: Reasons.SPAM,
+        body: 'Test Report',
+      };
       reportServiceMock.create.mockResolvedValue(newReport);
       return request(app.getHttpServer())
         .post('/report')
         .send({
+          id: '1',
+          status: Statuses.OPEN,
+          reason: Reasons.SPAM,
           body: 'Test Report',
-          reason: 'Spam',
           userId: 1,
           postId: 1,
         })
@@ -92,34 +131,18 @@ describe('ReportController', () => {
     });
   });
 
-  describe('DELETE /report/:id', () => {
-    it('should delete a report by ID', () => {
-      reportServiceMock.delete.mockResolvedValue(true);
-      return request(app.getHttpServer())
-        .delete('/report/1')
-        .expect(HttpStatus.NO_CONTENT);
-    });
-
-    it('should return 404 if report not found', () => {
-      reportServiceMock.delete.mockResolvedValue(null);
-      return request(app.getHttpServer())
-        .delete('/report/999')
-        .expect(HttpStatus.NOT_FOUND)
-        .expect({ message: 'Report not found' });
-    });
-  });
-
   describe('PUT /report/:id', () => {
     it('should update a report successfully', () => {
       const updatedReport = {
         id: '1',
-        body: 'Updated Report',
-        reason: 'Abuse',
+        status: Statuses.RESOLVED,
+        reason: Reasons.SPAM,
+        body: 'Test Report',
       };
       reportServiceMock.update.mockResolvedValue(updatedReport);
       return request(app.getHttpServer())
         .put('/report/1')
-        .send({ body: 'Updated Report', reason: 'Abuse' })
+        .send({ status: Statuses.RESOLVED })
         .expect(HttpStatus.OK)
         .expect(updatedReport);
     });
