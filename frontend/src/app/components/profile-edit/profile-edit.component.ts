@@ -82,15 +82,15 @@ export class ProfileEditComponent implements OnInit {
   }
 
   getUserData(id: number): void {
-    this.http.get(`http://localhost:3000/user/?id=${id}`).subscribe(
-      (data: any) => {
+    this.http.get(`http://localhost:3000/user/?id=${id}`).subscribe({
+      next: (data: any) => {
         this.user = data;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching user posts:', error);
         this.router.navigate(['/']);
-      }
-    );
+      },
+    });
   }
 
   updateUserData(username: string, password?: string): void {
@@ -99,14 +99,14 @@ export class ProfileEditComponent implements OnInit {
         username,
         password,
       })
-      .subscribe(
-        (data: any) => {
+      .subscribe({
+        next: (data: any) => {
           console.log(data);
         },
-        (error) => {
+        error: (error) => {
           console.error(error);
-        }
-      );
+        },
+      });
   }
 
   submitForm(): void {
@@ -119,9 +119,10 @@ export class ProfileEditComponent implements OnInit {
       return;
     }
 
-
-
-    this.updateUserData(this.username!.value, this.newPassword?.value ? this.newPassword?.value : undefined);
+    this.updateUserData(
+      this.username!.value,
+      this.newPassword?.value ? this.newPassword?.value : undefined
+    );
     console.log('submitting form');
   }
 
