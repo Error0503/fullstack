@@ -6,8 +6,20 @@ const { User, Post, Comment } = require('../models');
 module.exports = {
   async up() {
     const testUser = await User.create({
-      username: 'test',
-      password: 'test',
+      username: 'user',
+      password: 'user',
+      role: 'user',
+    });
+
+    await User.create({
+      username: 'admin',
+      password: 'admin',
+      role: 'user',
+    });
+
+    await User.create({
+      username: 'moderator',
+      password: 'moderator',
       role: 'user',
     });
 
@@ -15,7 +27,45 @@ module.exports = {
       heroId: 0,
       title: 'Test Post',
       shortDescription: 'This is a test post',
-      body: { description: 'This is a test post created by the seeder' },
+      body: {
+        description: 'This is a test post created by the seeder',
+        weaponItems: [
+          'Close Quarters',
+          'Hollow Point Ward',
+          'Kinetic Dash',
+          'Rapid Rounds',
+        ],
+        vitalityItems: [
+          'Reactive Barrier',
+          'Healbane',
+          'Healing Nova',
+          'Spirit Lifesteal',
+        ],
+        spiritItems: [
+          'Extra Spirit',
+          'Extra Charge',
+          'Torment Pulse',
+          'Spirit Snatch',
+        ],
+        flexItems: [
+          {
+            name: 'Crippling Headshot',
+            category: 'weapon',
+          },
+          {
+            name: "Enchanter's Barrier",
+            category: 'vitality',
+          },
+          {
+            name: 'Surge of Power',
+            category: 'spirit',
+          },
+          {
+            name: 'Superior Cooldown',
+            category: 'spirit',
+          },
+        ],
+      },
       UserId: testUser.id,
     });
 
