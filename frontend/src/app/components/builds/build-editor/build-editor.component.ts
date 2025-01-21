@@ -113,6 +113,8 @@ export class BuildEditorComponent {
     console.log(this.buildId);
     if (this.buildId === undefined) {
       console.log('POST');
+      console.log(cleanData);
+
       this.http.post(`http://localhost:3000/post`, cleanData).subscribe({
         next: console.log,
         error: console.error,

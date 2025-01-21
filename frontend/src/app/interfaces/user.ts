@@ -1,5 +1,5 @@
+import Build from "./build";
 import Comment from "./comment";
-import Post from "./post";
 
 export default interface User {
   id: number;
@@ -9,5 +9,5 @@ export default interface User {
   createdAt: Date;
   updatedAt: Date;
   comments?: Comment[];
-  posts?: Post[];
+  posts?: Build[];
 }
