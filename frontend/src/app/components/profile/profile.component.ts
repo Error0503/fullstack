@@ -33,14 +33,14 @@ export class ProfileComponent {
   }
 
   getUserData(id: number): void {
-    this.http.get(`http://localhost:3000/user/?id=${id}`).subscribe(
-      (data: any) => {
+    this.http.get(`http://localhost:3000/user/?id=${id}`).subscribe({
+      next: (data: any) => {
         this.user = data;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching user posts:', error);
         this.router.navigate(['/']);
-      }
-    );
+      },
+    });
   }
 }

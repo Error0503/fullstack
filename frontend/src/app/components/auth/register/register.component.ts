@@ -13,7 +13,11 @@ export class RegisterComponent {
   submitted = false;
   errorMessage?: string;
 
-  constructor(private fb: FormBuilder, private clientService: ClientService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private clientService: ClientService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -31,12 +35,12 @@ export class RegisterComponent {
   submitForm() {
     this.submitted = true;
     this.errorMessage = undefined;
-    this.clientService.register(this.registerForm.value).subscribe(
-      (response) => {
+    this.clientService.register(this.registerForm.value).subscribe({
+      next: (response) => {
         this.submitted = false;
         this.router.navigate(['/']);
       },
-      (error) => {
+      error: (error) => {
         console.error(error);
         this.submitted = false;
         if (error.error.statusCode === 401) {
@@ -48,7 +52,7 @@ export class RegisterComponent {
         } else {
           this.errorMessage = 'An error occurred';
         }
-      }
-    );
+      },
+    });
   }
 }
