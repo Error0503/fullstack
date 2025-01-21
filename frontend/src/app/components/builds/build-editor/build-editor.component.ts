@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -9,7 +9,7 @@ import {
 import heroesData from '../../../assets/heroes.json';
 import itemsData from '../../../assets/items.json';
 import Item from '../../../interfaces/item';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpStatusCode } from '@angular/common/http';
 import { UserService } from '../../../services/UserService/user-service.service';
 
 @Component({
@@ -37,6 +37,8 @@ export class BuildEditorComponent {
   loading: boolean = true;
 
   buildId: number | undefined;
+
+  error: string | undefined;
 
   @Input()
   set id(id: number) {
@@ -76,7 +78,8 @@ export class BuildEditorComponent {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this.buildForm = this.formBuilder.group({
       heroId: [undefined, [Validators.required]],
@@ -114,8 +117,25 @@ export class BuildEditorComponent {
     if (this.buildId === undefined) {
       console.log('POST');
       this.http.post(`http://localhost:3000/post`, cleanData).subscribe({
-        next: console.log,
-        error: console.error,
+        next: (data) => {
+          this.router.navigate([
+            '/builds',
+            JSON.parse(JSON.stringify(data)).id,
+          ]);
+        },
+        error: (error) => {
+          switch (error.status) {
+            case 0:
+              this.error = 'Server is down';
+              break;
+            case HttpStatusCode.NotFound:
+              this.error = 'Failed to create build';
+              break;
+          }
+          setTimeout(() => {
+            this.error = undefined;
+          }, 3000);
+        },
       });
     } else {
       console.log('PUT');
@@ -123,7 +143,19 @@ export class BuildEditorComponent {
         .put(`http://localhost:3000/post/${this.buildId}`, cleanData)
         .subscribe({
           next: console.log,
-          error: console.error,
+          error: (error) => {
+            switch (error.status) {
+              case 0:
+                this.error = 'Server is down';
+                break;
+              case HttpStatusCode.NotFound:
+                this.error = 'Failed to create build';
+                break;
+            }
+            setTimeout(() => {
+              this.error = undefined;
+            }, 3000);
+          },
         });
     }
   }
@@ -324,7 +356,7 @@ export class BuildEditorComponent {
   }
 
   onReset(): void {
-    if (this.id !== undefined) {
+    if (this.id === undefined) {
       this.buildForm.reset();
       this.selectedWeaponItems = [];
       this.selectedVitalityItems = [];
