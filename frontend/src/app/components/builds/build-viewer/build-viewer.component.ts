@@ -17,6 +17,13 @@ enum Reasons {
   SPAM = 'spam',
   MISLEADING = 'misleading',
 }
+
+enum Statuses {
+  OPEN = 'open',
+  IN_PROGRESS = 'in-progress',
+  RESOLVED = 'resolved',
+}
+
 @Component({
   selector: 'app-build-viewer',
   standalone: true,
@@ -30,6 +37,7 @@ export class BuildViewerComponent {
   heroes = Object.values(heroesData);
   reportForm: FormGroup;
   reasons = Object.values(Reasons);
+  statuses = Object.values(Statuses);
   errorMessage?: string;
   userService: UserService;
 
@@ -97,6 +105,7 @@ export class BuildViewerComponent {
       .post(`http://localhost:3000/report`, {
         body: this.reportForm.value.body,
         reason: this.reportForm.value.reason,
+        status: Statuses.OPEN,
         userId: this.userService.getUserId(),
         postId: this.buildData?.id,
       })
