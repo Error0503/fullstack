@@ -180,7 +180,7 @@
 @if (reportData?.status !== 'resolved') {
 <p class="text-center font-bold my-4">Moderation tools</p>
 <div class="flex flex-row justify-center gap-4 mt-4">
-  <a class="btn btn-primary" [routerLink]="['/buids', buildData?.id, 'edit']"
+  <a class="btn btn-primary" [routerLink]="['/builds', buildData?.id, 'edit']"
     >Edit</a
   >
   <button class="btn btn-error" (click)="deleteBuild()">Delete</button>
