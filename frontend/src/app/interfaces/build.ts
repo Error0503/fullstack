@@ -1,8 +1,7 @@
 import Comment from './comment';
-import User from './user';
 
 export default interface Build {
-  user: { id: number};
+  user: { id: number; username: string };
   id: number;
   heroId: number;
   title: string;

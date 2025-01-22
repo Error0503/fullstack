@@ -25,14 +25,11 @@ export class ReportController {
   @Get()
   @HttpCode(HttpStatus.OK)
   async filter(@Query('status') status: Statuses, @Res() res: Response) {
-    console.log('status:', status);
     if (status === undefined) {
-      console.log('findAll');
       const result = await this.reportService.findAll();
       res.status(HttpStatus.OK).send(result);
       return result;
     } else {
-      console.log('filter');
       const result = await this.reportService.filter(status);
       if (result === null) {
         res.status(HttpStatus.NOT_FOUND).send({ message: 'Report not found' });

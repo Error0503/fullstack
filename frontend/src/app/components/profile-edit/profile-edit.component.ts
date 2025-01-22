@@ -101,7 +101,6 @@ export class ProfileEditComponent implements OnInit {
       })
       .subscribe({
         next: (data: any) => {
-          console.log(data);
         },
         error: (error) => {
           console.error(error);
@@ -111,7 +110,7 @@ export class ProfileEditComponent implements OnInit {
 
   submitForm(): void {
     if (Date.now() - new Date(this.user!.updatedAt).getTime() < 86400000) {
-      console.log('Cannot change data yet');
+      // console.log('Cannot change data yet');
       // return;
     }
 
@@ -123,7 +122,6 @@ export class ProfileEditComponent implements OnInit {
       this.username!.value,
       this.newPassword?.value ? this.newPassword?.value : undefined
     );
-    console.log('submitting form');
   }
 
   checkPassword(): boolean {

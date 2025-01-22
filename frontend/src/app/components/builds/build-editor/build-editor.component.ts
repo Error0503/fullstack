@@ -123,11 +123,7 @@ export class BuildEditorComponent {
 
   saveBuild(): void {
     const cleanData = this.parseData();
-    console.log(this.buildId);
     if (this.buildId === undefined) {
-      console.log('POST');
-      console.log(cleanData);
-
       this.http
         .post(
           `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`,
@@ -155,14 +151,12 @@ export class BuildEditorComponent {
           },
         });
     } else {
-      console.log('PUT');
       this.http
         .put(
           `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildId}`,
           cleanData
         )
         .subscribe({
-          next: console.log,
           error: (error) => {
             switch (error.status) {
               case 0:
@@ -307,11 +301,6 @@ export class BuildEditorComponent {
         break;
     }
 
-    console.log(this.weaponItemCount);
-    console.log(this.vitalityItemCount);
-    console.log(this.spiritItemCount);
-    console.log(this.flexItemCount);
-
     this.buildForm.setValue({
       ...this.buildForm.getRawValue(),
       items:
@@ -325,7 +314,6 @@ export class BuildEditorComponent {
   selectedItemClick(category: string, item: string): void {
     switch (category) {
       case 'weapon':
-        console.log(item);
         this.selectedWeaponItems = this.selectedWeaponItems.filter((i) => {
           if (i === item) {
             this.weaponItemCount--;
@@ -376,7 +364,7 @@ export class BuildEditorComponent {
   }
 
   onReset(): void {
-    if (this.id === undefined) {
+    if (this.buildId === undefined) {
       this.buildForm.reset();
       this.selectedWeaponItems = [];
       this.selectedVitalityItems = [];

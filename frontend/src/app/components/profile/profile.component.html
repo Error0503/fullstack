@@ -1,7 +1,18 @@
+@if (loading) {
+<div class="flex items-center justify-around h-full">
+  <p class="w-1/12 loading"></p>
+</div>
+} @else {
 <div class="flex items-center">
-  <h1 class="m-5 text-4xl text-white font-bold">{{user?.username}}'s builds</h1>
+  <h1 class="m-5 text-4xl text-white font-bold">
+    {{ user?.username }}'s builds
+  </h1>
   @if (this.user?.id == loggedInUserId ) {
-  <button class="btn btn-primary font-bold text-white" [routerLink]="['/profile', user?.id, 'edit']">Edit profile
+  <button
+    class="btn btn-primary font-bold text-white"
+    [routerLink]="['/profile', user?.id, 'edit']"
+  >
+    Edit profile
   </button>
   }
 </div>
@@ -11,8 +22,11 @@
   <h1 class="text-2xl text-white">No builds yet.</h1>
 </div>
 }
-<div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-10 p-4 text-white gap-3">
+<div
+  class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-10 p-4 text-white gap-3"
+>
   @for (build of this.user?.posts; track build;) {
   <app-build-card [build]="build"></app-build-card>
   }
 </div>
+}

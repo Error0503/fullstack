@@ -5,7 +5,7 @@ import User from '../../interfaces/user';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/UserService/user-service.service';
-import { BuildCardComponent } from "../build-card/build-card.component";
+import { BuildCardComponent } from '../build-card/build-card.component';
 import heroesData from '../../assets/heroes.json';
 
 @Component({
@@ -19,6 +19,8 @@ export class ProfileComponent {
   loggedInUserId: number;
   user: User | undefined;
   num: number = 0;
+
+  loading: boolean = true;
 
   heroes = Object.values(heroesData);
   data: any = [];
@@ -39,26 +41,34 @@ export class ProfileComponent {
   }
 
   getUserData(id: number): void {
-    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/user/?id=${id}`).subscribe({
-      next: (data: any) => {
-        this.user = data;
-      },
-      error: (error) => {
-        console.error('Error fetching user posts:', error);
-        this.router.navigate(['/']);
-      },
-    });
+    this.http
+      .get(
+        `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/user/?id=${id}`
+      )
+      .subscribe({
+        next: (data: any) => {
+          this.user = data;
+        },
+        error: (error) => {
+          console.error('Error fetching user posts:', error);
+          this.router.navigate(['/']);
+        },
+      });
   }
 
   getBuilds(): void {
-    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`).subscribe(
-      (data: any) => {
-        console.log(data);
-        this.data = data;
-      },
-      (error) => {
-        console.error('Error fetching posts:', error);
-      }
-    );
+    this.http
+      .get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`)
+      .subscribe({
+        next: (data: any) => {
+          this.data = data;
+        },
+        error: (error) => {
+          console.error('Error fetching posts:', error);
+        },
+        complete: () => {
+          this.loading = false;
+        },
+      });
   }
 }
