@@ -157,6 +157,12 @@ export class BuildEditorComponent {
           cleanData
         )
         .subscribe({
+          next: (data) => {
+            this.router.navigate([
+              '/builds',
+              JSON.parse(JSON.stringify(data)).id,
+            ]);
+          },
           error: (error) => {
             switch (error.status) {
               case 0:
