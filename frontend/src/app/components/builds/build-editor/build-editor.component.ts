@@ -48,7 +48,7 @@ export class BuildEditorComponent {
   loadData(id: number | undefined): void {
     this.buildId = id;
     if (id !== undefined) {
-      this.http.get(`http://localhost:3000/post/${id}`).subscribe({
+      this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`).subscribe({
         next: (data) => {
           const parsedDate = JSON.parse(JSON.stringify({ ...data }));
           this.buildForm.setValue({
@@ -118,7 +118,7 @@ export class BuildEditorComponent {
       console.log('POST');
       console.log(cleanData);
 
-      this.http.post(`http://localhost:3000/post`, cleanData).subscribe({
+      this.http.post(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`, cleanData).subscribe({
         next: (data) => {
           this.router.navigate([
             '/builds',
@@ -142,7 +142,7 @@ export class BuildEditorComponent {
     } else {
       console.log('PUT');
       this.http
-        .put(`http://localhost:3000/post/${this.buildId}`, cleanData)
+        .put(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildId}`, cleanData)
         .subscribe({
           next: console.log,
           error: (error) => {

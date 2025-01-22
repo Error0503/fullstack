@@ -37,7 +37,7 @@ export class ReportViewerComponent {
   }
 
   private fetchReport(id: number) {
-    this.http.get(`http://localhost:3000/report/${id}`).subscribe({
+    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report/${id}`).subscribe({
       next: (data) => {
         this.reportData = JSON.parse(JSON.stringify(data));
       },
@@ -52,7 +52,7 @@ export class ReportViewerComponent {
     console.log(id);
 
     if (id !== undefined) {
-      this.http.get(`http://localhost:3000/post/${id}`).subscribe({
+      this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`).subscribe({
         next: (data) => {
           this.buildData = JSON.parse(JSON.stringify({ ...data }));
           console.log(this.buildData);
@@ -68,7 +68,7 @@ export class ReportViewerComponent {
 
   deleteBuild() {
     this.http
-      .delete(`http://localhost:3000/post/${this.buildData?.id}`)
+      .delete(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildData?.id}`)
       .subscribe({
         error: () => {
           this.location.back();
@@ -81,7 +81,7 @@ export class ReportViewerComponent {
 
   markAsResolved() {
     this.http
-      .put(`http://localhost:3000/report/${this.reportData?.id}`, {
+      .put(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report/${this.reportData?.id}`, {
         status: 'resolved',
       })
       .subscribe({

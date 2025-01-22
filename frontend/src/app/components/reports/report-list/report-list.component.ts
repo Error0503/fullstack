@@ -26,7 +26,7 @@ export class ReportListComponent {
   }
 
   refresh() {
-    let url: string = 'http://localhost:3000/report';
+    let url: string = 'https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report';
     if (this.filter) {
       url += '?status=open';
     }

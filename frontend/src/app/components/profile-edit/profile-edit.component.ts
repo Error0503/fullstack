@@ -82,7 +82,7 @@ export class ProfileEditComponent implements OnInit {
   }
 
   getUserData(id: number): void {
-    this.http.get(`http://localhost:3000/user/?id=${id}`).subscribe({
+    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/user/?id=${id}`).subscribe({
       next: (data: any) => {
         this.user = data;
       },
@@ -95,7 +95,7 @@ export class ProfileEditComponent implements OnInit {
 
   updateUserData(username: string, password?: string): void {
     this.http
-      .put(`http://localhost:3000/user/${this.user?.id}`, {
+      .put(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/user/${this.user?.id}`, {
         username,
         password,
       })

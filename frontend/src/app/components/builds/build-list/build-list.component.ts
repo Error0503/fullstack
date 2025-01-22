@@ -23,7 +23,7 @@ export class BuildListComponent {
   }
 
   getBuilds(): void {
-    this.http.get(`http://localhost:3000/post`).subscribe(
+    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`).subscribe(
       (data: any) => {
         console.log(data);
         this.data = data;

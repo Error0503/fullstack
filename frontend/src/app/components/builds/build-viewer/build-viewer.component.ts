@@ -63,7 +63,7 @@ export class BuildViewerComponent {
   }
 
   private fetchData(id: number) {
-    this.http.get(`http://localhost:3000/post/${id}`).subscribe({
+    this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`).subscribe({
       next: (data) => {
         this.buildData = JSON.parse(JSON.stringify({ ...data }));
       },
@@ -82,7 +82,7 @@ export class BuildViewerComponent {
 
   deleteBuild() {
     this.http
-      .delete(`http://localhost:3000/post/${this.buildData?.id}`)
+      .delete(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildData?.id}`)
       .subscribe({
         error: console.error,
         complete: () => {
@@ -94,7 +94,7 @@ export class BuildViewerComponent {
   reportBuild(e: any) {
     e.preventDefault();
     this.http
-      .post(`http://localhost:3000/report`, {
+      .post(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report`, {
         body: this.reportForm.value.body,
         reason: this.reportForm.value.reason,
         userId: this.userService.getUserId(),
@@ -131,7 +131,7 @@ export class BuildViewerComponent {
 
   saveComment() {
     this.http
-      .post(`http://localhost:3000/comment`, {
+      .post(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/comment`, {
         postId: this.buildData?.id,
         userId: this.userService.getUserId(),
         commenterUsername: this.userService.getUsername(),
@@ -148,7 +148,7 @@ export class BuildViewerComponent {
 
   deleteComment(commentId: number) {
     this.http
-      .delete(`http://localhost:3000/comment/${commentId}`)
+      .delete(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/comment/${commentId}`)
       .subscribe({ complete: () => this.fetchData(this.buildData!.id) });
   }
 
