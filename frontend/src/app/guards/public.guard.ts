@@ -5,7 +5,7 @@ import { UserService } from '../services/UserService/user-service.service';
 @Injectable({
   providedIn: 'root',
 })
-export class PrivateGuardService {
+export class PublicGuardService {
   constructor(private router: Router, private userService: UserService) {}
 
   canActivate(): boolean {
@@ -17,5 +17,5 @@ export class PrivateGuardService {
 }
 
 export const publicGuard: CanActivateFn = (route, state) => {
-  return inject(PrivateGuardService).canActivate();
+  return inject(PublicGuardService).canActivate();
 };

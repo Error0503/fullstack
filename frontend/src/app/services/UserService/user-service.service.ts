@@ -11,6 +11,12 @@ export class UserService {
 
   constructor() {}
 
+  canAccess(id: string): boolean {
+    if (id !== undefined && this.getRole() === 'user')
+      return this.getUserId() === parseInt(id);
+    else return true;
+  }
+
   getToken(): string | null {
     return localStorage.getItem(this.STORAGE_KEY);
   }

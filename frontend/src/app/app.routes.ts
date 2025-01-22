@@ -41,13 +41,13 @@ export const routes: Routes = [
     title: 'Profile',
     path: 'profile/:id',
     component: ProfileComponent,
-    canActivate: [privateGuard],
   },
   {
     title: 'Profile',
     path: 'profile/:id/edit',
     component: ProfileEditComponent,
     canActivate: [privateGuard],
+    data: { roles: ['user', 'moderator', 'admin'] },
   },
   {
     title: 'Builds',
@@ -58,33 +58,38 @@ export const routes: Routes = [
     title: 'Build Editor',
     path: 'builds/editor',
     component: BuildEditorComponent,
+    canActivate: [privateGuard],
+    data: { roles: ['user', 'moderator', 'admin'] },
   },
   {
     title: 'Builds',
     path: 'builds/:id',
     component: BuildViewerComponent,
-    canActivate: [privateGuard],
   },
   {
     title: 'Builds',
     path: 'builds/:id/edit',
     component: BuildEditorComponent,
     canActivate: [privateGuard],
+    data: { roles: ['user', 'moderator', 'admin'] },
   },
   {
     title: 'Reports',
     path: 'reports',
     component: ReportListComponent,
+    canActivate: [privateGuard],
+    data: { roles: ['moderator', 'admin'] },
   },
   {
     title: 'Report Viewer',
     path: 'reports/:id',
     component: ReportViewerComponent,
     canActivate: [privateGuard],
+    data: { roles: ['moderator', 'admin'] },
   },
   {
     path: '**',
     redirectTo: 'builds',
     pathMatch: 'full',
-  }
+  },
 ];

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import {
   FormBuilder,
@@ -19,7 +19,7 @@ import { UserService } from '../../../services/UserService/user-service.service'
   templateUrl: './build-editor.component.html',
   styleUrl: './build-editor.component.css',
 })
-export class BuildEditorComponent {
+export class BuildEditorComponent implements OnInit {
   weaponItemCount = 0;
   selectedWeaponItems: string[] = [];
   vitalityItemCount = 0;
@@ -43,6 +43,17 @@ export class BuildEditorComponent {
   @Input()
   set id(id: number) {
     this.loadData(id);
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    if (
+      this.buildId !== undefined &&
+      this.buildId != this.userService.getUserId()
+    ) {
+      this.router.navigate(['/builds']);
+    }
   }
 
   loadData(id: number | undefined): void {
