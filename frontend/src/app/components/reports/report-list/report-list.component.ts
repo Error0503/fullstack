@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import Report from '../../../interfaces/report';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-report-list-component',
   standalone: true,
-  imports: [RouterModule],
+  imports: [],
   templateUrl: './report-list.component.html',
   styleUrl: './report-list.component.css',
 })
@@ -15,7 +15,7 @@ export class ReportListComponent {
   loading: boolean = true;
   filter: boolean = true;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.reports = [];
     this.refresh();
   }
@@ -26,7 +26,8 @@ export class ReportListComponent {
   }
 
   refresh() {
-    let url: string = 'https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report';
+    let url: string =
+      'https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report';
     if (this.filter) {
       url += '?status=open';
     }
@@ -34,9 +35,26 @@ export class ReportListComponent {
       next: (data) => {
         this.loading = true;
         this.reports = JSON.parse(JSON.stringify(data));
+        console.log(data);
       },
       error: console.error,
       complete: () => (this.loading = false),
     });
+  }
+
+  viewReport(index: number) {
+    if (this.reports[index].status === 'resolved') {
+      this.router.navigate(['/reports', this.reports[index].id]);
+    } else {
+      this.http
+        .put(
+          `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/report/${this.reports[index].id}`,
+          { status: 'in-progress' }
+        )
+        .subscribe({
+          complete: () =>
+            this.router.navigate(['/reports', this.reports[index].id]),
+        });
+    }
   }
 }

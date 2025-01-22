@@ -1,3 +1,8 @@
+@if (loading) {
+<div class="flex items-center justify-around h-full">
+  <p class="w-1/12 loading"></p>
+</div>
+}@else {
 <div>
   @if (buildData !== undefined) {
   <div class="flex flex-row gap-4">
@@ -155,6 +160,25 @@
   </div>
   }
 </div>
+<div>
+  <div class="card w-fit mx-auto grid grid-cols-2 grid-rows-2 gap-4 mt-4">
+    <p>Reason</p>
+    <p
+      class="font-semibold badge"
+      [class]="{
+        'badge-info': reportData?.reason === 'spam',
+        'badge-warning': reportData?.reason === 'misleading',
+        'badge-error': reportData?.reason === 'offensive'
+      }"
+    >
+      {{ (reportData ?? { reason: "" }).reason.toUpperCase() }}
+    </p>
+    <p>Body</p>
+    <p>{{ reportData?.body }}</p>
+  </div>
+</div>
+@if (reportData?.status !== 'resolved') {
+<p class="text-center font-bold my-4">Moderation tools</p>
 <div class="flex flex-row justify-center gap-4 mt-4">
   <a class="btn btn-primary" [routerLink]="['/buids', buildData?.id, 'edit']"
     >Edit</a
@@ -162,3 +186,4 @@
   <button class="btn btn-error" (click)="deleteBuild()">Delete</button>
   <button class="btn btn-success" (click)="markAsResolved()">Done</button>
 </div>
+} }

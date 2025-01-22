@@ -56,13 +56,13 @@
           <td>
             <p>{{ report.body }}</p>
           </td>
-          <!-- TODO -->
           <td>
-            <a
+            <button
               class="btn btn-sm btn-primary"
-              [routerLink]="['/reports', report.id]"
-              >View</a
+              (click)="viewReport($index)"
             >
+              View
+            </button>
           </td>
         </tr>
         }
