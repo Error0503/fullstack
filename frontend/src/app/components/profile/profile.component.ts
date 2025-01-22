@@ -61,7 +61,6 @@ export class ProfileComponent {
       .get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`)
       .subscribe({
         next: (data: any) => {
-          console.log(data);
           this.data = data;
         },
         error: (error) => {

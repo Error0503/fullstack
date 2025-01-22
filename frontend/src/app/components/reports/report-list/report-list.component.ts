@@ -35,7 +35,6 @@ export class ReportListComponent {
       next: (data) => {
         this.loading = true;
         this.reports = JSON.parse(JSON.stringify(data));
-        console.log(data);
       },
       error: console.error,
       complete: () => (this.loading = false),

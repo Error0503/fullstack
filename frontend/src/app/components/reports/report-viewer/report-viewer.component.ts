@@ -42,25 +42,20 @@ export class ReportViewerComponent {
         this.reportData = JSON.parse(JSON.stringify(data));
       },
       complete: () => {
-        console.log(this.reportData);
         this.fetchBuild(this.reportData?.post.id);
       },
     });
   }
 
   private fetchBuild(id: number | undefined) {
-    console.log(id);
-
     if (id !== undefined) {
       this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`).subscribe({
         next: (data) => {
           this.buildData = JSON.parse(JSON.stringify({ ...data }));
-          console.log(this.buildData);
         },
         error: console.error,
         complete: () => {
           this.loading = false;
-          console.log(this.buildData);
         },
       });
     }

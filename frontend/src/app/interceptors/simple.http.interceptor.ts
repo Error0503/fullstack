@@ -25,12 +25,10 @@ export class SimpleHttpInterceptor implements HttpInterceptor {
     });
 
     return next.handle(clonedRequest).pipe(
-      tap((r) => {
-        console.log('r', r);
-      }),
+      tap((r) => {}),
       catchError((error: HttpErrorResponse) => {
         if (error.status >= 500) {
-          console.log('Server error occured!');
+          console.error(error);
         }
 
         return throwError(() => error);
