@@ -376,7 +376,7 @@ export class BuildEditorComponent {
   }
 
   onReset(): void {
-    if (this.id === undefined) {
+    if (this.buildId === undefined) {
       this.buildForm.reset();
       this.selectedWeaponItems = [];
       this.selectedVitalityItems = [];
