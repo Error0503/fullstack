@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import {
   FormBuilder,
@@ -19,7 +19,7 @@ import { UserService } from '../../../services/UserService/user-service.service'
   templateUrl: './build-editor.component.html',
   styleUrl: './build-editor.component.css',
 })
-export class BuildEditorComponent implements OnInit {
+export class BuildEditorComponent {
   weaponItemCount = 0;
   selectedWeaponItems: string[] = [];
   vitalityItemCount = 0;
@@ -45,42 +45,41 @@ export class BuildEditorComponent implements OnInit {
     this.loadData(id);
   }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    if (
-      this.buildId !== undefined &&
-      this.buildId != this.userService.getUserId()
-    ) {
-      this.router.navigate(['/builds']);
-    }
-  }
-
   loadData(id: number | undefined): void {
     this.buildId = id;
     if (id !== undefined) {
-      this.http.get(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`).subscribe({
-        next: (data) => {
-          const parsedDate = JSON.parse(JSON.stringify({ ...data }));
-          this.buildForm.setValue({
-            heroId: parsedDate.heroId,
-            title: parsedDate.title,
-            shortDescription: parsedDate.shortDescription,
-            description: parsedDate.body.description,
-            items: true,
-          });
-          this.selectedWeaponItems = parsedDate.body.weaponItems;
-          this.weaponItemCount = this.selectedWeaponItems.length;
-          this.selectedVitalityItems = parsedDate.body.vitalityItems;
-          this.vitalityItemCount = this.selectedVitalityItems.length;
-          this.selectedSpiritItems = parsedDate.body.spiritItems;
-          this.spiritItemCount = this.selectedSpiritItems.length;
-          this.selectedFlexItems = parsedDate.body.flexItems;
-          this.flexItemCount = this.selectedFlexItems.length;
-        },
-        error: console.error,
-        complete: () => (this.loading = false),
-      });
+      this.http
+        .get(
+          `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${id}`
+        )
+        .subscribe({
+          next: (data) => {
+            const parsedData = JSON.parse(JSON.stringify({ ...data }));
+            if (
+              parsedData.user.id !== this.userService.getUserId() &&
+              this.userService.getRole() === 'user'
+            ) {
+              this.router.navigate(['/builds']);
+            }
+            this.buildForm.setValue({
+              heroId: parsedData.heroId,
+              title: parsedData.title,
+              shortDescription: parsedData.shortDescription,
+              description: parsedData.body.description,
+              items: true,
+            });
+            this.selectedWeaponItems = parsedData.body.weaponItems;
+            this.weaponItemCount = this.selectedWeaponItems.length;
+            this.selectedVitalityItems = parsedData.body.vitalityItems;
+            this.vitalityItemCount = this.selectedVitalityItems.length;
+            this.selectedSpiritItems = parsedData.body.spiritItems;
+            this.spiritItemCount = this.selectedSpiritItems.length;
+            this.selectedFlexItems = parsedData.body.flexItems;
+            this.flexItemCount = this.selectedFlexItems.length;
+          },
+          error: console.error,
+          complete: () => (this.loading = false),
+        });
     } else {
       this.loading = false;
     }
@@ -129,31 +128,39 @@ export class BuildEditorComponent implements OnInit {
       console.log('POST');
       console.log(cleanData);
 
-      this.http.post(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`, cleanData).subscribe({
-        next: (data) => {
-          this.router.navigate([
-            '/builds',
-            JSON.parse(JSON.stringify(data)).id,
-          ]);
-        },
-        error: (error) => {
-          switch (error.status) {
-            case 0:
-              this.error = 'Server is down';
-              break;
-            case HttpStatusCode.NotFound:
-              this.error = 'Failed to create build';
-              break;
-          }
-          setTimeout(() => {
-            this.error = undefined;
-          }, 3000);
-        },
-      });
+      this.http
+        .post(
+          `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post`,
+          cleanData
+        )
+        .subscribe({
+          next: (data) => {
+            this.router.navigate([
+              '/builds',
+              JSON.parse(JSON.stringify(data)).id,
+            ]);
+          },
+          error: (error) => {
+            switch (error.status) {
+              case 0:
+                this.error = 'Server is down';
+                break;
+              case HttpStatusCode.NotFound:
+                this.error = 'Failed to create build';
+                break;
+            }
+            setTimeout(() => {
+              this.error = undefined;
+            }, 3000);
+          },
+        });
     } else {
       console.log('PUT');
       this.http
-        .put(`https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildId}`, cleanData)
+        .put(
+          `https://deadlock-builds-backend-9514acf001ce.herokuapp.com/post/${this.buildId}`,
+          cleanData
+        )
         .subscribe({
           next: console.log,
           error: (error) => {
