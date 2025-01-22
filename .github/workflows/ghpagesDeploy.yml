@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: npm run build -- --configuration=production --base-href=/DeadlockBuilds/
+        run: npm run build -- --configuration=production --base-href=/fullstack/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
