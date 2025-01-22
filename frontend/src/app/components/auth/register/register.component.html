@@ -38,10 +38,10 @@
     </label>
 
     @if (errorMessage != null) {
-      <div class="label">
-        <span class="label-text-alt text-error">{{errorMessage}}</span>
-      </div>
-      }
+    <div class="label">
+      <span class="label-text-alt text-error">{{ errorMessage }}</span>
+    </div>
+    }
 
     <div>
       <button class="btn btn-primary" [disabled]="!registerForm.valid">
@@ -50,7 +50,9 @@
     </div>
 
     <p class="w-full text-center">Already have an account?</p>
-    <p class="link w-full text-center"><a href="./auth/login">Log in</a></p>
+    <p class="link w-full text-center">
+      <a [routerLink]="['/auth', 'login']">Log in</a>
+    </p>
 
     @if (submitted) {
     <div>
